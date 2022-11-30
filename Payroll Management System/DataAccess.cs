@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI.Xaml.Controls;
 
 namespace Payroll_Management_System
 {
@@ -19,6 +20,15 @@ namespace Payroll_Management_System
                 return output;
             }
 
+        }
+
+        public void addEmployee(Employees emp)
+        {
+            using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
+            {
+                dbConnection.Execute("insert into EmployeesTable (employeeName,employeeNIC,employeeContact,employeeEmail,gender,houseNo,street,town,city,employeeDepartment,employeeDesignation,joiningDate,employeeDOB) values ('" + emp.employeeName + "', '" + emp.employeeNIC + "' ,'" + emp.employeeEmail + "','" + emp.employeeContact +"','"+emp.gender+"','"+emp.houseNo+"','"+emp.street+"','"+emp.town+"','"+emp.city+"','"+emp.employeeDepartment+"','"+emp.employeeDesignation+"','"+emp.joiningDate+"','"+emp.employeeDOB+"') ");
+
+            }
         }
     }
 }

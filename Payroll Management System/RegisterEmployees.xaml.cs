@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.ServiceModel.Channels;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -24,10 +25,41 @@ namespace Payroll_Management_System
     /// </summary>
     public sealed partial class RegisterEmployees : Page
     {
+        
         public RegisterEmployees()
         {
             this.InitializeComponent();
         }
+        private void registerEmployee_Click(object sender, RoutedEventArgs e)
+        {
+            var gend = "";
+            if (gender.SelectedIndex == 0)
+            {
+                gend = "Male";
+            }
+            else
+            {
+                gend = "Female";
+            }
+            Employees newEmployee = new Employees();
+            newEmployee.employeeName = employeeName.Text;
+            newEmployee.employeeNIC = employeeNIC.Text;
+            newEmployee.employeeContact = employeeContact.Text;
+            newEmployee.employeeEmail = employeeEmail.Text;
+            newEmployee.gender = gend;
+            newEmployee.houseNo = houseNo.Text;
+            newEmployee.street = street.Text;
+            newEmployee.town = town.Text;
+            newEmployee.city = city.Text;
+            newEmployee.employeeDepartment = employeeDepartment.SelectedIndex;
+            newEmployee.employeeDesignation = employeeDesignation.SelectedIndex;
+            // newEmployee.joiningDate = joiningDate;
+            newEmployee.employeeDOB = employeeDOB.ToString();
+            newEmployee.employeeDesignation = employeeDesignation.SelectedIndex;
 
+            DataAccess cont = new DataAccess();
+            cont.addEmployee(newEmployee);
+            ToggleThemeTeachingTip1.IsOpen = true;
+        }
     }
 }

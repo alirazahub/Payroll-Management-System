@@ -5,7 +5,6 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
-using Windows.Foundation.Metadata;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -21,15 +20,11 @@ namespace Payroll_Management_System
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class AllEmployees : Page
+    public sealed partial class Attendance : Page
     {
-        List<Employees> employees;
-        DataAccess cont = new DataAccess();
-        public AllEmployees()
+        public Attendance()
         {
             this.InitializeComponent();
-            employees = cont.getUsers();
         }
-
     }
 }

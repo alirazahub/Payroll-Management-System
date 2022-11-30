@@ -45,6 +45,11 @@ namespace Payroll_Management_System
                 mainFrame.Navigate(typeof(AllEmployees));
 
             }
+            else if (NavView.SelectedItem == attendance)
+            {
+                mainFrame.Navigate(typeof(Attendance));
+
+            }
         }
     }
 }

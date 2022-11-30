@@ -23,7 +23,7 @@
                     Tag="home" />
                 <muxc:NavigationViewItemSeparator />
 
-                <muxc:NavigationViewItem Content="Attendance" Tag="Attendance">
+                <muxc:NavigationViewItem Name="attendance" Content="Attendance" Tag="Attendance">
                     <muxc:NavigationViewItem.Icon>
                         <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xf0e3;" />
                     </muxc:NavigationViewItem.Icon>

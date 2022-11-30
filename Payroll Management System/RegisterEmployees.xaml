@@ -61,6 +61,7 @@
                     Padding="3"
                     Header="Email" />
                 <DatePicker
+                    Name="employeeDOB"
                     Margin="10,12,10,0"
                     VerticalAlignment="Top"
                     Header="Date Of Birth" />
@@ -74,7 +75,6 @@
                     PlaceholderText="Select Gender">
                     <ComboBoxItem Content="Male" />
                     <ComboBoxItem Content="Female" />
-                    <ComboBoxItem Content="Other" />
                 </ComboBox>
             </StackPanel>
             <TextBlock
@@ -125,7 +125,7 @@
                 VerticalAlignment="Center"
                 Orientation="Horizontal">
                 <ComboBox
-                    x:Name="EmployeeDepartment"
+                    x:Name="employeeDepartment"
                     Width="300"
                     Margin="6"
                     Padding="3"
@@ -138,7 +138,7 @@
                     <ComboBoxItem Content="5" />
                 </ComboBox>
                 <ComboBox
-                    x:Name="EmployeeDesignation"
+                    x:Name="employeeDesignation"
                     Width="300"
                     Margin="6"
                     Padding="3"
@@ -151,6 +151,7 @@
                     <ComboBoxItem Content="5" />
                 </ComboBox>
                 <DatePicker
+                    x:Name="joiningDate"
                     Width="305"
                     Margin="6,10,6,6"
                     Padding="3"
@@ -163,14 +164,24 @@
                     Width="200"
                     Height="35"
                     Margin="300,60,30,0"
+                    Click="registerEmployee_Click"
                     CornerRadius="3">
                     <StackPanel Orientation="Horizontal">
                         <SymbolIcon Margin="0,0,15,0" Symbol="Add" />
                         <TextBlock><Run Text="Register Employee" /></TextBlock>
                     </StackPanel>
+
                 </Button>
             </StackPanel>
         </StackPanel>
-
+        <muxc:TeachingTip
+            Margin="0 100 0 0"
+            x:Name="ToggleThemeTeachingTip1"
+            Title="Change themes without hassle"
+            Subtitle="It's easier than ever to see control samples in both light and dark theme!">
+            <muxc:TeachingTip.IconSource>
+                <muxc:SymbolIconSource Symbol="Refresh" />
+            </muxc:TeachingTip.IconSource>
+        </muxc:TeachingTip>
     </Grid>
 </Page>
