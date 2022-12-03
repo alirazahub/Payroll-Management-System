@@ -53,13 +53,31 @@ namespace Payroll_Management_System
             newEmployee.city = city.Text;
             newEmployee.employeeDepartment = employeeDepartment.SelectedIndex;
             newEmployee.employeeDesignation = employeeDesignation.SelectedIndex;
-            // newEmployee.joiningDate = joiningDate;
-            newEmployee.employeeDOB = employeeDOB.ToString();
+            newEmployee.joiningDate = joiningDate.Date.Value.ToString();
+            newEmployee.employeeDOB = employeeDOB.Date.Value.ToString();
             newEmployee.employeeDesignation = employeeDesignation.SelectedIndex;
 
             DataAccess cont = new DataAccess();
+
+            try
+            {
             cont.addEmployee(newEmployee);
-            
+                RegisterToggleTeaching.IsOpen = true;
+                employeeName.Text = "";
+                employeeNIC.Text = "";
+                employeeContact.Text = "";
+                employeeEmail.Text = "";
+                houseNo.Text = "";
+                street.Text = "";
+                town.Text = "";
+                city.Text = "";
+            }
+            catch(Exception ex)
+            {
+
+            }
+
+
 
         }
     }

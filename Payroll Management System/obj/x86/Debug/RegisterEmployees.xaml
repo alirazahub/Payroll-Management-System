@@ -1,0 +1,191 @@
+﻿<Page
+    x:Class="Payroll_Management_System.RegisterEmployees"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:Payroll_Management_System"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    mc:Ignorable="d">
+
+    <Grid>
+        <StackPanel
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Orientation="Vertical">
+            <TextBlock
+                Margin="0,0,0,50"
+                HorizontalAlignment="Center"
+                FontSize="35">
+                Register New Emloyee
+            </TextBlock>
+            <TextBlock
+                Margin="0,0,0,0"
+                HorizontalAlignment="Left"
+                FontSize="15">
+                Peronal Information
+            </TextBlock>
+            <muxc:NavigationViewItemSeparator />
+            <StackPanel
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Orientation="Horizontal">
+                <TextBox x:ConnectionId='14'
+                    x:Name="employeeName"
+                    Width="300"
+                    Margin="6"
+                    Padding="3"
+                    Header="Name" />
+                <TextBox x:ConnectionId='15'
+                    x:Name="employeeNIC"
+                    Width="300"
+                    Margin="6"
+                    Padding="3"
+                    Header="CINIC" />
+                <TextBox x:ConnectionId='16'
+                    x:Name="employeeContact"
+                    Width="300"
+                    Margin="6"
+                    Padding="3"
+                    Header="Contact No" />
+            </StackPanel>
+            <StackPanel
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Orientation="Horizontal">
+                <TextBox x:ConnectionId='11'
+                    x:Name="employeeEmail"
+                    Width="300"
+                    Margin="6"
+                    Padding="3"
+                    Header="Email" />
+                <CalendarDatePicker x:ConnectionId='12'
+                    Name="employeeDOB"
+                    Width="305"
+                    Margin="6 0"
+                    Header="Date Of Birth"
+                    PlaceholderText="Pick a date" />
+
+                <ComboBox x:ConnectionId='13'
+                    x:Name="gender"
+                    Width="300"
+                    Margin="6"
+                    Padding="3"
+                    Header="Gender"
+                    PlaceholderText="Select Gender">
+                    <ComboBoxItem Content="Male" />
+                    <ComboBoxItem Content="Female" />
+                </ComboBox>
+            </StackPanel>
+            <TextBlock
+                Margin="0,20,0,0"
+                HorizontalAlignment="Left"
+                FontSize="15">
+                Address Details
+            </TextBlock>
+            <muxc:NavigationViewItemSeparator />
+            <StackPanel
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Orientation="Horizontal">
+                <TextBox x:ConnectionId='7'
+                    x:Name="houseNo"
+                    Width="214"
+                    Margin="10"
+                    Padding="5"
+                    Header="House No" />
+                <TextBox x:ConnectionId='8'
+                    x:Name="street"
+                    Width="214"
+                    Margin="10"
+                    Padding="5"
+                    Header="Street" />
+                <TextBox x:ConnectionId='9'
+                    x:Name="town"
+                    Width="214"
+                    Margin="10"
+                    Padding="5"
+                    Header="Town" />
+                <TextBox x:ConnectionId='10'
+                    x:Name="city"
+                    Width="214"
+                    Margin="10"
+                    Padding="5"
+                    Header="City" />
+            </StackPanel>
+            <TextBlock
+                Margin="0,20,0,0"
+                HorizontalAlignment="Left"
+                FontSize="15">
+                Offical Details
+            </TextBlock>
+            <muxc:NavigationViewItemSeparator />
+            <StackPanel
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Orientation="Horizontal">
+                <ComboBox x:ConnectionId='4'
+                    x:Name="employeeDepartment"
+                    Width="300"
+                    Margin="6"
+                    Padding="3"
+                    Header="Department of Employee"
+                    PlaceholderText="Select Department">
+                    <ComboBoxItem Content="1" />
+                    <ComboBoxItem Content="2" />
+                    <ComboBoxItem Content="3" />
+                    <ComboBoxItem Content="4" />
+                    <ComboBoxItem Content="5" />
+                </ComboBox>
+                <ComboBox x:ConnectionId='5'
+                    x:Name="employeeDesignation"
+                    Width="300"
+                    Margin="6"
+                    Padding="3"
+                    Header="Designation of Employee"
+                    PlaceholderText="Select Designation">
+                    <ComboBoxItem Content="1" />
+                    <ComboBoxItem Content="2" />
+                    <ComboBoxItem Content="3" />
+                    <ComboBoxItem Content="4" />
+                    <ComboBoxItem Content="5" />
+                </ComboBox>
+                <CalendarDatePicker x:ConnectionId='6'
+                    Name="joiningDate"
+                    Width="305"
+                    Margin="6"
+                    Padding="3"
+                    VerticalAlignment="Top"
+                    Header="Joining Date"
+                    PlaceholderText="Pick a date" />
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                <Button x:ConnectionId='3'
+                    x:Name="registerEmployee"
+                    Width="200"
+                    Height="35"
+                    Margin="300,60,30,0"
+                                                  
+                    CornerRadius="3">
+                    <StackPanel Orientation="Horizontal">
+                        <SymbolIcon Margin="0,0,15,0" Symbol="Add" />
+                        <TextBlock><Run Text="Register Employee" /></TextBlock>
+                    </StackPanel>
+
+                </Button>
+            </StackPanel>
+            <muxc:TeachingTip x:ConnectionId='2'
+            x:Name="RegisterToggleTeaching"
+            Title="Register!"
+            Margin="0,100,0,0"
+            Subtitle="New Employee Registerd Successfully! Check details for Employee ID">
+                <muxc:TeachingTip.IconSource>
+                    <muxc:SymbolIconSource Symbol="Refresh" />
+                </muxc:TeachingTip.IconSource>
+            </muxc:TeachingTip>
+        </StackPanel>
+
+    </Grid>
+</Page>
+

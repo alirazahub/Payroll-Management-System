@@ -17,6 +17,22 @@
                 FontWeight="ExtraBold"
                 Text="Attendance"
                 TextAlignment="Center" />
+            <StackPanel Orientation="Horizontal" >
+                <Button
+                    Width="200"
+                    Height="35"
+                    Margin="20,50,0,0"
+                    Background="LightSteelBlue"
+                    Click="Button_Click"
+                    CornerRadius="3"
+                    Style="{StaticResource AccentButtonStyle}">
+                    <StackPanel Orientation="Horizontal">
+                        <SymbolIcon Margin="0,0,15,0" Symbol="Add" />
+                        <TextBlock><Run Text="Add Attendance" /></TextBlock>
+                    </StackPanel>
+                </Button>
+               <CalendarDatePicker PlaceholderText="Pick a date" Header="Calendar" />
+            </StackPanel>
 
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
                 <StackPanel
@@ -146,25 +162,6 @@
 
 
 
-            <StackPanel Orientation="Horizontal">
-                <Button
-                    Width="200"
-                    Height="35"
-                    Margin="20,50,0,0"
-                    Background="LightSteelBlue"
-                    Click="Button_Click"
-                    CornerRadius="3"
-                    Style="{StaticResource AccentButtonStyle}">
-                    <StackPanel Orientation="Horizontal">
-                        <SymbolIcon Margin="0,0,15,0" Symbol="Add" />
-                        <TextBlock><Run Text="Add Attendance" /></TextBlock>
-                    </StackPanel>
-                </Button>
-                <TextBox
-                    Width="400"
-                    Margin="20,50,0,0"
-                    PlaceholderText="Search Here...." />
-            </StackPanel>
 
         </StackPanel>
         <muxc:TeachingTip
@@ -176,5 +173,6 @@
                 <muxc:SymbolIconSource Symbol="Refresh" />
             </muxc:TeachingTip.IconSource>
         </muxc:TeachingTip>
+
     </Grid>
 </Page>

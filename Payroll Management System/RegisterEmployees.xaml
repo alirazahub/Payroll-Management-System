@@ -60,11 +60,12 @@
                     Margin="6"
                     Padding="3"
                     Header="Email" />
-                <DatePicker
+                <CalendarDatePicker
                     Name="employeeDOB"
-                    Margin="10,12,10,0"
-                    VerticalAlignment="Top"
-                    Header="Date Of Birth" />
+                    Width="305"
+                    Margin="6 0"
+                    Header="Date Of Birth"
+                    PlaceholderText="Pick a date" />
 
                 <ComboBox
                     x:Name="gender"
@@ -150,13 +151,14 @@
                     <ComboBoxItem Content="4" />
                     <ComboBoxItem Content="5" />
                 </ComboBox>
-                <DatePicker
-                    x:Name="joiningDate"
+                <CalendarDatePicker
+                    Name="joiningDate"
                     Width="305"
-                    Margin="6,10,6,6"
+                    Margin="6"
                     Padding="3"
                     VerticalAlignment="Top"
-                    Header="Joining Date" />
+                    Header="Joining Date"
+                    PlaceholderText="Pick a date" />
             </StackPanel>
             <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
                 <Button
@@ -173,7 +175,16 @@
 
                 </Button>
             </StackPanel>
+            <muxc:TeachingTip
+            x:Name="RegisterToggleTeaching"
+            Title="Register!"
+            Margin="0,100,0,0"
+            Subtitle="New Employee Registerd Successfully! Check details for Employee ID">
+                <muxc:TeachingTip.IconSource>
+                    <muxc:SymbolIconSource Symbol="Refresh" />
+                </muxc:TeachingTip.IconSource>
+            </muxc:TeachingTip>
         </StackPanel>
-        
+
     </Grid>
 </Page>
