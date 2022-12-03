@@ -5,6 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="using:Payroll_Management_System"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     mc:Ignorable="d">
 
@@ -16,23 +17,164 @@
                 FontWeight="ExtraBold"
                 Text="Attendance"
                 TextAlignment="Center" />
-            <StackPanel Orientation="Horizontal">
-            <Button
-                Width="200"
-                Height="35"
-                Margin="20 50 0 0"
-                CornerRadius="3"
-                Background="LightSteelBlue"
-                Style="{StaticResource AccentButtonStyle}">
-                <StackPanel Orientation="Horizontal">
-                    <SymbolIcon Margin="0,0,15,0" Symbol="Add" />
-                    <TextBlock><Run Text="Add Attendance" /></TextBlock>
+
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                <StackPanel
+                    Width="200"
+                    Margin="30"
+                    Padding="20,10"
+                    Background="#323232"
+                    CornerRadius="4">
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        FontSize="20"
+                        FontWeight="Bold">
+                        Total Employees
+                    </TextBlock>
+                    <muxc:NavigationViewItemSeparator />
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        FontSize="20"
+                        FontWeight="Bold">
+                        50
+                    </TextBlock>
                 </StackPanel>
-            </Button>
-                <TextBox Margin="20 50 0 0" Width="400" PlaceholderText="Search Here...."/>
+                <StackPanel
+                    Width="200"
+                    Margin="30"
+                    Padding="20,10"
+                    Background="#323232"
+                    CornerRadius="4">
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        FontSize="20"
+                        FontWeight="Bold">
+                        Present
+                    </TextBlock>
+                    <muxc:NavigationViewItemSeparator />
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        FontSize="20"
+                        FontWeight="Bold">
+                        10
+                    </TextBlock>
+                </StackPanel>
+                <StackPanel
+                    Width="200"
+                    Margin="30"
+                    Padding="20,10"
+                    Background="#323232"
+                    CornerRadius="4">
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        FontSize="20"
+                        FontWeight="Bold">
+                        Absent
+                    </TextBlock>
+                    <muxc:NavigationViewItemSeparator />
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        FontSize="20"
+                        FontWeight="Bold">
+                        30
+                    </TextBlock>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                <StackPanel
+                    Width="200"
+                    Margin="30"
+                    Padding="20,10"
+                    Background="#323232"
+                    CornerRadius="4">
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        FontSize="20"
+                        FontWeight="Bold">
+                        Total Leaves
+                    </TextBlock>
+                    <muxc:NavigationViewItemSeparator />
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        FontSize="20"
+                        FontWeight="Bold">
+                        10
+                    </TextBlock>
+                </StackPanel>
+                <StackPanel
+                    Width="200"
+                    Margin="30"
+                    Padding="20,10"
+                    Background="#323232"
+                    CornerRadius="4">
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        FontSize="20"
+                        FontWeight="Bold">
+                        Accepted
+                    </TextBlock>
+                    <muxc:NavigationViewItemSeparator />
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        FontSize="20"
+                        FontWeight="Bold">
+                        7
+                    </TextBlock>
+                </StackPanel>
+                <StackPanel
+                    Width="200"
+                    Margin="30"
+                    Padding="20,10"
+                    Background="#323232"
+                    CornerRadius="4">
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        FontSize="20"
+                        FontWeight="Bold">
+                        Rejected
+                    </TextBlock>
+                    <muxc:NavigationViewItemSeparator />
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        FontSize="20"
+                        FontWeight="Bold">
+                        3
+                    </TextBlock>
+                </StackPanel>
             </StackPanel>
 
 
+
+            <StackPanel Orientation="Horizontal">
+                <Button
+                    Width="200"
+                    Height="35"
+                    Margin="20,50,0,0"
+                    Background="LightSteelBlue"
+                    Click="Button_Click"
+                    CornerRadius="3"
+                    Style="{StaticResource AccentButtonStyle}">
+                    <StackPanel Orientation="Horizontal">
+                        <SymbolIcon Margin="0,0,15,0" Symbol="Add" />
+                        <TextBlock><Run Text="Add Attendance" /></TextBlock>
+                    </StackPanel>
+                </Button>
+                <TextBox
+                    Width="400"
+                    Margin="20,50,0,0"
+                    PlaceholderText="Search Here...." />
+            </StackPanel>
+
         </StackPanel>
+        <muxc:TeachingTip
+            x:Name="ToggleThemeTeachingTip1"
+            Title="Register!"
+            Margin="0,100,0,0"
+            Subtitle="New Employee Registerd Successfully! Check details for Employee ID">
+            <muxc:TeachingTip.IconSource>
+                <muxc:SymbolIconSource Symbol="Refresh" />
+            </muxc:TeachingTip.IconSource>
+        </muxc:TeachingTip>
     </Grid>
 </Page>

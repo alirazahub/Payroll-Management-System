@@ -59,7 +59,8 @@ namespace Payroll_Management_System
 
             DataAccess cont = new DataAccess();
             cont.addEmployee(newEmployee);
-            ToggleThemeTeachingTip1.IsOpen = true;
+            
+
         }
     }
 }
