@@ -18,17 +18,24 @@
             <muxc:NavigationView.MenuItems>
                 <muxc:NavigationViewItem
                     Name="home"
-                    Content="Home"
-                    Icon="Home"
-                    Tag="home" />
+                    Content="Dashboard"
+                    Tag="home">
+                    <muxc:NavigationViewItem.Icon>
+                        <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xf246;" />
+                    </muxc:NavigationViewItem.Icon>
+                </muxc:NavigationViewItem>
                 <muxc:NavigationViewItemSeparator />
 
-                <muxc:NavigationViewItem Name="attendance" Content="Attendance" Tag="Attendance">
+                <muxc:NavigationViewItem
+                    Name="attendance"
+                    Content="Attendance"
+                    Tag="Attendance">
                     <muxc:NavigationViewItem.Icon>
                         <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xf0e3;" />
                     </muxc:NavigationViewItem.Icon>
                 </muxc:NavigationViewItem>
                 <muxc:NavigationViewItem
+                    Name="report"
                     Content="Report"
                     Tag="Report"
                     ToolTipService.ToolTip="Report">

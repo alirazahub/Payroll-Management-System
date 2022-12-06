@@ -12,28 +12,61 @@
     <Grid>
         <StackPanel>
             <TextBlock
-                Margin="0,10,0,0"
+                Margin="0,10,0,100"
                 FontSize="25"
                 FontWeight="ExtraBold"
                 Text="Attendance"
                 TextAlignment="Center" />
-            <StackPanel Orientation="Horizontal" >
-                <Button
-                    Width="200"
-                    Height="35"
-                    Margin="20,50,0,0"
-                    Background="LightSteelBlue"
-                    Click="Button_Click"
-                    CornerRadius="3"
-                    Style="{StaticResource AccentButtonStyle}">
-                    <StackPanel Orientation="Horizontal">
-                        <SymbolIcon Margin="0,0,15,0" Symbol="Add" />
-                        <TextBlock><Run Text="Add Attendance" /></TextBlock>
-                    </StackPanel>
-                </Button>
-               <CalendarDatePicker PlaceholderText="Pick a date" Header="Calendar" />
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                <StackPanel
+                    Margin="-30,30,30,30"
+                    Padding="20,10"
+                    CornerRadius="4">
+
+                    <Button
+                        Width="200"
+                        Height="35"
+                        Background="LightSteelBlue"
+                        Click="Button_Click"
+                        CornerRadius="3"
+                        Style="{StaticResource AccentButtonStyle}">
+                        <StackPanel Orientation="Horizontal">
+                            <SymbolIcon Margin="0,0,15,0" Symbol="Add" />
+                            <TextBlock><Run Text="Add Attendance" /></TextBlock>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+                <StackPanel
+                    Margin="30"
+                    Padding="20,10"
+                    CornerRadius="4">
+
+
+                    <CalendarDatePicker Width="200" PlaceholderText="Pick a date" />
+                </StackPanel>
+
+                <StackPanel
+                    Width="150"
+                    Margin="0,30,0,0"
+                    Padding="20,10"
+                    CornerRadius="4">
+
+                    <Button
+                        Height="35"
+                        Background="LightSteelBlue"
+                        CornerRadius="3"
+                        Style="{StaticResource AccentButtonStyle}">
+                        <StackPanel Orientation="Horizontal">
+                            <SymbolIcon Margin="0,0,15,0" Symbol="Find" />
+                            <TextBlock><Run Text="Search" /></TextBlock>
+                        </StackPanel>
+                    </Button>
+
+                </StackPanel>
+
             </StackPanel>
 
+            <muxc:NavigationViewItemSeparator />
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
                 <StackPanel
                     Width="200"
@@ -160,7 +193,12 @@
                 </StackPanel>
             </StackPanel>
 
-
+            <Button Margin="0,80,0,0" HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal">
+                    <SymbolIcon Margin="0,0,10,0" Symbol="More" />
+                    <TextBlock Text="Check Details" />
+                </StackPanel>
+            </Button>
 
 
         </StackPanel>

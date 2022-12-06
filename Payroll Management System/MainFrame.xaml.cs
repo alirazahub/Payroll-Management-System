@@ -50,6 +50,11 @@ namespace Payroll_Management_System
                 mainFrame.Navigate(typeof(Attendance));
 
             }
+            else if (NavView.SelectedItem == report)
+            {
+                mainFrame.Navigate(typeof(UpdateEmployee));
+
+            }
         }
     }
 }
