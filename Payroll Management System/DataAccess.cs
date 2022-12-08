@@ -12,11 +12,11 @@ namespace Payroll_Management_System
     class DataAccess
     {
         string connectionString = "Server=.,61099;Database=payrollManagementDB;User Id=devil;pwd=angel";
-        public List<Employees> getUsers()
+        public List<ReadingEmployees> getUsers()
         {
             using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
             {
-                var output = dbConnection.Query<Employees>("select * from EmployeesTable").ToList();
+                var output = dbConnection.Query<ReadingEmployees>("select employeeID,employeeDOB,joiningDate,gender,houseNo,street,town,employeeName,employeeNIC,employeeContact,employeeEmail,departmentName,designationName,city,username,password from [EmployeesTable] as e inner join [DepartmentsTable] as d on e.employeeDepartment = d.departmentID inner join [DesignationTable] as s on e.employeeDesignation = s.designationID").ToList();
                 return output;
             }
 

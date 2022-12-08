@@ -132,11 +132,13 @@
                     Padding="3"
                     Header="Department of Employee"
                     PlaceholderText="Select Department">
-                    <ComboBoxItem Content="1" />
-                    <ComboBoxItem Content="2" />
-                    <ComboBoxItem Content="3" />
-                    <ComboBoxItem Content="4" />
-                    <ComboBoxItem Content="5" />
+                    <ComboBoxItem Content="Adminstration" />
+                    <ComboBoxItem Content="Human Resource" />
+                    <ComboBoxItem Content="Customer Services" />
+                    <ComboBoxItem Content="Accounting and Finance" />
+                    <ComboBoxItem Content="Marketing" />
+                    <ComboBoxItem Content="Research and Developement" />
+                    <ComboBoxItem Content="Other" />
                 </ComboBox>
                 <ComboBox x:ConnectionId='5'
                     x:Name="employeeDesignation"
@@ -145,11 +147,13 @@
                     Padding="3"
                     Header="Designation of Employee"
                     PlaceholderText="Select Designation">
-                    <ComboBoxItem Content="1" />
-                    <ComboBoxItem Content="2" />
-                    <ComboBoxItem Content="3" />
-                    <ComboBoxItem Content="4" />
-                    <ComboBoxItem Content="5" />
+                    <ComboBoxItem Content="CEO" />
+                    <ComboBoxItem Content="Managing Director" />
+                    <ComboBoxItem Content="General Manager" />
+                    <ComboBoxItem Content="Supervisor" />
+                    <ComboBoxItem Content="Assistant Manager" />
+                    <ComboBoxItem Content="Team Lead" />
+                    <ComboBoxItem Content="Team Member" />
                 </ComboBox>
                 <CalendarDatePicker x:ConnectionId='6'
                     Name="joiningDate"

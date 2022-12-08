@@ -26,7 +26,7 @@ namespace Payroll_Management_System
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        List<Employees> employees;
+        List<ReadingEmployees> employees;
         DataAccess cont = new DataAccess();
         public MainPage()
         {
@@ -48,7 +48,7 @@ namespace Payroll_Management_System
         private void btn2_Click(object sender, RoutedEventArgs e)
         {
             Trace.TraceInformation(employees[0].ToString());
-            foreach (Employees ee in employees)
+            foreach (ReadingEmployees ee in employees)
             {
                 if (username.Text == ee.username && passwordBox.Password.ToString() == ee.password)
                 {

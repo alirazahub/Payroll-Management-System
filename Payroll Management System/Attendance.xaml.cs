@@ -22,14 +22,27 @@ namespace Payroll_Management_System
     /// </summary>
     public sealed partial class Attendance : Page
     {
+        List<ReadingEmployees> employees;
+        DataAccess cont = new DataAccess();
         public Attendance()
         {
             this.InitializeComponent();
+            employees = cont.getUsers();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            ToggleThemeTeachingTip1.IsOpen = true;
+            addNewAttendanceDialog.IsPrimaryButtonEnabled = true;
+            ContentDialogResult result = await addNewAttendanceDialog.ShowAsync();
+            if (result == ContentDialogResult.Primary)
+            {
+                //new
+
+            }
+            else
+            {
+                // User pressed Cancel, ESC, or the back arrow.
+            }
         }
     }
 }

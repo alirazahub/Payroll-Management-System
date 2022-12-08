@@ -125,6 +125,7 @@
     <Compile Include="Attendance.xaml.cs">
       <DependentUpon>Attendance.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ReadingEmployees.cs" />
     <Compile Include="DataAccess.cs" />
     <Compile Include="Employees.cs" />
     <Compile Include="HomePage.xaml.cs">
@@ -137,7 +138,6 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegisterEmoloyees.cs" />
     <Compile Include="RegisterEmployees.xaml.cs">
       <DependentUpon>RegisterEmployees.xaml</DependentUpon>
     </Compile>

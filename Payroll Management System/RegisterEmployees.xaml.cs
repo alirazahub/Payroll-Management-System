@@ -51,11 +51,10 @@ namespace Payroll_Management_System
             newEmployee.street = street.Text;
             newEmployee.town = town.Text;
             newEmployee.city = city.Text;
-            newEmployee.employeeDepartment = employeeDepartment.SelectedIndex;
-            newEmployee.employeeDesignation = employeeDesignation.SelectedIndex;
+            newEmployee.employeeDepartment = employeeDepartment.SelectedIndex + 1;
+            newEmployee.employeeDesignation = employeeDesignation.SelectedIndex + 1;
             newEmployee.joiningDate = joiningDate.Date.Value.ToString();
             newEmployee.employeeDOB = employeeDOB.Date.Value.ToString();
-            newEmployee.employeeDesignation = employeeDesignation.SelectedIndex;
 
             DataAccess cont = new DataAccess();
 

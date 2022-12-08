@@ -26,6 +26,7 @@ namespace Payroll_Management_System
         {
             this.InitializeComponent();
             mainFrame.Navigate(typeof(HomePage));
+            
         }
 
         private void NavView_ItemInvoked(Microsoft.UI.Xaml.Controls.NavigationView sender, Microsoft.UI.Xaml.Controls.NavigationViewItemInvokedEventArgs args)

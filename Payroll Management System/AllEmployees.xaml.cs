@@ -24,7 +24,7 @@ namespace Payroll_Management_System
     /// </summary>
     public sealed partial class AllEmployees : Page
     {
-        List<Employees> employees;
+        List<ReadingEmployees> employees;
         DataAccess cont = new DataAccess();
         public AllEmployees()
         {
@@ -43,7 +43,8 @@ namespace Payroll_Management_System
             ContentDialogResult result = await termsOfUseContentDialog.ShowAsync();
             if (result == ContentDialogResult.Primary)
             {
-                string empID = empIDToEdit.Text;
+                AllEmployees emp = new AllEmployees();
+                 string empID = empIDToEdit.Text;
                 editEmployeeDialog.IsPrimaryButtonEnabled = true;
                 ContentDialogResult resultw = await editEmployeeDialog.ShowAsync();
 
