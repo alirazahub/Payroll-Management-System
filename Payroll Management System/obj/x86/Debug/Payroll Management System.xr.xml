@@ -9,6 +9,12 @@
     <RootPropertyPathName Name="employeeNIC" />
     <RootPropertyPathName Name="employeeName" />
     <RootPropertyPathName Name="employeeID" />
+    <RootPropertyPathName Name="leave" />
+    <RootPropertyPathName Name="status" />
+    <RootPropertyPathName Name="details" />
+    <RootPropertyPathName Name="totalBonus" />
+    <RootPropertyPathName Name="hours" />
+    <RootPropertyPathName Name="date" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application">
@@ -45,8 +51,8 @@
       <RootProperty Name="BorderBrush" />
       <RootProperty Name="BorderThickness" />
       <RootProperty Name="CornerRadius" />
-      <RootProperty Name="Background" />
       <RootProperty Name="Width" />
+      <RootProperty Name="Background" />
       <RootProperty Name="VerticalAlignment" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.DataTemplate">
@@ -62,8 +68,8 @@
       <RootProperty Name="FontSize" />
       <RootProperty Name="TextAlignment" />
       <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Name" />
       <RootProperty Name="Width" />
-      <RootProperty Name="TextWrapping" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="HorizontalAlignment" />
@@ -91,9 +97,11 @@
       <RootProperty Name="Padding" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ListView">
+      <RootProperty Name="BorderBrush" />
+      <RootProperty Name="BorderThickness" />
       <RootProperty Name="Width" />
       <RootProperty Name="Height" />
-      <RootProperty Name="BorderThickness" />
+      <RootProperty Name="CornerRadius" />
       <RootProperty Name="ItemsSource" />
       <RootProperty Name="ItemTemplate" />
     </RootType>
@@ -128,8 +136,8 @@
     <RootType FullName="Payroll_Management_System.AllEmployees" />
     <RootType FullName="Windows.UI.Xaml.Controls.CalendarDatePicker">
       <RootProperty Name="Width" />
-      <RootProperty Name="PlaceholderText" />
       <RootProperty Name="Name" />
+      <RootProperty Name="PlaceholderText" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Padding" />
       <RootProperty Name="VerticalAlignment" />
@@ -137,10 +145,26 @@
     </RootType>
     <RootType FullName="Microsoft.UI.Xaml.Controls.NavigationViewItemSeparator" />
     <RootType FullName="Payroll_Management_System.Attendance" />
+    <RootType FullName="Microsoft.UI.Xaml.Controls.TeachingTip">
+      <RootProperty Name="Title" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Subtitle" />
+      <RootProperty Name="IconSource" />
+    </RootType>
+    <RootType FullName="Microsoft.UI.Xaml.Controls.SymbolIconSource">
+      <RootProperty Name="Symbol" />
+    </RootType>
+    <RootType FullName="Microsoft.UI.Xaml.Controls.NumberBox">
+      <RootProperty Name="Name" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Value" />
+    </RootType>
+    <RootType FullName="Payroll_Management_System.Bonus" />
     <RootType FullName="Payroll_Management_System.HomePage" />
     <RootType FullName="Microsoft.UI.Xaml.Controls.NavigationView">
-      <RootProperty Name="IsPaneToggleButtonVisible" />
       <RootProperty Name="IsBackButtonVisible" />
+      <RootProperty Name="IsPaneToggleButtonVisible" />
       <RootProperty Name="MenuItems" />
       <RootProperty Name="Content" />
       <RootEvent Name="ItemInvoked" />
@@ -182,17 +206,12 @@
       <RootEvent Name="Unchecked" />
     </RootType>
     <RootType FullName="Payroll_Management_System.MainPage" />
-    <RootType FullName="Microsoft.UI.Xaml.Controls.TeachingTip">
-      <RootProperty Name="Title" />
-      <RootProperty Name="Margin" />
-      <RootProperty Name="Subtitle" />
-      <RootProperty Name="IconSource" />
-    </RootType>
-    <RootType FullName="Microsoft.UI.Xaml.Controls.SymbolIconSource">
-      <RootProperty Name="Symbol" />
-    </RootType>
     <RootType FullName="Payroll_Management_System.RegisterEmployees" />
-    <RootType FullName="Windows.UI.Xaml.Documents.LineBreak" />
-    <RootType FullName="Payroll_Management_System.UpdateEmployee" />
+    <RootType FullName="Windows.UI.Xaml.Controls.DatePicker">
+      <RootProperty Name="Name" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="DayVisible" />
+    </RootType>
+    <RootType FullName="Payroll_Management_System.Salary" />
   </Roots.RootTypes>
 </Roots>

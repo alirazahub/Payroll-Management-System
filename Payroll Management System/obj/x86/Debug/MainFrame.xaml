@@ -12,9 +12,9 @@
     <Grid>
 
         <muxc:NavigationView x:ConnectionId='2'
-            IsPaneToggleButtonVisible="False"
             x:Name="NavView"
             IsBackButtonVisible="Collapsed"
+            IsPaneToggleButtonVisible="False"
                                              >
             <muxc:NavigationView.MenuItems>
                 <muxc:NavigationViewItem x:ConnectionId='3'
@@ -44,26 +44,28 @@
                         <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xe9f9;" />
                     </muxc:NavigationViewItem.Icon>
                 </muxc:NavigationViewItem>
-                <muxc:NavigationViewItem Content="Salary" Tag="Salary">
+                <muxc:NavigationViewItem x:ConnectionId='6'
+                    Name="salary"
+                    Content="Salary"
+                    Tag="Salary">
                     <muxc:NavigationViewItem.Icon>
                         <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xEB3C;" />
                     </muxc:NavigationViewItem.Icon>
                 </muxc:NavigationViewItem>
-                <muxc:NavigationViewItem
-                    Content="Employees"
-                    Icon="Keyboard"
-                    ToolTipService.ToolTip="Employees">
+                <muxc:NavigationViewItem Content="Employees" ToolTipService.ToolTip="Employees">
+                    <muxc:NavigationViewItem.Icon>
+                        <FontIcon FontFamily="Segoe Fluent Icons" Glyph="&#xE716;" />
+                    </muxc:NavigationViewItem.Icon>
                     <muxc:NavigationViewItem.MenuItems>
-                        <muxc:NavigationViewItem x:ConnectionId='6'
+                        <muxc:NavigationViewItem x:ConnectionId='8'
                             Name="RegisterEmployee"
-                            Content="RegisterEmployee"
+                            Content="Register Employee"
                             ToolTipService.ToolTip="Register Employees">
                             <muxc:NavigationViewItem.Icon>
                                 <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xe8fa;" />
                             </muxc:NavigationViewItem.Icon>
                         </muxc:NavigationViewItem>
-
-                        <muxc:NavigationViewItem x:ConnectionId='7'
+                        <muxc:NavigationViewItem x:ConnectionId='9'
                             Name="AllEmployee"
                             Content="All Employee"
                             ToolTipService.ToolTip="All Employees">
@@ -73,9 +75,18 @@
                         </muxc:NavigationViewItem>
                     </muxc:NavigationViewItem.MenuItems>
                 </muxc:NavigationViewItem>
+                <muxc:NavigationViewItem x:ConnectionId='7'
+                    Name="bonus"
+                    Content="Bonus"
+                    Tag="Bonus"
+                    ToolTipService.ToolTip="Bonus">
+                    <muxc:NavigationViewItem.Icon>
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE83B;" />
+                    </muxc:NavigationViewItem.Icon>
+                </muxc:NavigationViewItem>
             </muxc:NavigationView.MenuItems>
             <muxc:NavigationView.Content>
-                <Frame x:ConnectionId='8'
+                <Frame x:ConnectionId='10'
                     Name="mainFrame"
                     Margin="2,0,0,0"
                     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" />

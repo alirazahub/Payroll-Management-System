@@ -23,7 +23,7 @@
                     Padding="20,10"
                     CornerRadius="4">
 
-                    <Button x:ConnectionId='6'
+                    <Button x:ConnectionId='19'
                         Width="200"
                         Height="35"
                         Background="LightSteelBlue"
@@ -42,7 +42,10 @@
                     CornerRadius="4">
 
 
-                    <CalendarDatePicker Width="200" PlaceholderText="Pick a date" />
+                    <CalendarDatePicker x:ConnectionId='18'
+                        Name="attenDate"
+                        Width="200"
+                        PlaceholderText="Pick a date" />
                 </StackPanel>
 
                 <StackPanel
@@ -51,9 +54,10 @@
                     Padding="20,10"
                     CornerRadius="4">
 
-                    <Button
+                    <Button x:ConnectionId='17'
                         Height="35"
                         Background="LightSteelBlue"
+                                              
                         CornerRadius="3"
                         Style="{StaticResource AccentButtonStyle}">
                         <StackPanel Orientation="Horizontal">
@@ -81,12 +85,12 @@
                         Total Employees
                     </TextBlock>
                     <muxc:NavigationViewItemSeparator />
-                    <TextBlock
+                    <TextBlock x:ConnectionId='16'
+                        Name="totalEmployees"
                         HorizontalAlignment="Center"
                         FontSize="20"
-                        FontWeight="Bold">
-                        50
-                    </TextBlock>
+                        FontWeight="Bold" />
+
                 </StackPanel>
                 <StackPanel
                     Width="200"
@@ -101,12 +105,13 @@
                         Present
                     </TextBlock>
                     <muxc:NavigationViewItemSeparator />
-                    <TextBlock
+                    <TextBlock x:ConnectionId='15'
+                        Name="presentEmployee"
                         HorizontalAlignment="Center"
                         FontSize="20"
-                        FontWeight="Bold">
-                        10
-                    </TextBlock>
+                        FontWeight="Bold" />
+
+
                 </StackPanel>
                 <StackPanel
                     Width="200"
@@ -121,12 +126,12 @@
                         Absent
                     </TextBlock>
                     <muxc:NavigationViewItemSeparator />
-                    <TextBlock
+                    <TextBlock x:ConnectionId='14'
+                        Name="absentEmployee"
                         HorizontalAlignment="Center"
                         FontSize="20"
-                        FontWeight="Bold">
-                        30
-                    </TextBlock>
+                        FontWeight="Bold" />
+
                 </StackPanel>
             </StackPanel>
 
@@ -144,12 +149,12 @@
                         Total Leaves
                     </TextBlock>
                     <muxc:NavigationViewItemSeparator />
-                    <TextBlock
+                    <TextBlock x:ConnectionId='13'
+                        Name="totoalLeaves"
                         HorizontalAlignment="Center"
                         FontSize="20"
-                        FontWeight="Bold">
-                        10
-                    </TextBlock>
+                        FontWeight="Bold" />
+
                 </StackPanel>
                 <StackPanel
                     Width="200"
@@ -164,12 +169,12 @@
                         Accepted
                     </TextBlock>
                     <muxc:NavigationViewItemSeparator />
-                    <TextBlock
+                    <TextBlock x:ConnectionId='12'
+                        Name="acceptedLeaves"
                         HorizontalAlignment="Center"
                         FontSize="20"
-                        FontWeight="Bold">
-                        7
-                    </TextBlock>
+                        FontWeight="Bold" />
+
                 </StackPanel>
                 <StackPanel
                     Width="200"
@@ -184,16 +189,19 @@
                         Rejected
                     </TextBlock>
                     <muxc:NavigationViewItemSeparator />
-                    <TextBlock
+                    <TextBlock x:ConnectionId='11'
+                        Name="rejectedLeaves"
                         HorizontalAlignment="Center"
                         FontSize="20"
-                        FontWeight="Bold">
-                        3
-                    </TextBlock>
+                        FontWeight="Bold" />
+
                 </StackPanel>
             </StackPanel>
 
-            <Button Margin="0,80,0,0" HorizontalAlignment="Center">
+            <Button x:ConnectionId='10'
+                Margin="0,80,0,0"
+                HorizontalAlignment="Center"
+                                      >
                 <StackPanel Orientation="Horizontal">
                     <SymbolIcon Margin="0,0,10,0" Symbol="More" />
                     <TextBlock Text="Check Details" />
@@ -220,9 +228,9 @@
                 BorderBrush="Gray"
                 BorderThickness="1"
                 CornerRadius="6">
-                <StackPanel Margin="0 0 0 10" Orientation="Horizontal">
-                    <TextBlock Margin="0 6 40 0 " Text="Select Date"/>
-                    <CalendarDatePicker Width="163"/>
+                <StackPanel Margin="0,0,0,10" Orientation="Horizontal">
+                    <TextBlock Margin="0,6,40,0" Text="Select Date" />
+                    <CalendarDatePicker Width="163" />
                 </StackPanel>
                 <StackPanel
                     Width="275"
@@ -252,7 +260,10 @@
                             Text="Full Name" />
                     </Grid>
                 </StackPanel>
-                <ListView x:ConnectionId='4' BorderThickness="10"                                 >
+                <ListView x:ConnectionId='8'
+                    Height="400"
+                    BorderThickness="10"
+                                                    >
                     <ListView.ItemTemplate>
 
                         <DataTemplate>
@@ -287,6 +298,120 @@
 
         </ContentDialog>
 
+
+
+
+        <ContentDialog x:ConnectionId='3' x:Name="AttendanceDialog" CloseButtonText="O K A Y">
+
+            <ContentDialog.TitleTemplate>
+                <DataTemplate>
+                    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                        <TextBlock Text="Attendance Details" />
+                    </StackPanel>
+                </DataTemplate>
+            </ContentDialog.TitleTemplate>
+            <StackPanel
+                Padding="20"
+                BorderBrush="Gray"
+                BorderThickness="1"
+                CornerRadius="6">
+                <StackPanel Margin="0,10" Orientation="Horizontal">
+                    <TextBlock
+                        FontWeight="Bold"
+                        Foreground="RoyalBlue"
+                        Text="Date: " />
+                    <TextBlock
+                        Margin="330,0,0,0"
+                        FontWeight="Bold"
+                        Foreground="RoyalBlue"
+                        Text=" 2022-12-12" />
+                </StackPanel>
+                <StackPanel
+                    Width="450"
+                    Padding="0,10"
+                    Background="#323232"
+                    CornerRadius="5"
+                    Orientation="Horizontal">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition Width="84" />
+                            <ColumnDefinition Width="150" />
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            FontWeight="Bold"
+                            Text="ID" />
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.Column="2"
+                            FontWeight="Bold"
+                            Text="Employe Name" />
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.Column="3"
+                            FontWeight="Bold"
+                            Text="STATUS" />
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.Column="4"
+                            FontWeight="Bold"
+                            Text="Leave Status" />
+                    </Grid>
+                </StackPanel>
+                <ListView x:ConnectionId='5'
+                    Height="400"
+                    BorderBrush="#323232"
+                    BorderThickness="2"
+                    CornerRadius="6"
+                                                        >
+                    <ListView.ItemTemplate>
+
+                        <DataTemplate>
+
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="80" />
+                                    <ColumnDefinition Width="150" />
+                                    <ColumnDefinition Width="120" />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    Text="{Binding employeeID}" />
+                                <TextBlock
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    Text="{Binding employeeName}" />
+                                <TextBlock
+                                    Grid.Row="0"
+                                    Grid.Column="2"
+                                    Text="{Binding status}" />
+                                <TextBlock
+                                    Grid.Row="0"
+                                    Grid.Column="3"
+                                    Text="{Binding leave}" />
+                            </Grid>
+
+                        </DataTemplate>
+
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+
+        </ContentDialog>
     </Grid>
 </Page>
 

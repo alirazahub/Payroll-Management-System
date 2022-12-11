@@ -33,19 +33,19 @@
                 Orientation="Horizontal">
                 <TextBox
                     x:Name="employeeName"
-                    Width="300"
+                    Width="350"
                     Margin="6"
                     Padding="3"
                     Header="Name" />
                 <TextBox
                     x:Name="employeeNIC"
-                    Width="300"
+                    Width="350"
                     Margin="6"
                     Padding="3"
                     Header="CINIC" />
                 <TextBox
                     x:Name="employeeContact"
-                    Width="300"
+                    Width="350"
                     Margin="6"
                     Padding="3"
                     Header="Contact No" />
@@ -56,20 +56,20 @@
                 Orientation="Horizontal">
                 <TextBox
                     x:Name="employeeEmail"
-                    Width="300"
+                    Width="350"
                     Margin="6"
                     Padding="3"
                     Header="Email" />
                 <CalendarDatePicker
                     Name="employeeDOB"
-                    Width="305"
+                    Width="355"
                     Margin="6 0"
                     Header="Date Of Birth"
                     PlaceholderText="Pick a date" />
 
                 <ComboBox
                     x:Name="gender"
-                    Width="300"
+                    Width="350"
                     Margin="6"
                     Padding="3"
                     Header="Gender"
@@ -91,25 +91,25 @@
                 Orientation="Horizontal">
                 <TextBox
                     x:Name="houseNo"
-                    Width="214"
+                    Width="254"
                     Margin="10"
                     Padding="5"
                     Header="House No" />
                 <TextBox
                     x:Name="street"
-                    Width="214"
+                    Width="254"
                     Margin="10"
                     Padding="5"
                     Header="Street" />
                 <TextBox
                     x:Name="town"
-                    Width="214"
+                    Width="254"
                     Margin="10"
                     Padding="5"
                     Header="Town" />
                 <TextBox
                     x:Name="city"
-                    Width="214"
+                    Width="254"
                     Margin="10"
                     Padding="5"
                     Header="City" />
@@ -127,7 +127,7 @@
                 Orientation="Horizontal">
                 <ComboBox
                     x:Name="employeeDepartment"
-                    Width="300"
+                    Width="350"
                     Margin="6"
                     Padding="3"
                     Header="Department of Employee"
@@ -142,7 +142,7 @@
                 </ComboBox>
                 <ComboBox
                     x:Name="employeeDesignation"
-                    Width="300"
+                    Width="350"
                     Margin="6"
                     Padding="3"
                     Header="Designation of Employee"
@@ -157,7 +157,7 @@
                 </ComboBox>
                 <CalendarDatePicker
                     Name="joiningDate"
-                    Width="305"
+                    Width="350"
                     Margin="6"
                     Padding="3"
                     VerticalAlignment="Top"

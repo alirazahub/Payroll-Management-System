@@ -125,6 +125,11 @@
     <Compile Include="Attendance.xaml.cs">
       <DependentUpon>Attendance.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BonusClass.cs" />
+    <Compile Include="Bonus.xaml.cs">
+      <DependentUpon>Bonus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Calculations.cs" />
     <Compile Include="ReadingEmployees.cs" />
     <Compile Include="DataAccess.cs" />
     <Compile Include="Employees.cs" />
@@ -141,9 +146,11 @@
     <Compile Include="RegisterEmployees.xaml.cs">
       <DependentUpon>RegisterEmployees.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UpdateEmployee.xaml.cs">
-      <DependentUpon>UpdateEmployee.xaml</DependentUpon>
+    <Compile Include="Salary.xaml.cs">
+      <DependentUpon>Salary.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SalaryClass.cs" />
+    <Compile Include="TotalAttendanceNos.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -173,6 +180,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Bonus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="HomePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -189,7 +200,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UpdateEmployee.xaml">
+    <Page Include="Salary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

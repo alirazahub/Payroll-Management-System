@@ -24,7 +24,14 @@ namespace Payroll_Management_System
         public string city { get; set; }
         public string username { get; set; }
         public string password { get; set; }
-
-
+        public string status { get; set; }
+        public string leave { get; set; }
+        public int TotalPresents { get; set; }
+        public int TotalAbsents { get; set; }
+        public int RejectedLeaves { get; set; }
+        public int AcceptedLeaves { get; set; }
+        public int PerDay { get; set; }
+        public int BonusPerHour { get; set; }
+        public string employeeCINIC { get; set; }
     }
 }

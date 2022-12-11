@@ -52,10 +52,14 @@
                 <!--
                     QuerySubmitted="Control2_QuerySubmitted"
                     SuggestionChosen="Control2_SuggestionChosen"
-                    TextChanged="Control2_TextChanged"
+                    TextChanged="Control2_TextChanged"/>
                 -->
             </StackPanel>
-            <StackPanel Background="#323232" Orientation="Horizontal">
+            <StackPanel
+                Width="1080"
+                Background="#323232"
+                CornerRadius="6"
+                Orientation="Horizontal">
                 <Button x:ConnectionId='20'
                     Width="210"
                     Height="35"
@@ -93,7 +97,7 @@
                 </ComboBox>
             </StackPanel>
             <StackPanel
-                Width="1075"
+                Width="1100"
                 Margin="0,40,0,0"
                 Padding="0,10"
                 Background="#323232"
@@ -104,7 +108,7 @@
                         <RowDefinition />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="7" />
+                        <ColumnDefinition Width="20" />
                         <ColumnDefinition Width="53" />
                         <ColumnDefinition Width="120" />
                         <ColumnDefinition Width="149" />
@@ -158,9 +162,11 @@
                 </Grid>
             </StackPanel>
             <ListView x:ConnectionId='18'
-                Width="350"
-                Height="400"
-                BorderThickness="10"
+                BorderBrush="#323232"
+                BorderThickness="1"
+                Width="1100"
+                Height="480"
+                CornerRadius="6"
                                                 >
                 <ListView.ItemTemplate>
 

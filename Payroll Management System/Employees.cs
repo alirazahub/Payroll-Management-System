@@ -25,7 +25,5 @@ namespace Payroll_Management_System
         public string city { get; set;}
         public string username { get; set;}
         public string password { get; set;}
-
-
     }
 }

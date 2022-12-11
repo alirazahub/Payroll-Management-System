@@ -1,0 +1,309 @@
+﻿<Page
+    x:Class="Payroll_Management_System.Salary"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:Payroll_Management_System"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    mc:Ignorable="d">
+
+    <Grid>
+        <StackPanel>
+            <TextBlock
+                Margin="0,20,0,10"
+                FontSize="30"
+                Text="Pay Salary"
+                TextAlignment="Center" />
+            <StackPanel
+                Width="1080"
+                Padding="0,8"
+                Background="#323232"
+                CornerRadius="6"
+                Orientation="Horizontal">
+                <TextBlock
+                    Margin="8,4,0,0"
+                    FontWeight="Bold"
+                    Text="Employee-ID" />
+                <TextBlock
+                    Margin="200,5,0,0"
+                    FontWeight="Bold"
+                    Text="Selet Month: " />
+            </StackPanel>
+            <StackPanel
+                Width="1080"
+                Margin="0,15"
+                Orientation="Horizontal">
+                <TextBox
+                    Name="EmpID"
+                    Width="200"
+                    PlaceholderText="EMP-01" />
+                <DatePicker
+                    Name="SalaryDate"
+                    Margin="90,0,0,0"
+                    DayVisible="False" />
+                <Button
+                    Margin="10,0"
+                    Click="Button_Click_1"
+                    Style="{StaticResource AccentButtonStyle}">
+                    <StackPanel Orientation="Horizontal">
+                        <SymbolIcon Symbol="Find" />
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+
+            <StackPanel
+                Width="1080"
+                Padding="0,8"
+                Background="#323232"
+                CornerRadius="6"
+                Orientation="Horizontal">
+                <TextBlock
+                    Margin="8,0,0,0"
+                    FontWeight="bold"
+                    Text="Employee Name" />
+                <TextBlock
+                    Margin="175,0,0,0"
+                    FontWeight="bold"
+                    Text="Employee CINIC" />
+                <TextBlock
+                    Margin="190,0,0,0"
+                    FontWeight="bold"
+                    Text="Employee Contact" />
+                <TextBlock
+                    Margin="170,0,0,0"
+                    FontWeight="bold"
+                    Text="Department" />
+            </StackPanel>
+
+            <StackPanel
+                Width="1080"
+                Margin="0,15"
+                Orientation="Horizontal">
+                <TextBox
+                    Name="employeeName"
+                    Width="200"
+                    IsReadOnly="True" />
+                <TextBox
+                    Name="employeeNIC"
+                    Width="200"
+                    Margin="93,0,0,0"
+                    IsReadOnly="True" />
+                <TextBox
+                    Name="employeeContact"
+                    Width="200"
+                    Margin="93,0,0,0"
+                    IsReadOnly="True" />
+                <TextBox
+                    Name="employeeDepartment"
+                    Width="200"
+                    Margin="93,0,0,0"
+                    IsReadOnly="True" />
+            </StackPanel>
+
+            <StackPanel
+                Width="1080"
+                Padding="0,8"
+                Background="#323232"
+                CornerRadius="6"
+                Orientation="Horizontal">
+                <TextBlock
+                    Margin="8,0,0,0"
+                    FontWeight="bold"
+                    Text="Designation" />
+                <TextBlock
+                    Margin="205,0,0,0"
+                    FontWeight="bold"
+                    Text="Total Presence" />
+                <TextBlock
+                    Margin="198,0,0,0"
+                    FontWeight="bold"
+                    Text="Total Absence" />
+                <TextBlock
+                    Margin="199,0,0,0"
+                    FontWeight="bold"
+                    Text="Rejected Leaves" />
+            </StackPanel>
+
+            <StackPanel
+                Width="1080"
+                Margin="0,15"
+                Orientation="Horizontal">
+                <TextBox
+                    Name="employeeDesignation"
+                    Width="200"
+                    IsReadOnly="True" />
+                <TextBox
+                    Name="TotalPresent"
+                    Width="200"
+                    Margin="93,0,0,0"
+                    IsReadOnly="True" />
+                <TextBox
+                    Name="TotalAbsent"
+                    Width="200"
+                    Margin="93,0,0,0"
+                    IsReadOnly="True" />
+                <TextBox
+                    Name="RejectedLeaves"
+                    Width="200"
+                    Margin="93,0,0,0"
+                    IsReadOnly="True" />
+            </StackPanel>
+
+            <StackPanel
+                Width="1080"
+                Padding="0,8"
+                Background="#323232"
+                CornerRadius="6"
+                Orientation="Horizontal">
+                <TextBlock
+                    Margin="8,0,0,0"
+                    FontWeight="bold"
+                    Text="Accepted Leaves" />
+                <TextBlock
+                    Margin="175,0,0,0"
+                    FontWeight="bold"
+                    Text="Salary Per Day" />
+                <TextBlock
+                    Margin="200,0,0,0"
+                    FontWeight="bold"
+                    Text="Bonus Per Hour" />
+                <TextBlock
+                    Margin="190,0,0,0"
+                    FontWeight="bold"
+                    Text="Click Here to Calculate Salary" />
+
+            </StackPanel>
+
+            <StackPanel
+                Width="1080"
+                Margin="0,15"
+                Orientation="Horizontal">
+                <TextBox
+                    Name="AcceptedLeaves"
+                    Width="200"
+                    IsReadOnly="True" />
+                <TextBox
+                    Name="PerDay"
+                    Width="200"
+                    Margin="93,0,0,0"
+                    IsReadOnly="True" />
+                <TextBox
+                    Name="BonusPerHour"
+                    Width="200"
+                    Margin="93,0,0,0"
+                    IsReadOnly="True" />
+                <Button
+                    Width="200"
+                    Margin="93,0,0,0"
+                    Click="Button_Click"
+                    Content="Calculate"
+                    Style="{StaticResource AccentButtonStyle}" />
+            </StackPanel>
+
+            <StackPanel
+                Width="1080"
+                Padding="0,8"
+                Background="#323232"
+                CornerRadius="6"
+                Orientation="Horizontal">
+                <TextBlock
+                    Margin="8,0,0,0"
+                    FontWeight="bold"
+                    Text="Basic Salary" />
+                <TextBlock
+                    Margin="155,0,0,0"
+                    FontWeight="bold"
+                    Text="Total Bonus Earned" />
+                <TextBlock
+                    Margin="220,0,0,0"
+                    FontWeight="bold"
+                    Text="Total Deduction" />
+                <TextBlock
+                    Margin="186,0,0,0"
+                    FontWeight="bold"
+                    Text="Total Salary" />
+
+            </StackPanel>
+
+            <StackPanel
+                Width="1080"
+                Margin="0,15"
+                Orientation="Horizontal">
+                <TextBox
+                    Name="TotalSalary"
+                    Width="200"
+                    IsReadOnly="True" />
+                <TextBox
+                    Name="TotalBonus"
+                    Width="200"
+                    Margin="93,0,0,0"
+                    IsReadOnly="True" />
+                <TextBox
+                    Name="TotalDeduction"
+                    Width="200"
+                    Margin="93,0,0,0"
+                    IsReadOnly="True" />
+                <TextBox
+                    Name="TotalSalaryAfterBonus"
+                    Width="200"
+                    Margin="93,0,0,0"
+                    IsReadOnly="True" />
+            </StackPanel>
+
+
+            <StackPanel
+                Width="1080"
+                Padding="0,8"
+                Background="#323232"
+                CornerRadius="6"
+                Orientation="Horizontal">
+                <TextBlock
+                    Margin="8,0,0,0"
+                    FontWeight="bold"
+                    Text="Details" />
+
+            </StackPanel>
+
+            <StackPanel
+                Width="1080"
+                Margin="0,15"
+                Orientation="Horizontal">
+                <TextBox
+                    Name="details"
+                    Width="1080"
+                    PlaceholderText="Enter the Details About Salary" />
+            </StackPanel>
+
+            <StackPanel
+                Margin="0,30"
+                HorizontalAlignment="Right"
+                Orientation="Horizontal">
+                <Button
+                    Width="200"
+                    Margin="0,0,28,0"
+                    Background="BlueViolet"
+                    Click="Button_Click_2"
+                    Style="{StaticResource ButtonRevealStyle}">
+                    <StackPanel Orientation="Horizontal">
+                        <SymbolIcon Margin="-10,0,10,0" Symbol="Like" />
+                        <TextBlock
+                            FontSize="15"
+                            FontWeight="Bold"
+                            Text="Pay Now" />
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+        <muxc:TeachingTip
+            x:Name="AddNewSalaryToggleTeaching"
+            Title="Added!"
+            Margin="0,100,0,0"
+            Subtitle="New Salary Added Successfully! Check details">
+            <muxc:TeachingTip.IconSource>
+                <muxc:SymbolIconSource Symbol="Refresh" />
+            </muxc:TeachingTip.IconSource>
+        </muxc:TeachingTip>
+    </Grid>
+</Page>

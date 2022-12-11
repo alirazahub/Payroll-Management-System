@@ -51,9 +51,14 @@ namespace Payroll_Management_System
                 mainFrame.Navigate(typeof(Attendance));
 
             }
-            else if (NavView.SelectedItem == report)
+            else if (NavView.SelectedItem == salary)
             {
-                mainFrame.Navigate(typeof(UpdateEmployee));
+                mainFrame.Navigate(typeof(Salary));
+
+            }
+            else if (NavView.SelectedItem == bonus)
+            {
+                mainFrame.Navigate(typeof(Bonus));
 
             }
         }

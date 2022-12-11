@@ -73,7 +73,7 @@ namespace Payroll_Management_System
             }
             catch(Exception ex)
             {
-
+                Console.WriteLine(ex.Message);
             }
 
 
