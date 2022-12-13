@@ -25,6 +25,8 @@ namespace Payroll_Management_System
     public sealed partial class AllEmployees : Page
     {
         List<ReadingEmployees> employees;
+        List<Employees> employeeDetails;
+        Employees employe;
         DataAccess cont = new DataAccess();
         public AllEmployees()
         {
@@ -45,14 +47,51 @@ namespace Payroll_Management_System
             {
                 AllEmployees emp = new AllEmployees();
                  string empID = empIDToEdit.Text;
+                int id = Convert.ToInt32(empID);  
+                employeeDetails = cont.getEmployeeDetails(id);
+                employe = employeeDetails[0];
+
+                employeeID.Text = empID;
+                employeeName.Text = employe.employeeName;
+                employeeNIC.Text = employe.employeeNIC;
+                employeeEmail.Text = employe.employeeEmail;
+                employeeContact.Text = employe.employeeContact;
+                gender.Text = employe.gender;
+                houseNo.Text = employe.houseNo;
+                street.Text = employe.street;
+                town.Text = employe.town;
+                city.Text = employe.city;
+                employeeDOB.Text = employe.employeeDOB;
                 editEmployeeDialog.IsPrimaryButtonEnabled = true;
-                ContentDialogResult resultw = await editEmployeeDialog.ShowAsync();
+                ContentDialogResult result2 = await editEmployeeDialog.ShowAsync();
+                if (result2 == ContentDialogResult.Primary)
+                {
+                    Employees updatedEmployee= new Employees();
+                    updatedEmployee.employeeName = employeeName.Text;
+                    updatedEmployee.employeeNIC = employeeNIC.Text;
+                    updatedEmployee.employeeContact = employeeContact.Text;
+                    updatedEmployee.employeeDOB = employeeDOB.Text;
+                    updatedEmployee.employeeEmail = employeeEmail.Text;
+                    updatedEmployee.town = town.Text;
+                    updatedEmployee.city = city.Text;
+                    updatedEmployee.houseNo = houseNo.Text;
+                    updatedEmployee.street = street.Text;
+                    updatedEmployee.gender = gender.Text;
+
+                    cont.updateEmployee(updatedEmployee,id);
+
+                }
 
             }
             else
             {
                 // User pressed Cancel, ESC, or the back arrow.
             }
+        }
+
+        private void DeleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

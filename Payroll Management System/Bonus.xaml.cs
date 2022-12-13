@@ -41,9 +41,12 @@ namespace Payroll_Management_System
             try
             {
                 cont.addBonus(newBonus);
+                bonus = cont.getBonus();
                 empID.Text = "";
                 hourss.Text = "";
                 detailss.Text = "";
+                bonusList.ItemsSource = null;
+                bonusList.ItemsSource = bonus;
             }
             catch (Exception ex)
             {

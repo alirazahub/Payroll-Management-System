@@ -166,6 +166,7 @@
                 </Grid>
             </StackPanel>
             <ListView
+                Name="bonusList"
                 Width="1080"
                 Height="188"
                 BorderBrush="#323232"

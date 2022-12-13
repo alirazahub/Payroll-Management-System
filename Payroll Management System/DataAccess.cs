@@ -106,5 +106,48 @@ namespace Payroll_Management_System
                 dbConnection.Execute("insert into PayrollTable  values ("+sal.employeeID+",'"+sal.Details+"','"+sal.Date+"',"+sal.Deduction+","+sal.Bonus+","+sal.TotalSalary + ")");
             }
         }
+
+        public List<ReadingEmployees> getEmployeeByDep(string departName)
+        {
+            using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
+            {
+                var output = dbConnection.Query<ReadingEmployees>("EXEC SPEmployeesOfDepartment @departmentName = '"+departName+"'").ToList();
+                return output;
+            }
+        }
+        public List<ReadingEmployees> getManagingDirectors()
+        {
+            using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
+            {
+                var output = dbConnection.Query<ReadingEmployees>("select * from VManagingDirectors").ToList();
+                return output;
+            }
+        }
+
+        public List<ToDoList> getToDoList()
+        {
+            using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
+            {
+                int ID = MainPage.currentUser.employeeID;
+                var output = dbConnection.Query<ToDoList>("select * from ToDoTable where employeeID = "+ID+"").ToList();
+                return output;
+            }
+        }
+
+        public List<Employees> getEmployeeDetails(int id)
+        {
+            using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
+            {
+                var output = dbConnection.Query<Employees>("select * from EmployeesTable where employeeID = " + id + "").ToList();
+                return output;
+            }
+        }
+        public void updateEmployee(Employees employee,int id)
+        {
+            using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
+            {
+                dbConnection.Execute("update EmployeesTable set employeeName = '"+employee.employeeName+"',employeeDOB = '"+employee.employeeDOB+"',employeeNIC = '"+employee.employeeNIC+"',employeeContact='"+employee.employeeContact+"',gender='"+employee.gender+"',houseNo='"+employee.houseNo+"',street='"+employee.street+"',town='"+employee.town+"',city='"+employee.city+"' where employeeID = "+id+"\r\n");
+            }
+        }
     }
 }

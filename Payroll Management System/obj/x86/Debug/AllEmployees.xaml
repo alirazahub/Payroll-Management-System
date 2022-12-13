@@ -30,7 +30,7 @@
                 <TextBlock>Employee ID</TextBlock>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock>Enter the ID of the Employee you want to Edit.</TextBlock>
-                    <TextBox x:ConnectionId='24'
+                    <TextBox x:ConnectionId='23'
                         Name="empIDToEdit"
                         Width="100"
                         Margin="50,-10,0,0"
@@ -60,7 +60,7 @@
                 Background="#323232"
                 CornerRadius="6"
                 Orientation="Horizontal">
-                <Button x:ConnectionId='20'
+                <Button x:ConnectionId='19'
                     Width="210"
                     Height="35"
                     Margin="10,10"
@@ -74,7 +74,7 @@
                     </StackPanel>
                 </Button>
                 <StackPanel Margin="230,20" Orientation="Horizontal">
-                    <Button x:ConnectionId='22' Background="Transparent"                       >
+                    <Button x:ConnectionId='21' Background="Transparent"                       >
                         <StackPanel Orientation="Horizontal">
                             <SymbolIcon Margin="0,0,10,0" Symbol="Edit" />
                             <TextBlock>Edit Employee</TextBlock>
@@ -86,7 +86,7 @@
                     Margin="13,20"
                     Padding="0,10,0,0"
                     Text="Sort By:" />
-                <ComboBox x:ConnectionId='21'
+                <ComboBox x:ConnectionId='20'
                     x:Name="sortBy"
                     Margin="0,23,0,0"
                     SelectedIndex="0">
@@ -161,11 +161,11 @@
 
                 </Grid>
             </StackPanel>
-            <ListView x:ConnectionId='18'
-                BorderBrush="#323232"
-                BorderThickness="1"
+            <ListView x:ConnectionId='17'
                 Width="1100"
                 Height="480"
+                BorderBrush="#323232"
+                BorderThickness="1"
                 CornerRadius="6"
                                                 >
                 <ListView.ItemTemplate>
@@ -251,50 +251,48 @@
                     CornerRadius="6">
                     <StackPanel Margin="0,15" Orientation="Horizontal">
                         <TextBlock Margin="0,6,10,0">Employee ID</TextBlock>
-                        <TextBox x:ConnectionId='16'
+                        <TextBox x:ConnectionId='15'
                             Name="employeeID"
                             Width="130"
                             IsReadOnly="True" />
                         <TextBlock Margin="10,6,10,5">Full Name</TextBlock>
-                        <TextBox x:ConnectionId='17' Name="employeeName" Width="130" />
+                        <TextBox x:ConnectionId='16' Name="employeeName" Width="130" />
                     </StackPanel>
                     <StackPanel Margin="0,15" Orientation="Horizontal">
                         <TextBlock Margin="0,6,50,0">CINIC</TextBlock>
-                        <TextBox x:ConnectionId='14' Name="employeeNIC" Width="130" />
+                        <TextBox x:ConnectionId='13' Name="employeeNIC" Width="130" />
                         <TextBlock Margin="10,6,10,5">Contact no.</TextBlock>
-                        <TextBox x:ConnectionId='15' Name="employeeContact" Width="130" />
+                        <TextBox x:ConnectionId='14' Name="employeeContact" Width="130" />
                     </StackPanel>
                     <StackPanel Margin="0,15" Orientation="Horizontal">
                         <TextBlock Margin="0,6,50,0">Email</TextBlock>
-                        <TextBox x:ConnectionId='12' Name="employeeEmail" Width="130" />
+                        <TextBox x:ConnectionId='11' Name="employeeEmail" Width="130" />
                         <TextBlock Margin="10,6,10,5">DateOFBirth</TextBlock>
-                        <TextBox x:ConnectionId='13' Name="employeeDOB" Width="130" />
+                        <TextBox x:ConnectionId='12' Name="employeeDOB" Width="130" />
                     </StackPanel>
 
                     <StackPanel Margin="0,15" Orientation="Horizontal">
                         <TextBlock Margin="0,6,45,0">House</TextBlock>
-                        <TextBox x:ConnectionId='10' Name="houseNo" Width="130" />
+                        <TextBox x:ConnectionId='9' Name="houseNo" Width="130" />
                         <TextBlock Margin="10,6,46,5">Street</TextBlock>
-                        <TextBox x:ConnectionId='11' Name="street" Width="130" />
+                        <TextBox x:ConnectionId='10' Name="street" Width="130" />
                     </StackPanel>
                     <StackPanel Margin="0,15" Orientation="Horizontal">
                         <TextBlock Margin="0,6,50,0">Town</TextBlock>
-                        <TextBox x:ConnectionId='8' Name="town" Width="130" />
+                        <TextBox x:ConnectionId='7' Name="town" Width="130" />
                         <TextBlock Margin="10,6,59,5">City</TextBlock>
-                        <TextBox x:ConnectionId='9' Name="city" Width="130" />
-                    </StackPanel>
-                    <StackPanel Margin="0,15" Orientation="Horizontal">
-                        <TextBlock Margin="0,6,10,0">Department</TextBlock>
-                        <TextBox x:ConnectionId='6' Name="employeeDepartment" Width="130" />
-                        <TextBlock Margin="10,6,10,5">Designation</TextBlock>
-                        <TextBox x:ConnectionId='7' Name="employeeDesignation" Width="130" />
+                        <TextBox x:ConnectionId='8' Name="city" Width="130" />
                     </StackPanel>
                     <StackPanel Margin="0,15" Orientation="Horizontal">
                         <TextBlock Margin="0,6,39,0">Gender</TextBlock>
-                        <TextBox x:ConnectionId='5' Name="gender" Width="130" />
+                        <TextBox x:ConnectionId='6' Name="gender" Width="130" />
                     </StackPanel>
                 </StackPanel>
-                <Button HorizontalAlignment="Right" Background="Transparent">
+                <Button x:ConnectionId='5'
+                    Name="DeleteBtn"
+                    HorizontalAlignment="Right"
+                    Background="Transparent"
+                                           >
                     <StackPanel Orientation="Horizontal">
                         <SymbolIcon Margin="0,0,10,0" Symbol="Delete" />
                         <TextBlock Foreground="Red">Delete</TextBlock>

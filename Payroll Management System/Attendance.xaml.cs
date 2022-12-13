@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -48,6 +49,7 @@ namespace Payroll_Management_System
             absentEmployee.Text = absent.ToString();
             acceptedLeaves.Text = obj.AcceptedLeaves.ToString();
             rejectedLeaves.Text = obj.RejectedLeaves.ToString();
+            datee.Text = date;
 
         }
 
@@ -87,11 +89,45 @@ namespace Payroll_Management_System
             absentEmployee.Text = absent.ToString();
             acceptedLeaves.Text = obj.AcceptedLeaves.ToString();
             rejectedLeaves.Text = obj.RejectedLeaves.ToString();
+            listAttendance.ItemsSource = null;
+            listAttendance.ItemsSource = EmpAttendance;
+            datee.Text = date;
         }
 
         private async void Button_Click_2(object sender, RoutedEventArgs e)
         {
             ContentDialogResult result = await AttendanceDialog.ShowAsync();
+        }
+
+        private void markAttendance()
+        {
+
+            int index = markAttendanceList.SelectedIndex;
+            int empID = employees[index].employeeID;
+            string query = "EXEC SPMarkAttendance @employeeID = "+empID+", @status ='Present',@date = '2021-10-10'";
+        }
+
+        private void Attendance_Checked(object sender, RoutedEventArgs e)
+        {
+            int index = markAttendanceList.SelectedIndex;
+            int empID = employees[index].employeeID;
+            
+
+        }
+
+        private void Attendance_Unchecked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void accepted_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void accepted_Unchecked(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

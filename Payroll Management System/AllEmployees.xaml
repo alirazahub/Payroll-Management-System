@@ -162,10 +162,10 @@
                 </Grid>
             </StackPanel>
             <ListView
-                BorderBrush="#323232"
-                BorderThickness="1"
                 Width="1100"
                 Height="480"
+                BorderBrush="#323232"
+                BorderThickness="1"
                 CornerRadius="6"
                 ItemsSource="{x:Bind employees}">
                 <ListView.ItemTemplate>
@@ -284,17 +284,15 @@
                         <TextBox Name="city" Width="130" />
                     </StackPanel>
                     <StackPanel Margin="0,15" Orientation="Horizontal">
-                        <TextBlock Margin="0,6,10,0">Department</TextBlock>
-                        <TextBox Name="employeeDepartment" Width="130" />
-                        <TextBlock Margin="10,6,10,5">Designation</TextBlock>
-                        <TextBox Name="employeeDesignation" Width="130" />
-                    </StackPanel>
-                    <StackPanel Margin="0,15" Orientation="Horizontal">
                         <TextBlock Margin="0,6,39,0">Gender</TextBlock>
                         <TextBox Name="gender" Width="130" />
                     </StackPanel>
                 </StackPanel>
-                <Button HorizontalAlignment="Right" Background="Transparent">
+                <Button
+                    Name="DeleteBtn"
+                    HorizontalAlignment="Right"
+                    Background="Transparent"
+                    Click="DeleteBtn_Click">
                     <StackPanel Orientation="Horizontal">
                         <SymbolIcon Margin="0,0,10,0" Symbol="Delete" />
                         <TextBlock Foreground="Red">Delete</TextBlock>

@@ -26,6 +26,7 @@ namespace Payroll_Management_System
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        public static ReadingEmployees currentUser;
         List<ReadingEmployees> employees;
         DataAccess cont = new DataAccess();
         public MainPage()
@@ -52,6 +53,7 @@ namespace Payroll_Management_System
             {
                 if (username.Text == ee.username && passwordBox.Password.ToString() == ee.password)
                 {
+                    currentUser = ee;
                   Frame.Navigate(typeof(MainFrame));
                 }
                

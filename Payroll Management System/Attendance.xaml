@@ -233,7 +233,7 @@
                     <CalendarDatePicker Width="163" />
                 </StackPanel>
                 <StackPanel
-                    Width="275"
+                    Width="450"
                     Margin="0,0,0,0"
                     Padding="0,10"
                     Background="#323232"
@@ -245,7 +245,11 @@
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="25" />
-                            <ColumnDefinition Width="53" />
+                            <ColumnDefinition Width="43" />
+                            <ColumnDefinition Width="123" />
+                            <ColumnDefinition Width="68" />
+                            <ColumnDefinition Width="68" />
+                            <ColumnDefinition Width="68" />
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
                         <TextBlock
@@ -258,12 +262,38 @@
                             Grid.Column="2"
                             FontWeight="Bold"
                             Text="Full Name" />
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.Column="3"
+                            FontSize="12"
+                            FontWeight="Bold"
+                            Text="Present" />
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.Column="4"
+                            FontSize="12"
+                            FontWeight="Bold"
+                            Text="Absent" />
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.Column="5"
+                            FontSize="12"
+                            FontWeight="Bold"
+                            Text="Leave(A)" />
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.Column="6"
+                            FontSize="12"
+                            FontWeight="Bold"
+                            Text="Leave(R)" />
                     </Grid>
                 </StackPanel>
                 <ListView
-                    Height="400"
+                    Name="markAttendanceList"
+                    Height="420"
                     BorderThickness="10"
-                    ItemsSource="{x:Bind employees}">
+                    ItemsSource="{x:Bind employees}"
+                    SelectionMode="Single">
                     <ListView.ItemTemplate>
 
                         <DataTemplate>
@@ -275,7 +305,10 @@
 
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="50" />
-                                    <ColumnDefinition Width="120" />
+                                    <ColumnDefinition Width="133" />
+                                    <ColumnDefinition Width="60" />
+                                    <ColumnDefinition Width="73" />
+                                    <ColumnDefinition Width="69" />
                                     <ColumnDefinition />
                                 </Grid.ColumnDefinitions>
 
@@ -287,7 +320,20 @@
                                     Grid.Row="0"
                                     Grid.Column="1"
                                     Text="{Binding employeeName}" />
-
+                                <CheckBox
+                                    x:Name="status"
+                                    Grid.Row="0"
+                                    Grid.Column="2"
+                                    Checked="Attendance_Checked"
+                                    Unchecked="Attendance_Unchecked" />
+                                <CheckBox
+                                    x:Name="accepted"
+                                    Grid.Row="0"
+                                    Grid.Column="3"
+                                    Checked="accepted_Checked"
+                                    Unchecked="accepted_Unchecked" />
+                                <CheckBox Grid.Row="0" Grid.Column="4" />
+                                <CheckBox Grid.Row="0" Grid.Column="5" />
                             </Grid>
 
                         </DataTemplate>
@@ -297,9 +343,6 @@
             </StackPanel>
 
         </ContentDialog>
-
-
-
 
         <ContentDialog x:Name="AttendanceDialog" CloseButtonText="O K A Y">
 
@@ -321,6 +364,7 @@
                         Foreground="RoyalBlue"
                         Text="Date: " />
                     <TextBlock
+                        x:Name="datee"
                         Margin="330,0,0,0"
                         FontWeight="Bold"
                         Foreground="RoyalBlue"
@@ -340,7 +384,7 @@
                             <ColumnDefinition Width="10" />
                             <ColumnDefinition Width="84" />
                             <ColumnDefinition Width="150" />
-                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="110" />
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
                         <TextBlock
@@ -366,6 +410,7 @@
                     </Grid>
                 </StackPanel>
                 <ListView
+                    Name="listAttendance"
                     Height="400"
                     BorderBrush="#323232"
                     BorderThickness="2"

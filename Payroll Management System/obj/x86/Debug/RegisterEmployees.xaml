@@ -63,7 +63,7 @@
                 <CalendarDatePicker x:ConnectionId='12'
                     Name="employeeDOB"
                     Width="355"
-                    Margin="6 0"
+                    Margin="6,0"
                     Header="Date Of Birth"
                     PlaceholderText="Pick a date" />
 
@@ -180,10 +180,10 @@
                 </Button>
             </StackPanel>
             <muxc:TeachingTip x:ConnectionId='2'
-            x:Name="RegisterToggleTeaching"
-            Title="Register!"
-            Margin="0,100,0,0"
-            Subtitle="New Employee Registerd Successfully! Check details for Employee ID">
+                x:Name="RegisterToggleTeaching"
+                Title="Register!"
+                Margin="0,100,0,0"
+                Subtitle="New Employee Registerd Successfully! Check details for Employee ID">
                 <muxc:TeachingTip.IconSource>
                     <muxc:SymbolIconSource Symbol="Refresh" />
                 </muxc:TeachingTip.IconSource>

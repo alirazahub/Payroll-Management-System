@@ -150,6 +150,7 @@
       <DependentUpon>Salary.xaml</DependentUpon>
     </Compile>
     <Compile Include="SalaryClass.cs" />
+    <Compile Include="ToDoList.cs" />
     <Compile Include="TotalAttendanceNos.cs" />
   </ItemGroup>
   <ItemGroup>

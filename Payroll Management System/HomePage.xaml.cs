@@ -22,9 +22,29 @@ namespace Payroll_Management_System
     /// </summary>
     public sealed partial class HomePage : Page
     {
+            List<ReadingEmployees> empByDeparts;
+            List<ReadingEmployees> directors;
+            List<ToDoList> todo;
+            DataAccess cont = new DataAccess();
         public HomePage()
         {
             this.InitializeComponent();
+            empByDeparts = cont.getEmployeeByDep("Research & Developement");
+            directors = cont.getManagingDirectors();
+            UserName.Text = MainPage.currentUser.employeeName.ToString();
+            displayName.DisplayName = MainPage.currentUser.employeeName.ToString();
+            UserEmail.Text = MainPage.currentUser.employeeEmail.ToString();
+            Userusername.Text = MainPage.currentUser.username.ToString();
+            todo = cont.getToDoList();
+        }
+
+        private void empDepart_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ComboBoxItem comb = (ComboBoxItem)empDepart.SelectedItem;
+            string seleted = comb.Content.ToString();
+            empByDeparts = cont.getEmployeeByDep(seleted);
+            empByDepart.ItemsSource = null;
+            empByDepart.ItemsSource = empByDeparts;
         }
     }
 }
