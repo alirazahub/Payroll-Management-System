@@ -45,6 +45,7 @@
     <Pkgruntime_win10-arm_Microsoft_Net_Native_Compiler Condition=" '$(Pkgruntime_win10-arm_Microsoft_Net_Native_Compiler)' == '' ">C:\Program Files (x86)\Microsoft SDKs\UWPNuGetPackages\runtime.win10-arm.microsoft.net.native.compiler\2.2.12-rel-31116-00</Pkgruntime_win10-arm_Microsoft_Net_Native_Compiler>
     <PkgMicrosoft_Web_WebView2 Condition=" '$(PkgMicrosoft_Web_WebView2)' == '' ">C:\Users\alira\.nuget\packages\microsoft.web.webview2\1.0.1264.42</PkgMicrosoft_Web_WebView2>
     <PkgMicrosoft_UI_Xaml Condition=" '$(PkgMicrosoft_UI_Xaml)' == '' ">C:\Users\alira\.nuget\packages\microsoft.ui.xaml\2.8.1</PkgMicrosoft_UI_Xaml>
+    <PkgMicrosoft_Toolkit_Uwp_UI_Controls_DataGrid Condition=" '$(PkgMicrosoft_Toolkit_Uwp_UI_Controls_DataGrid)' == '' ">C:\Users\alira\.nuget\packages\microsoft.toolkit.uwp.ui.controls.datagrid\7.1.3</PkgMicrosoft_Toolkit_Uwp_UI_Controls_DataGrid>
     <PkgMicrosoft_Net_UWPCoreRuntimeSdk Condition=" '$(PkgMicrosoft_Net_UWPCoreRuntimeSdk)' == '' ">C:\Program Files (x86)\Microsoft SDKs\UWPNuGetPackages\microsoft.net.uwpcoreruntimesdk\2.2.14</PkgMicrosoft_Net_UWPCoreRuntimeSdk>
     <PkgMicrosoft_Net_Native_Compiler Condition=" '$(PkgMicrosoft_Net_Native_Compiler)' == '' ">C:\Program Files (x86)\Microsoft SDKs\UWPNuGetPackages\microsoft.net.native.compiler\2.2.12-rel-31116-00</PkgMicrosoft_Net_Native_Compiler>
   </PropertyGroup>

@@ -15,6 +15,10 @@
     <RootPropertyPathName Name="totalBonus" />
     <RootPropertyPathName Name="hours" />
     <RootPropertyPathName Name="date" />
+    <RootPropertyPathName Name="Details" />
+    <RootPropertyPathName Name="Description" />
+    <RootPropertyPathName Name="SourceUrl" />
+    <RootPropertyPathName Name="PicturePath" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application">
@@ -34,6 +38,8 @@
       <RootMethod Name="SetRow" />
       <RootMethod Name="GetColumn" />
       <RootMethod Name="SetColumn" />
+      <RootMethod Name="GetRowSpan" />
+      <RootMethod Name="SetRowSpan" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ContentDialog">
       <RootProperty Name="CloseButtonText" />
@@ -70,6 +76,8 @@
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Name" />
       <RootProperty Name="Width" />
+      <RootProperty Name="FontStyle" />
+      <RootProperty Name="TextWrapping" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="Name" />
@@ -98,6 +106,7 @@
       <RootProperty Name="Padding" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ListView">
+      <RootProperty Name="Name" />
       <RootProperty Name="Width" />
       <RootProperty Name="Height" />
       <RootProperty Name="BorderBrush" />
@@ -105,13 +114,15 @@
       <RootProperty Name="CornerRadius" />
       <RootProperty Name="ItemsSource" />
       <RootProperty Name="ItemTemplate" />
-      <RootProperty Name="Name" />
       <RootProperty Name="SelectionMode" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Padding" />
+      <RootProperty Name="Resources" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.BindExtension" />
-    <RootType FullName="Windows.UI.Xaml.Controls.RowDefinition" />
+    <RootType FullName="Windows.UI.Xaml.Controls.RowDefinition">
+      <RootProperty Name="Height" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition">
       <RootProperty Name="Width" />
     </RootType>
@@ -177,12 +188,13 @@
     <RootType FullName="Microsoft.UI.Xaml.Controls.InfoBar">
       <RootProperty Name="Title" />
       <RootProperty Name="Width" />
-      <RootProperty Name="Margin" />
+      <RootProperty Name="Height" />
       <RootProperty Name="CornerRadius" />
       <RootProperty Name="IsClosable" />
       <RootProperty Name="IsOpen" />
-      <RootProperty Name="Message" />
       <RootProperty Name="Severity" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Message" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.CalendarView">
       <RootProperty Name="Height" />
@@ -231,13 +243,26 @@
     <RootType FullName="Windows.UI.Xaml.Controls.Image">
       <RootProperty Name="Source" />
       <RootProperty Name="Height" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Stretch" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="VerticalAlignment" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.PasswordBox">
       <RootProperty Name="Name" />
       <RootProperty Name="PasswordRevealMode" />
     </RootType>
     <RootType FullName="Payroll_Management_System.MainPage" />
+    <RootType FullName="Microsoft.Toolkit.Uwp.UI.FrameworkElementExtensions">
+      <RootMethod Name="GetCursor" />
+      <RootMethod Name="SetCursor" />
+    </RootType>
+    <RootType FullName="Microsoft.Toolkit.Uwp.UI.TextBoxExtensions">
+      <RootMethod Name="GetMask" />
+      <RootMethod Name="SetMask" />
+    </RootType>
     <RootType FullName="Payroll_Management_System.RegisterEmployees" />
+    <RootType FullName="Payroll_Management_System.Report" />
     <RootType FullName="Windows.UI.Xaml.Controls.DatePicker">
       <RootProperty Name="Name" />
       <RootProperty Name="Margin" />

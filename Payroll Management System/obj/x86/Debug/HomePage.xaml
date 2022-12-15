@@ -24,13 +24,13 @@
                     Background="#272727"
                     CornerRadius="6"
                     Orientation="Horizontal">
-                    <PersonPicture x:ConnectionId='7'
+                    <PersonPicture x:ConnectionId='9'
                         Name="displayName"
                         Width="70"
                         Margin="20,0,0,0"
                         DisplayName="A R" />
                     <StackPanel Margin="17,6,0,0">
-                        <TextBlock x:ConnectionId='10'
+                        <TextBlock x:ConnectionId='12'
                             Name="UserName"
                             Margin="0,6,0,10"
                             FontSize="18" />
@@ -46,7 +46,7 @@
                                 FontSize="17"
                                 FontWeight="Bold"
                                 Text="Email:" />
-                            <TextBlock x:ConnectionId='9' Name="UserEmail" FontSize="17" />
+                            <TextBlock x:ConnectionId='11' Name="UserEmail" FontSize="17" />
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
                             <TextBlock
@@ -54,7 +54,7 @@
                                 FontSize="17"
                                 FontWeight="Bold"
                                 Text="Username:" />
-                            <TextBlock x:ConnectionId='8' Name="Userusername" FontSize="17" />
+                            <TextBlock x:ConnectionId='10' Name="Userusername" FontSize="17" />
                         </StackPanel>
                     </StackPanel>
                 </StackPanel>
@@ -77,7 +77,7 @@
                             IsOpen="True"
                             Message="You can check the Employees Department Wise"
                             Severity="Informational" />
-                        <ComboBox x:ConnectionId='4'
+                        <ComboBox x:ConnectionId='6'
                             x:Name="empDepart"
                             Width="220"
                             Margin="40,6"
@@ -138,7 +138,7 @@
                                     Text="Designation" />
                             </Grid>
                         </StackPanel>
-                        <ListView x:ConnectionId='5'
+                        <ListView x:ConnectionId='7'
                             Name="empByDepart"
                             Width="738"
                             Height="200"
@@ -252,7 +252,7 @@
                                     Text="Deartment" />
                             </Grid>
                         </StackPanel>
-                        <ListView x:ConnectionId='2'
+                        <ListView x:ConnectionId='4'
                             Width="600"
                             Height="156"
                             Margin="35,0,0,0"
@@ -305,7 +305,7 @@
                             </ListView.ItemTemplate>
                         </ListView>
                     </StackPanel>
-                    <!-- <StackPanel Margin="10,0,0,0">
+                    <StackPanel Margin="10,0,0,0">
                         <muxc:InfoBar
                             Title="Todo List"
                             Width="470"
@@ -315,6 +315,8 @@
                             IsOpen="True"
                             Severity="Informational" />
 
+
+
                         <StackPanel
                             Width="470"
                             Margin="0,0,0,0"
@@ -322,14 +324,15 @@
                             Background="#323232"
                             CornerRadius="5"
                             Orientation="Horizontal">
+
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition />
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="10" />
-                                    <ColumnDefinition Width="60" />
-                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="80" />
+                                    <ColumnDefinition Width="73" />
                                     <ColumnDefinition />
                                 </Grid.ColumnDefinitions>
                                 <TextBlock
@@ -349,14 +352,14 @@
                                     Text="Task" />
                             </Grid>
                         </StackPanel>
-                        <ListView
+                        <ListView x:ConnectionId='2'
                             Width="470"
                             Height="156"
                             Margin="0,0,0,0"
                             BorderBrush="#272727"
                             BorderThickness="1"
                             CornerRadius="6"
-                            ItemsSource="{x:Bind todo}"
+                                                       
                             SelectionMode="Single">
                             <ListView.ItemTemplate>
 
@@ -369,7 +372,7 @@
 
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="70" />
-                                            <ColumnDefinition Width="100" />
+                                            <ColumnDefinition Width="80" />
                                             <ColumnDefinition />
                                         </Grid.ColumnDefinitions>
 
@@ -380,6 +383,7 @@
                                         <TextBlock
                                             Grid.Row="0"
                                             Grid.Column="1"
+                                            FontWeight="Bold"
                                             Text="{Binding status}" />
                                         <TextBlock
                                             Grid.Row="0"
@@ -391,7 +395,7 @@
 
                             </ListView.ItemTemplate>
                         </ListView>
-                    </StackPanel>-->
+                    </StackPanel>
 
                 </StackPanel>
 

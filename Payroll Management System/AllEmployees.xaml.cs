@@ -79,7 +79,10 @@ namespace Payroll_Management_System
                     updatedEmployee.gender = gender.Text;
 
                     cont.updateEmployee(updatedEmployee,id);
-
+                    employeeList.ItemsSource = null;
+                    employeeList.ItemsSource = employees;
+                    employeeList.ItemsSource = null;
+                    employeeList.ItemsSource = employees;
                 }
 
             }

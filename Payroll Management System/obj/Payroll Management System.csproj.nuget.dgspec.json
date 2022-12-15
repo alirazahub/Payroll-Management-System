@@ -47,6 +47,14 @@
               "target": "Package",
               "version": "[6.2.14, )"
             },
+            "Microsoft.Toolkit.Uwp.UI": {
+              "target": "Package",
+              "version": "[7.1.3, )"
+            },
+            "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid": {
+              "target": "Package",
+              "version": "[7.1.3, )"
+            },
             "Microsoft.UI.Xaml": {
               "target": "Package",
               "version": "[2.8.1, )"

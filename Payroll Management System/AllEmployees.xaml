@@ -162,6 +162,7 @@
                 </Grid>
             </StackPanel>
             <ListView
+                Name="employeeList"
                 Width="1100"
                 Height="480"
                 BorderBrush="#323232"

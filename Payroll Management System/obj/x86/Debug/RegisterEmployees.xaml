@@ -6,6 +6,7 @@
     xmlns:local="using:Payroll_Management_System"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    xmlns:ui="using:Microsoft.Toolkit.Uwp.UI"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     mc:Ignorable="d">
 
@@ -42,12 +43,14 @@
                     Width="350"
                     Margin="6"
                     Padding="3"
+                    ui:TextBoxExtensions.Mask="99999-9999999-9"
                     Header="CINIC" />
                 <TextBox x:ConnectionId='16'
                     x:Name="employeeContact"
                     Width="350"
                     Margin="6"
                     Padding="3"
+                    ui:TextBoxExtensions.Mask="0399-9999999"
                     Header="Contact No" />
             </StackPanel>
             <StackPanel
@@ -130,6 +133,7 @@
                     Width="350"
                     Margin="6"
                     Padding="3"
+                    ui:FrameworkElementExtensions.Cursor="Hand"
                     Header="Department of Employee"
                     PlaceholderText="Select Department">
                     <ComboBoxItem Content="Adminstration" />
@@ -145,6 +149,7 @@
                     Width="350"
                     Margin="6"
                     Padding="3"
+                    ui:FrameworkElementExtensions.Cursor="Hand"
                     Header="Designation of Employee"
                     PlaceholderText="Select Designation">
                     <ComboBoxItem Content="CEO" />
@@ -161,6 +166,7 @@
                     Margin="6"
                     Padding="3"
                     VerticalAlignment="Top"
+                    ui:FrameworkElementExtensions.Cursor="Hand"
                     Header="Joining Date"
                     PlaceholderText="Pick a date" />
             </StackPanel>
@@ -170,6 +176,7 @@
                     Width="200"
                     Height="35"
                     Margin="300,60,30,0"
+                    ui:FrameworkElementExtensions.Cursor="Hand"
                                                   
                     CornerRadius="3">
                     <StackPanel Orientation="Horizontal">

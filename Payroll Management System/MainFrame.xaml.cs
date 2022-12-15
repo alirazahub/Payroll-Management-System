@@ -61,6 +61,11 @@ namespace Payroll_Management_System
                 mainFrame.Navigate(typeof(Bonus));
 
             }
+            else if (NavView.SelectedItem == report)
+            {
+                mainFrame.Navigate(typeof(Report));
+
+            }
         }
     }
 }

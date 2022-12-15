@@ -146,6 +146,9 @@
     <Compile Include="RegisterEmployees.xaml.cs">
       <DependentUpon>RegisterEmployees.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Report.xaml.cs">
+      <DependentUpon>Report.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Salary.xaml.cs">
       <DependentUpon>Salary.xaml</DependentUpon>
     </Compile>
@@ -201,6 +204,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Report.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Salary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -212,6 +219,12 @@
     </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.14</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Toolkit.Uwp.UI">
+      <Version>7.1.3</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Toolkit.Uwp.UI.Controls.DataGrid">
+      <Version>7.1.3</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.UI.Xaml">
       <Version>2.8.1</Version>

@@ -162,6 +162,7 @@
                 </Grid>
             </StackPanel>
             <ListView x:ConnectionId='17'
+                Name="employeeList"
                 Width="1100"
                 Height="480"
                 BorderBrush="#323232"
