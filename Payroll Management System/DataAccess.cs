@@ -22,20 +22,34 @@ namespace Payroll_Management_System
 
         }
 
-        public void addEmployee(Employees emp)
+        public string addEmployee(Employees emp)
         {
             using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
             {
-                dbConnection.Execute("insert into EmployeesTable (employeeName,employeeNIC,employeeContact,employeeEmail,gender,houseNo,street,town,city,employeeDepartment,employeeDesignation,joiningDate,employeeDOB) values ('" + emp.employeeName + "', '" + emp.employeeNIC + "' ,'" + emp.employeeContact + "','" + emp.employeeEmail +"','"+emp.gender+"','"+emp.houseNo+"','"+emp.street+"','"+emp.town+"','"+emp.city+"','"+emp.employeeDepartment+"','"+emp.employeeDesignation+"','"+emp.joiningDate+"','"+emp.employeeDOB+"') ");
-
+                try
+                {
+                    dbConnection.Execute("insert into EmployeesTable (employeeName,employeeNIC,employeeContact,employeeEmail,gender,houseNo,street,town,city,employeeDepartment,employeeDesignation,joiningDate,employeeDOB) values ('" + emp.employeeName + "', '" + emp.employeeNIC + "' ,'" + emp.employeeContact + "','" + emp.employeeEmail +"','"+emp.gender+"','"+emp.houseNo+"','"+emp.street+"','"+emp.town+"','"+emp.city+"','"+emp.employeeDepartment+"','"+emp.employeeDesignation+"','"+emp.joiningDate+"','"+emp.employeeDOB+"') ");
+                    return "Done";
+                }
+                catch (Exception ex)
+                {
+                    return "Error: " + ex;
+                }
             }
         }
 
-        public void addBonus(BonusClass bonus)
+        public string addBonus(BonusClass bonus)
         {
             using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
             {
-                dbConnection.Execute("insert into BonusTable  values ('" + bonus.employeeID + "', '" + bonus.date + "' ,'" + bonus.hours + "','" + bonus.details +"') ");
+                try
+                {
+                    dbConnection.Execute("insert into BonusTable  values ('" + bonus.employeeID + "', '" + bonus.date + "' ,'" + bonus.hours + "','" + bonus.details + "') ");
+                    return "Done";
+                }catch(Exception ex)
+                {
+                    return "Error: "+ex;
+                }
             }
         }
         public List<BonusClass> getBonus()
@@ -99,11 +113,19 @@ namespace Payroll_Management_System
             }
         }
 
-        public void addNewSalary(SalaryClass sal)
+        public string addNewSalary(SalaryClass sal)
         {
             using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
             {
-                dbConnection.Execute("insert into PayrollTable  values ("+sal.employeeID+",'"+sal.Details+"','"+sal.Date+"',"+sal.Deduction+","+sal.Bonus+","+sal.TotalSalary + ")");
+                try
+                {
+                    dbConnection.Execute("insert into PayrollTable  values ("+sal.employeeID+",'"+sal.Details+"','"+sal.Year+"','"+sal.Month+"','"+sal.Date+"',"+sal.Deduction+","+sal.Bonus+","+sal.TotalSalary + ")");
+                    return "Done";
+                }
+                catch (Exception ex)
+                {
+                    return "Error" + ex;
+                }
             }
         }
 
@@ -129,7 +151,7 @@ namespace Payroll_Management_System
             using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
             {
                 int ID = MainPage.currentUser.employeeID;
-                var output = dbConnection.Query<ToDoList>("select * from ToDoTable where employeeID = "+ID+"").ToList();
+                var output = dbConnection.Query<ToDoList>("select * from ToDoTable where employeeID = "+ID+ " order by taskid desc").ToList();
                 return output;
             }
         }
@@ -146,7 +168,78 @@ namespace Payroll_Management_System
         {
             using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
             {
-                dbConnection.Execute("update EmployeesTable set employeeName = '"+employee.employeeName+"',employeeDOB = '"+employee.employeeDOB+"',employeeNIC = '"+employee.employeeNIC+"',employeeContact='"+employee.employeeContact+"',gender='"+employee.gender+"',houseNo='"+employee.houseNo+"',street='"+employee.street+"',town='"+employee.town+"',city='"+employee.city+"' where employeeID = "+id+"\r\n");
+                dbConnection.Execute("update EmployeesTable set employeeName = '"+employee.employeeName+"',employeeEmail = '"+employee.employeeEmail+"',employeeDOB = '"+employee.employeeDOB+"',employeeNIC = '"+employee.employeeNIC+"',employeeContact='"+employee.employeeContact+"',gender='"+employee.gender+"',houseNo='"+employee.houseNo+"',street='"+employee.street+"',town='"+employee.town+"',city='"+employee.city+"' where employeeID = "+id+"\r\n");
+            }
+        }
+
+        public void present(string date,int id)
+        {
+            using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
+            {
+                dbConnection.Execute("EXEC SPMarkAttendance @employeeID = "+id+", @status ='Present',@date = '"+date+"'");
+            }
+        }
+
+        public void absent(string date, int id)
+        {
+            using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
+            {
+                dbConnection.Execute("EXEC SPMarkAttendance @employeeID = " + id + ", @status ='Absent',@date = '" + date + "'");
+            }
+        }
+
+        public void leaveA(string date, int id)
+        {
+            using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
+            {
+                dbConnection.Execute("EXEC SPMarkAttendance @employeeID = " + id + ", @status ='LeaveAccepted',@date = '" + date + "'");
+            }
+        }
+
+        public void leaveR(string date, int id)
+        {
+            using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
+            {
+                dbConnection.Execute("EXEC SPMarkAttendance @employeeID = " + id + ", @status ='LeaveRejected',@date = '" + date + "'");
+            }
+        }
+        public void deleteAttend(string date, int id)
+        {
+            using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
+            {
+                dbConnection.Execute("delete from attendanceTable where employeeid = "+id+" and date = '"+date+"'");
+            }
+        }
+
+        public void addNewTask(string date, string task)
+        {
+            using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
+            {
+                dbConnection.Execute("insert into ToDoTable values("+MainPage.currentUser.employeeID+",'"+date+"','"+task+ "','Pending')");
+            }
+        }
+
+        public string updateTask(int taskid,string task,string status)
+        {
+            using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
+            {
+                try
+                {
+                    dbConnection.Execute("update ToDoTable SET [Status] = '"+status+ "',Details = '" + task+"' where taskID = "+ taskid + "");
+                    return "Done";
+                }
+                catch (Exception ex)
+                {
+                    return "Error" + ex;
+                }
+            }
+        }
+
+        public void deleteTask(int taskID)
+        {
+            using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
+            {
+                dbConnection.Execute("delete from ToDoTable where taskID = "+ taskID + "");
             }
         }
     }

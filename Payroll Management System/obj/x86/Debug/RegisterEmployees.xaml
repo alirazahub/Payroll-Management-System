@@ -16,9 +16,10 @@
             VerticalAlignment="Center"
             Orientation="Vertical">
             <TextBlock
-                Margin="0,0,0,50"
+                Margin="0,70,0,50"
                 HorizontalAlignment="Center"
-                FontSize="35">
+                FontSize="27"
+                FontWeight="Bold">
                 Register New Emloyee
             </TextBlock>
             <TextBlock
@@ -32,20 +33,20 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 Orientation="Horizontal">
-                <TextBox x:ConnectionId='14'
+                <TextBox x:ConnectionId='15'
                     x:Name="employeeName"
                     Width="350"
                     Margin="6"
                     Padding="3"
                     Header="Name" />
-                <TextBox x:ConnectionId='15'
+                <TextBox x:ConnectionId='16'
                     x:Name="employeeNIC"
                     Width="350"
                     Margin="6"
                     Padding="3"
                     ui:TextBoxExtensions.Mask="99999-9999999-9"
                     Header="CINIC" />
-                <TextBox x:ConnectionId='16'
+                <TextBox x:ConnectionId='17'
                     x:Name="employeeContact"
                     Width="350"
                     Margin="6"
@@ -57,20 +58,20 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 Orientation="Horizontal">
-                <TextBox x:ConnectionId='11'
+                <TextBox x:ConnectionId='12'
                     x:Name="employeeEmail"
                     Width="350"
                     Margin="6"
                     Padding="3"
                     Header="Email" />
-                <CalendarDatePicker x:ConnectionId='12'
+                <CalendarDatePicker x:ConnectionId='13'
                     Name="employeeDOB"
                     Width="355"
                     Margin="6,0"
                     Header="Date Of Birth"
                     PlaceholderText="Pick a date" />
 
-                <ComboBox x:ConnectionId='13'
+                <ComboBox x:ConnectionId='14'
                     x:Name="gender"
                     Width="350"
                     Margin="6"
@@ -92,25 +93,25 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 Orientation="Horizontal">
-                <TextBox x:ConnectionId='7'
+                <TextBox x:ConnectionId='8'
                     x:Name="houseNo"
                     Width="254"
                     Margin="10"
                     Padding="5"
                     Header="House No" />
-                <TextBox x:ConnectionId='8'
+                <TextBox x:ConnectionId='9'
                     x:Name="street"
                     Width="254"
                     Margin="10"
                     Padding="5"
                     Header="Street" />
-                <TextBox x:ConnectionId='9'
+                <TextBox x:ConnectionId='10'
                     x:Name="town"
                     Width="254"
                     Margin="10"
                     Padding="5"
                     Header="Town" />
-                <TextBox x:ConnectionId='10'
+                <TextBox x:ConnectionId='11'
                     x:Name="city"
                     Width="254"
                     Margin="10"
@@ -128,7 +129,7 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 Orientation="Horizontal">
-                <ComboBox x:ConnectionId='4'
+                <ComboBox x:ConnectionId='5'
                     x:Name="employeeDepartment"
                     Width="350"
                     Margin="6"
@@ -144,7 +145,7 @@
                     <ComboBoxItem Content="Research and Developement" />
                     <ComboBoxItem Content="Other" />
                 </ComboBox>
-                <ComboBox x:ConnectionId='5'
+                <ComboBox x:ConnectionId='6'
                     x:Name="employeeDesignation"
                     Width="350"
                     Margin="6"
@@ -160,7 +161,7 @@
                     <ComboBoxItem Content="Team Lead" />
                     <ComboBoxItem Content="Team Member" />
                 </ComboBox>
-                <CalendarDatePicker x:ConnectionId='6'
+                <CalendarDatePicker x:ConnectionId='7'
                     Name="joiningDate"
                     Width="350"
                     Margin="6"
@@ -171,7 +172,7 @@
                     PlaceholderText="Pick a date" />
             </StackPanel>
             <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
-                <Button x:ConnectionId='3'
+                <Button x:ConnectionId='4'
                     x:Name="registerEmployee"
                     Width="200"
                     Height="35"
@@ -191,6 +192,16 @@
                 Title="Register!"
                 Margin="0,100,0,0"
                 Subtitle="New Employee Registerd Successfully! Check details for Employee ID">
+                <muxc:TeachingTip.IconSource>
+                    <muxc:SymbolIconSource Symbol="Refresh" />
+                </muxc:TeachingTip.IconSource>
+            </muxc:TeachingTip>
+
+            <muxc:TeachingTip x:ConnectionId='3'
+                x:Name="FailToggleTeaching"
+                Title="Failure!"
+                Margin="0,100,0,0"
+                Subtitle="Faliure">
                 <muxc:TeachingTip.IconSource>
                     <muxc:SymbolIconSource Symbol="Refresh" />
                 </muxc:TeachingTip.IconSource>

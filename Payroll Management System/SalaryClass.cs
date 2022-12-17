@@ -10,6 +10,8 @@ namespace Payroll_Management_System
     {
         public int employeeID { get; set; }
         public string Details { get; set; }
+        public string Year { get; set; }
+        public string Month { get; set; }
         public string Date { get; set; }
         public int TotalSalary { get; set; }
         public int Deduction { get; set; }

@@ -85,10 +85,10 @@
       <RootProperty Name="Background" />
       <RootProperty Name="Content" />
       <RootProperty Name="Width" />
-      <RootProperty Name="Height" />
       <RootProperty Name="Margin" />
       <RootProperty Name="CornerRadius" />
       <RootProperty Name="Style" />
+      <RootProperty Name="Height" />
       <RootProperty Name="ClickMode" />
       <RootEvent Name="Click" />
     </RootType>
@@ -134,6 +134,7 @@
       <RootProperty Name="Width" />
       <RootProperty Name="Padding" />
       <RootProperty Name="PlaceholderText" />
+      <RootProperty Name="Name" />
       <RootProperty Name="Header" />
       <RootEvent Name="SelectionChanged" />
     </RootType>
@@ -151,24 +152,6 @@
       <RootProperty Name="QueryIcon" />
     </RootType>
     <RootType FullName="Payroll_Management_System.AllEmployees" />
-    <RootType FullName="Windows.UI.Xaml.Controls.CheckBox">
-      <RootProperty Name="Name" />
-      <RootProperty Name="Content" />
-      <RootProperty Name="IsChecked" />
-      <RootEvent Name="Checked" />
-      <RootEvent Name="Unchecked" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.CalendarDatePicker">
-      <RootProperty Name="Width" />
-      <RootProperty Name="Name" />
-      <RootProperty Name="PlaceholderText" />
-      <RootProperty Name="Margin" />
-      <RootProperty Name="Padding" />
-      <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="Header" />
-    </RootType>
-    <RootType FullName="Microsoft.UI.Xaml.Controls.NavigationViewItemSeparator" />
-    <RootType FullName="Payroll_Management_System.Attendance" />
     <RootType FullName="Microsoft.UI.Xaml.Controls.TeachingTip">
       <RootProperty Name="Title" />
       <RootProperty Name="Margin" />
@@ -178,6 +161,24 @@
     <RootType FullName="Microsoft.UI.Xaml.Controls.SymbolIconSource">
       <RootProperty Name="Symbol" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.CheckBox">
+      <RootProperty Name="Name" />
+      <RootProperty Name="Content" />
+      <RootProperty Name="IsChecked" />
+      <RootEvent Name="Checked" />
+      <RootEvent Name="Unchecked" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.CalendarDatePicker">
+      <RootProperty Name="Name" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="PlaceholderText" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Padding" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Header" />
+    </RootType>
+    <RootType FullName="Microsoft.UI.Xaml.Controls.NavigationViewItemSeparator" />
+    <RootType FullName="Payroll_Management_System.Attendance" />
     <RootType FullName="Microsoft.UI.Xaml.Controls.NumberBox">
       <RootProperty Name="Name" />
       <RootProperty Name="Width" />
@@ -195,6 +196,22 @@
       <RootProperty Name="Severity" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Message" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.CommandBar">
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Background" />
+      <RootProperty Name="DefaultLabelPosition" />
+      <RootProperty Name="IsOpen" />
+      <RootProperty Name="PrimaryCommands" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.AppBarButton">
+      <RootProperty Name="Icon" />
+      <RootProperty Name="Label" />
+      <RootEvent Name="Click" />
+    </RootType>
+    <RootType FullName="Microsoft.Toolkit.Uwp.UI.FrameworkElementExtensions">
+      <RootMethod Name="GetCursor" />
+      <RootMethod Name="SetCursor" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.CalendarView">
       <RootProperty Name="Height" />
@@ -253,10 +270,6 @@
       <RootProperty Name="PasswordRevealMode" />
     </RootType>
     <RootType FullName="Payroll_Management_System.MainPage" />
-    <RootType FullName="Microsoft.Toolkit.Uwp.UI.FrameworkElementExtensions">
-      <RootMethod Name="GetCursor" />
-      <RootMethod Name="SetCursor" />
-    </RootType>
     <RootType FullName="Microsoft.Toolkit.Uwp.UI.TextBoxExtensions">
       <RootMethod Name="GetMask" />
       <RootMethod Name="SetMask" />
@@ -269,5 +282,6 @@
       <RootProperty Name="DayVisible" />
     </RootType>
     <RootType FullName="Payroll_Management_System.Salary" />
+    <RootType FullName="Payroll_Management_System.Settings" />
   </Roots.RootTypes>
 </Roots>

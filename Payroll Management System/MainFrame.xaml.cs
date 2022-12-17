@@ -66,6 +66,11 @@ namespace Payroll_Management_System
                 mainFrame.Navigate(typeof(Report));
 
             }
+            else if (NavView.IsSettingsVisible)
+            {
+                mainFrame.Navigate(typeof(Settings));
+
+            }
         }
     }
 }

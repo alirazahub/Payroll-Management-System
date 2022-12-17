@@ -57,10 +57,9 @@ namespace Payroll_Management_System
             newEmployee.employeeDOB = employeeDOB.Date.Value.ToString();
 
             DataAccess cont = new DataAccess();
-
-            try
+            string res = cont.addEmployee(newEmployee);
+            if(res == "Done")
             {
-            cont.addEmployee(newEmployee);
                 RegisterToggleTeaching.IsOpen = true;
                 employeeName.Text = "";
                 employeeNIC.Text = "";
@@ -71,13 +70,11 @@ namespace Payroll_Management_System
                 town.Text = "";
                 city.Text = "";
             }
-            catch(Exception ex)
+            else
             {
-                Console.WriteLine(ex.Message);
+                FailToggleTeaching.Subtitle = res;
+                FailToggleTeaching.IsOpen = true;
             }
-
-
-
         }
     }
 }

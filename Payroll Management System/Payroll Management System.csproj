@@ -153,6 +153,9 @@
       <DependentUpon>Salary.xaml</DependentUpon>
     </Compile>
     <Compile Include="SalaryClass.cs" />
+    <Compile Include="Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ToDoList.cs" />
     <Compile Include="TotalAttendanceNos.cs" />
   </ItemGroup>
@@ -209,6 +212,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Salary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Settings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

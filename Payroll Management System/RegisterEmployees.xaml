@@ -16,9 +16,10 @@
             VerticalAlignment="Center"
             Orientation="Vertical">
             <TextBlock
-                Margin="0,0,0,50"
+                Margin="0,70,0,50"
                 HorizontalAlignment="Center"
-                FontSize="35">
+                FontSize="27"
+                FontWeight="Bold">
                 Register New Emloyee
             </TextBlock>
             <TextBlock
@@ -191,6 +192,16 @@
                 Title="Register!"
                 Margin="0,100,0,0"
                 Subtitle="New Employee Registerd Successfully! Check details for Employee ID">
+                <muxc:TeachingTip.IconSource>
+                    <muxc:SymbolIconSource Symbol="Refresh" />
+                </muxc:TeachingTip.IconSource>
+            </muxc:TeachingTip>
+
+            <muxc:TeachingTip
+                x:Name="FailToggleTeaching"
+                Title="Failure!"
+                Margin="0,100,0,0"
+                Subtitle="Faliure">
                 <muxc:TeachingTip.IconSource>
                     <muxc:SymbolIconSource Symbol="Refresh" />
                 </muxc:TeachingTip.IconSource>

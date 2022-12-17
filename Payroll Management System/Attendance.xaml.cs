@@ -59,7 +59,7 @@ namespace Payroll_Management_System
             ContentDialogResult result = await addNewAttendanceDialog.ShowAsync();
             if (result == ContentDialogResult.Primary)
             {
-                //new
+                AddAttendanceToggleTeaching.IsOpen= true;
 
             }
             else
@@ -99,35 +99,67 @@ namespace Payroll_Management_System
             ContentDialogResult result = await AttendanceDialog.ShowAsync();
         }
 
-        private void markAttendance()
+        private void present_Checked(object sender, RoutedEventArgs e)
         {
-
+            string dat = attendanceDate.Date.Value.ToString();
             int index = markAttendanceList.SelectedIndex;
             int empID = employees[index].employeeID;
-            string query = "EXEC SPMarkAttendance @employeeID = "+empID+", @status ='Present',@date = '2021-10-10'";
+            cont.present(dat,empID);
+
         }
 
-        private void Attendance_Checked(object sender, RoutedEventArgs e)
+        private void present_Unchecked(object sender, RoutedEventArgs e)
         {
+            string dat = attendanceDate.Date.Value.ToString();
             int index = markAttendanceList.SelectedIndex;
             int empID = employees[index].employeeID;
-            
-
+            cont.deleteAttend(dat,empID);
         }
 
-        private void Attendance_Unchecked(object sender, RoutedEventArgs e)
+        private void absent_Checked(object sender, RoutedEventArgs e)
         {
-
+            string dat = attendanceDate.Date.Value.ToString();
+            int index = markAttendanceList.SelectedIndex;
+            int empID = employees[index].employeeID;
+            cont.absent(dat,empID);
         }
 
-        private void accepted_Checked(object sender, RoutedEventArgs e)
+        private void absent_Unchecked(object sender, RoutedEventArgs e)
         {
-
+            string dat = attendanceDate.Date.Value.ToString();
+            int index = markAttendanceList.SelectedIndex;
+            int empID = employees[index].employeeID;
+            cont.deleteAttend(dat,empID);
+        }
+        private void leaveA_Checked(object sender, RoutedEventArgs e)
+        {
+            string dat = attendanceDate.Date.Value.ToString();
+            int index = markAttendanceList.SelectedIndex;
+            int empID = employees[index].employeeID;
+            cont.leaveA(dat,empID);
         }
 
-        private void accepted_Unchecked(object sender, RoutedEventArgs e)
+        private void leaveA_Unchecked(object sender, RoutedEventArgs e)
         {
+            string dat = attendanceDate.Date.Value.ToString();
+            int index = markAttendanceList.SelectedIndex;
+            int empID = employees[index].employeeID;
+            cont.deleteAttend(dat,empID);
+        }
+        private void leaveR_Checked(object sender, RoutedEventArgs e)
+        {
+            string dat = attendanceDate.Date.Value.ToString();
+            int index = markAttendanceList.SelectedIndex;
+            int empID = employees[index].employeeID;
+            cont.leaveR(dat,empID);
+        }
 
+        private void leaveR_Unchecked(object sender, RoutedEventArgs e)
+        {
+            string dat = attendanceDate.Date.Value.ToString();
+            int index = markAttendanceList.SelectedIndex;
+            int empID = employees[index].employeeID;
+            cont.deleteAttend(dat,empID);
         }
     }
 }

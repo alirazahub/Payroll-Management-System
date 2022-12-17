@@ -38,21 +38,22 @@ namespace Payroll_Management_System
             newBonus.hours = Int32.Parse(hourss.Text);
             newBonus.details = detailss.Text;
             DataAccess cont = new DataAccess();
-            try
-            {
-                cont.addBonus(newBonus);
+                string res = cont.addBonus(newBonus);
+                if(res == "Done")
+                {
                 bonus = cont.getBonus();
                 empID.Text = "";
                 hourss.Text = "";
                 detailss.Text = "";
                 bonusList.ItemsSource = null;
                 bonusList.ItemsSource = bonus;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
             BonusToggleTeaching.IsOpen = true;
+            }
+            else
+            {
+                faliureToggleTeaching.Subtitle = res;
+                faliureToggleTeaching.IsOpen = true;
+            }
             
         }
 

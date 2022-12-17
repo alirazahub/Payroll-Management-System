@@ -13,7 +13,7 @@
         <StackPanel>
             <TextBlock
                 Margin="0,10,0,100"
-                FontSize="25"
+                FontSize="27"
                 FontWeight="ExtraBold"
                 Text="Attendance"
                 TextAlignment="Center" />
@@ -230,7 +230,7 @@
                 CornerRadius="6">
                 <StackPanel Margin="0,0,0,10" Orientation="Horizontal">
                     <TextBlock Margin="0,6,40,0" Text="Select Date" />
-                    <CalendarDatePicker Width="163" />
+                    <CalendarDatePicker Name="attendanceDate" Width="163" />
                 </StackPanel>
                 <StackPanel
                     Width="450"
@@ -321,19 +321,29 @@
                                     Grid.Column="1"
                                     Text="{Binding employeeName}" />
                                 <CheckBox
-                                    x:Name="status"
+                                    x:Name="present"
                                     Grid.Row="0"
                                     Grid.Column="2"
-                                    Checked="Attendance_Checked"
-                                    Unchecked="Attendance_Unchecked" />
+                                    Checked="present_Checked"
+                                    Unchecked="present_Unchecked" />
                                 <CheckBox
-                                    x:Name="accepted"
+                                    x:Name="absent"
                                     Grid.Row="0"
                                     Grid.Column="3"
-                                    Checked="accepted_Checked"
-                                    Unchecked="accepted_Unchecked" />
-                                <CheckBox Grid.Row="0" Grid.Column="4" />
-                                <CheckBox Grid.Row="0" Grid.Column="5" />
+                                    Checked="absent_Checked"
+                                    Unchecked="absent_Unchecked" />
+                                <CheckBox
+                                    x:Name="leaveA"
+                                    Grid.Row="0"
+                                    Grid.Column="4"
+                                    Checked="leaveA_Checked"
+                                    Unchecked="leaveA_Unchecked" />
+                                <CheckBox
+                                    Name="leaveR"
+                                    Grid.Row="0"
+                                    Grid.Column="5"
+                                    Checked="leaveR_Checked"
+                                    Unchecked="leaveR_Unchecked" />
                             </Grid>
 
                         </DataTemplate>
@@ -457,5 +467,14 @@
             </StackPanel>
 
         </ContentDialog>
+        <muxc:TeachingTip
+            x:Name="AddAttendanceToggleTeaching"
+            Title="Success!"
+            Margin="0,100,0,0"
+            Subtitle="Attendance Added Successfullay!">
+            <muxc:TeachingTip.IconSource>
+                <muxc:SymbolIconSource Symbol="Refresh" />
+            </muxc:TeachingTip.IconSource>
+        </muxc:TeachingTip>
     </Grid>
 </Page>

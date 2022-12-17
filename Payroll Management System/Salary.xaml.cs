@@ -73,13 +73,20 @@ namespace Payroll_Management_System
             newSalary.Details = details.Text;
             string date = System.DateTime.Now.Date.ToString("yyyy/MM/dd");
             newSalary.Date = date;
+            string Year = date.Split('/')[0];
+            string Month = date.Split('/')[1];
+            newSalary.Year = Year;
+            newSalary.Month = Month;
             string Totsal = TotalSalaryAfterBonus.Text;
             newSalary.TotalSalary = Convert.ToInt32(Totsal);
             string ded = TotalDeduction.Text;
             newSalary.Deduction = Convert.ToInt32(ded);
             string bon = TotalBonus.Text;
             newSalary.Bonus = Convert.ToInt32(bon);
-            cont.addNewSalary(newSalary);
+
+            string res = cont.addNewSalary(newSalary);
+            if (res == "Done")
+            {
             EmpID.Text = "";
             details.Text = "";
             TotalSalary.Text = "";
@@ -99,6 +106,12 @@ namespace Payroll_Management_System
             employeeNIC.Text = "";
             employeeName.Text = "";
             AddNewSalaryToggleTeaching.IsOpen = true;
+            }
+            else
+            {
+                FailSalaryToggleTeaching.Subtitle = res;
+                FailSalaryToggleTeaching.IsOpen = true;
+            }
         }
     }
 }

@@ -6,16 +6,100 @@
     xmlns:local="using:Payroll_Management_System"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    xmlns:ui="using:Microsoft.Toolkit.Uwp.UI"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     mc:Ignorable="d">
 
     <Grid>
+        <ContentDialog
+            x:Name="AddTaskContentDialog"
+            CloseButtonText="Cancel"
+            IsPrimaryButtonEnabled="False"
+            PrimaryButtonText="ADD">
+
+            <ContentDialog.TitleTemplate>
+                <DataTemplate>
+                    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                        <TextBlock Text="Add a new Task" />
+                    </StackPanel>
+                </DataTemplate>
+            </ContentDialog.TitleTemplate>
+            <StackPanel
+                Padding="20"
+                BorderBrush="Gray"
+                BorderThickness="1"
+                CornerRadius="6"
+                Orientation="Horizontal">
+                <TextBlock
+                    Margin="10,10"
+                    FontSize="16"
+                    FontWeight="Bold"
+                    Text="Task:" />
+                <TextBox
+                    Name="task"
+                    Width="300"
+                    Margin="20,0,0,0"
+                    PlaceholderText="Learn new ...." />
+            </StackPanel>
+        </ContentDialog>
+
+        <ContentDialog
+            x:Name="UpdateTaskContentDialog"
+            CloseButtonText="Cancel"
+            IsPrimaryButtonEnabled="False"
+            PrimaryButtonText="Update">
+
+            <ContentDialog.TitleTemplate>
+                <DataTemplate>
+                    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                        <TextBlock Text="Update Task" />
+                    </StackPanel>
+                </DataTemplate>
+            </ContentDialog.TitleTemplate>
+            <StackPanel
+                BorderBrush="Gray"
+                BorderThickness="1"
+                CornerRadius="6">
+                <StackPanel Padding="20" Orientation="Horizontal">
+                    <TextBlock
+                        Margin="10,6"
+                        FontSize="16"
+                        FontWeight="Bold"
+                        Text="Task:" />
+                    <TextBox
+                        Name="taskName"
+                        Width="300"
+                        Margin="20,0,0,0" />
+                </StackPanel>
+                <StackPanel
+                    Padding="20"
+                    CornerRadius="6"
+                    Orientation="Horizontal">
+                    <TextBlock
+                        Margin="10,6"
+                        FontSize="16"
+                        FontWeight="Bold"
+                        Text="Status:" />
+                    <ComboBox
+                        Name="taskStatus"
+                        Width="300"
+                        Margin="8,0,0,0">
+                        <ComboBoxItem Content="Pending" />
+                        <ComboBoxItem Content="Completed" />
+                    </ComboBox>
+                </StackPanel>
+            </StackPanel>
+        </ContentDialog>
         <StackPanel>
             <StackPanel
                 Margin="0,10"
                 HorizontalAlignment="Center"
                 Orientation="Horizontal">
-                <TextBlock FontSize="25" Text="Welcome to Payroll Management System" />
+                <TextBlock
+                    Margin="0,10"
+                    FontSize="27"
+                    FontWeight="Bold"
+                    Text="Welcome to Payroll Management System" />
             </StackPanel>
             <StackPanel>
                 <StackPanel
@@ -314,9 +398,6 @@
                             IsClosable="False"
                             IsOpen="True"
                             Severity="Informational" />
-
-
-
                         <StackPanel
                             Width="470"
                             Margin="0,0,0,0"
@@ -332,7 +413,8 @@
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="10" />
                                     <ColumnDefinition Width="80" />
-                                    <ColumnDefinition Width="73" />
+                                    <ColumnDefinition Width="85" />
+                                    <ColumnDefinition Width="85" />
                                     <ColumnDefinition />
                                 </Grid.ColumnDefinitions>
                                 <TextBlock
@@ -350,9 +432,33 @@
                                     Grid.Column="3"
                                     FontWeight="Bold"
                                     Text="Task" />
+                                <StackPanel Grid.Row="0" Grid.Column="4">
+                                    <CommandBar
+                                        Margin="-15"
+                                        Background="Transparent"
+                                        DefaultLabelPosition="Right"
+                                        IsOpen="False">
+                                        <AppBarButton
+                                            ui:FrameworkElementExtensions.Cursor="Hand"
+                                            Click="AppBarButton_Click"
+                                            Icon="Add"
+                                            Label="Add" />
+                                        <AppBarButton
+                                            ui:FrameworkElementExtensions.Cursor="Hand"
+                                            Click="AppBarButton_Click_1"
+                                            Icon="Edit"
+                                            Label="Edit" />
+                                        <AppBarButton
+                                            ui:FrameworkElementExtensions.Cursor="Hand"
+                                            Click="AppBarButton_Click_2"
+                                            Icon="Delete"
+                                            Label="Delete" />
+                                    </CommandBar>
+                                </StackPanel>
                             </Grid>
                         </StackPanel>
                         <ListView
+                            x:Name="tasks"
                             Width="470"
                             Height="156"
                             Margin="0,0,0,0"
@@ -372,7 +478,7 @@
 
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="70" />
-                                            <ColumnDefinition Width="80" />
+                                            <ColumnDefinition Width="90" />
                                             <ColumnDefinition />
                                         </Grid.ColumnDefinitions>
 
@@ -401,5 +507,13 @@
 
             </StackPanel>
         </StackPanel>
+        <muxc:TeachingTip
+            x:Name="taskToggleTeaching"
+            Title="Task"
+            Subtitle="Task Added SuccessFully">
+            <muxc:TeachingTip.IconSource>
+                <muxc:SymbolIconSource Symbol="Refresh" />
+            </muxc:TeachingTip.IconSource>
+        </muxc:TeachingTip>
     </Grid>
 </Page>

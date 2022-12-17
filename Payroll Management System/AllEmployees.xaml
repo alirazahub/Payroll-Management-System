@@ -39,14 +39,18 @@
             </StackPanel>
         </ContentDialog>
         <StackPanel>
-            <StackPanel Margin="0,0,0,50" Orientation="Horizontal">
+            <StackPanel
+                Width="1100"
+                Margin="0,0,0,35"
+                Orientation="Horizontal">
                 <TextBlock
-                    Margin="10,30,0,0"
-                    FontSize="20"
+                    Margin="7,30,0,0"
+                    FontSize="27"
+                    FontWeight="Bold"
                     Text="All Employees" />
                 <AutoSuggestBox
                     Width="300"
-                    Margin="600,30,0,0"
+                    Margin="613,30,0,0"
                     PlaceholderText="Search Employee"
                     QueryIcon="Find" />
                 <!--
@@ -56,13 +60,12 @@
                 -->
             </StackPanel>
             <StackPanel
-                Width="1080"
+                Width="1100"
                 Background="#323232"
                 CornerRadius="6"
                 Orientation="Horizontal">
                 <Button
                     Width="210"
-                    Height="35"
                     Margin="10,10"
                     Background="LightSteelBlue"
                     Click="Button_Click"
@@ -73,22 +76,21 @@
                         <TextBlock><Run Text="Register New Employee" /></TextBlock>
                     </StackPanel>
                 </Button>
-                <StackPanel Margin="230,20" Orientation="Horizontal">
+                <StackPanel Margin="230,10" Orientation="Horizontal">
                     <Button Background="Transparent" Click="Button_Click_1">
                         <StackPanel Orientation="Horizontal">
                             <SymbolIcon Margin="0,0,10,0" Symbol="Edit" />
                             <TextBlock>Edit Employee</TextBlock>
-
                         </StackPanel>
                     </Button>
                 </StackPanel>
                 <TextBlock
-                    Margin="13,20"
+                    Margin="13,6"
                     Padding="0,10,0,0"
                     Text="Sort By:" />
                 <ComboBox
                     x:Name="sortBy"
-                    Margin="0,23,0,0"
+                    Margin="0,10,0,0"
                     SelectedIndex="0">
                     <ComboBoxItem Content="ID" />
                     <ComboBoxItem Content="Name" />
@@ -98,7 +100,7 @@
             </StackPanel>
             <StackPanel
                 Width="1100"
-                Margin="0,40,0,0"
+                Margin="0,30,0,10"
                 Padding="0,10"
                 Background="#323232"
                 CornerRadius="5"
@@ -164,7 +166,7 @@
             <ListView
                 Name="employeeList"
                 Width="1100"
-                Height="480"
+                Height="527"
                 BorderBrush="#323232"
                 BorderThickness="1"
                 CornerRadius="6"

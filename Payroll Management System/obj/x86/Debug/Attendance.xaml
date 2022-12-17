@@ -13,7 +13,7 @@
         <StackPanel>
             <TextBlock
                 Margin="0,10,0,100"
-                FontSize="25"
+                FontSize="27"
                 FontWeight="ExtraBold"
                 Text="Attendance"
                 TextAlignment="Center" />
@@ -23,7 +23,7 @@
                     Padding="20,10"
                     CornerRadius="4">
 
-                    <Button x:ConnectionId='22'
+                    <Button x:ConnectionId='26'
                         Width="200"
                         Height="35"
                         Background="LightSteelBlue"
@@ -42,7 +42,7 @@
                     CornerRadius="4">
 
 
-                    <CalendarDatePicker x:ConnectionId='21'
+                    <CalendarDatePicker x:ConnectionId='25'
                         Name="attenDate"
                         Width="200"
                         PlaceholderText="Pick a date" />
@@ -54,7 +54,7 @@
                     Padding="20,10"
                     CornerRadius="4">
 
-                    <Button x:ConnectionId='20'
+                    <Button x:ConnectionId='24'
                         Height="35"
                         Background="LightSteelBlue"
                                               
@@ -85,7 +85,7 @@
                         Total Employees
                     </TextBlock>
                     <muxc:NavigationViewItemSeparator />
-                    <TextBlock x:ConnectionId='19'
+                    <TextBlock x:ConnectionId='23'
                         Name="totalEmployees"
                         HorizontalAlignment="Center"
                         FontSize="20"
@@ -105,7 +105,7 @@
                         Present
                     </TextBlock>
                     <muxc:NavigationViewItemSeparator />
-                    <TextBlock x:ConnectionId='18'
+                    <TextBlock x:ConnectionId='22'
                         Name="presentEmployee"
                         HorizontalAlignment="Center"
                         FontSize="20"
@@ -126,7 +126,7 @@
                         Absent
                     </TextBlock>
                     <muxc:NavigationViewItemSeparator />
-                    <TextBlock x:ConnectionId='17'
+                    <TextBlock x:ConnectionId='21'
                         Name="absentEmployee"
                         HorizontalAlignment="Center"
                         FontSize="20"
@@ -149,7 +149,7 @@
                         Total Leaves
                     </TextBlock>
                     <muxc:NavigationViewItemSeparator />
-                    <TextBlock x:ConnectionId='16'
+                    <TextBlock x:ConnectionId='20'
                         Name="totoalLeaves"
                         HorizontalAlignment="Center"
                         FontSize="20"
@@ -169,7 +169,7 @@
                         Accepted
                     </TextBlock>
                     <muxc:NavigationViewItemSeparator />
-                    <TextBlock x:ConnectionId='15'
+                    <TextBlock x:ConnectionId='19'
                         Name="acceptedLeaves"
                         HorizontalAlignment="Center"
                         FontSize="20"
@@ -189,7 +189,7 @@
                         Rejected
                     </TextBlock>
                     <muxc:NavigationViewItemSeparator />
-                    <TextBlock x:ConnectionId='14'
+                    <TextBlock x:ConnectionId='18'
                         Name="rejectedLeaves"
                         HorizontalAlignment="Center"
                         FontSize="20"
@@ -198,7 +198,7 @@
                 </StackPanel>
             </StackPanel>
 
-            <Button x:ConnectionId='13'
+            <Button x:ConnectionId='17'
                 Margin="0,80,0,0"
                 HorizontalAlignment="Center"
                                       >
@@ -230,7 +230,7 @@
                 CornerRadius="6">
                 <StackPanel Margin="0,0,0,10" Orientation="Horizontal">
                     <TextBlock Margin="0,6,40,0" Text="Select Date" />
-                    <CalendarDatePicker Width="163" />
+                    <CalendarDatePicker x:ConnectionId='16' Name="attendanceDate" Width="163" />
                 </StackPanel>
                 <StackPanel
                     Width="450"
@@ -288,7 +288,7 @@
                             Text="Leave(R)" />
                     </Grid>
                 </StackPanel>
-                <ListView x:ConnectionId='9'
+                <ListView x:ConnectionId='10'
                     Name="markAttendanceList"
                     Height="420"
                     BorderThickness="10"
@@ -320,20 +320,30 @@
                                     Grid.Row="0"
                                     Grid.Column="1"
                                     Text="{Binding employeeName}" />
-                                <CheckBox x:ConnectionId='11'
-                                    x:Name="status"
+                                <CheckBox x:ConnectionId='12'
+                                    x:Name="present"
                                     Grid.Row="0"
                                     Grid.Column="2"
-                                                                
-                                                                     />
-                                <CheckBox x:ConnectionId='12'
-                                    x:Name="accepted"
+                                                             
+                                                                  />
+                                <CheckBox x:ConnectionId='13'
+                                    x:Name="absent"
                                     Grid.Row="0"
                                     Grid.Column="3"
-                                                              
-                                                                   />
-                                <CheckBox Grid.Row="0" Grid.Column="4" />
-                                <CheckBox Grid.Row="0" Grid.Column="5" />
+                                                            
+                                                                 />
+                                <CheckBox x:ConnectionId='14'
+                                    x:Name="leaveA"
+                                    Grid.Row="0"
+                                    Grid.Column="4"
+                                                            
+                                                                 />
+                                <CheckBox x:ConnectionId='15'
+                                    Name="leaveR"
+                                    Grid.Row="0"
+                                    Grid.Column="5"
+                                                            
+                                                                 />
                             </Grid>
 
                         </DataTemplate>
@@ -363,7 +373,7 @@
                         FontWeight="Bold"
                         Foreground="RoyalBlue"
                         Text="Date: " />
-                    <TextBlock x:ConnectionId='7'
+                    <TextBlock x:ConnectionId='8'
                         x:Name="datee"
                         Margin="330,0,0,0"
                         FontWeight="Bold"
@@ -409,7 +419,7 @@
                             Text="Leave Status" />
                     </Grid>
                 </StackPanel>
-                <ListView x:ConnectionId='5'
+                <ListView x:ConnectionId='6'
                     Name="listAttendance"
                     Height="400"
                     BorderBrush="#323232"
@@ -457,6 +467,15 @@
             </StackPanel>
 
         </ContentDialog>
+        <muxc:TeachingTip x:ConnectionId='4'
+            x:Name="AddAttendanceToggleTeaching"
+            Title="Success!"
+            Margin="0,100,0,0"
+            Subtitle="Attendance Added Successfullay!">
+            <muxc:TeachingTip.IconSource>
+                <muxc:SymbolIconSource Symbol="Refresh" />
+            </muxc:TeachingTip.IconSource>
+        </muxc:TeachingTip>
     </Grid>
 </Page>
 

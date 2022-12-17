@@ -12,8 +12,9 @@
     <Grid>
         <StackPanel>
             <TextBlock
-                Margin="0,20,0,10"
-                FontSize="30"
+                Margin="0,20,0,20"
+                FontSize="27"
+                FontWeight="Bold"
                 Text="Pay Salary"
                 TextAlignment="Center" />
             <StackPanel
@@ -35,15 +36,15 @@
                 Width="1080"
                 Margin="0,15"
                 Orientation="Horizontal">
-                <TextBox x:ConnectionId='21'
+                <TextBox x:ConnectionId='22'
                     Name="EmpID"
                     Width="200"
                     PlaceholderText="EMP-01" />
-                <DatePicker x:ConnectionId='22'
+                <DatePicker x:ConnectionId='23'
                     Name="SalaryDate"
                     Margin="90,0,0,0"
                     DayVisible="False" />
-                <Button x:ConnectionId='23'
+                <Button x:ConnectionId='24'
                     Margin="10,0"
                                           
                     Style="{StaticResource AccentButtonStyle}">
@@ -81,21 +82,21 @@
                 Width="1080"
                 Margin="0,15"
                 Orientation="Horizontal">
-                <TextBox x:ConnectionId='17'
+                <TextBox x:ConnectionId='18'
                     Name="employeeName"
                     Width="200"
                     IsReadOnly="True" />
-                <TextBox x:ConnectionId='18'
+                <TextBox x:ConnectionId='19'
                     Name="employeeNIC"
                     Width="200"
                     Margin="93,0,0,0"
                     IsReadOnly="True" />
-                <TextBox x:ConnectionId='19'
+                <TextBox x:ConnectionId='20'
                     Name="employeeContact"
                     Width="200"
                     Margin="93,0,0,0"
                     IsReadOnly="True" />
-                <TextBox x:ConnectionId='20'
+                <TextBox x:ConnectionId='21'
                     Name="employeeDepartment"
                     Width="200"
                     Margin="93,0,0,0"
@@ -130,21 +131,21 @@
                 Width="1080"
                 Margin="0,15"
                 Orientation="Horizontal">
-                <TextBox x:ConnectionId='13'
+                <TextBox x:ConnectionId='14'
                     Name="employeeDesignation"
                     Width="200"
                     IsReadOnly="True" />
-                <TextBox x:ConnectionId='14'
+                <TextBox x:ConnectionId='15'
                     Name="TotalPresent"
                     Width="200"
                     Margin="93,0,0,0"
                     IsReadOnly="True" />
-                <TextBox x:ConnectionId='15'
+                <TextBox x:ConnectionId='16'
                     Name="TotalAbsent"
                     Width="200"
                     Margin="93,0,0,0"
                     IsReadOnly="True" />
-                <TextBox x:ConnectionId='16'
+                <TextBox x:ConnectionId='17'
                     Name="RejectedLeaves"
                     Width="200"
                     Margin="93,0,0,0"
@@ -180,21 +181,21 @@
                 Width="1080"
                 Margin="0,15"
                 Orientation="Horizontal">
-                <TextBox x:ConnectionId='9'
+                <TextBox x:ConnectionId='10'
                     Name="AcceptedLeaves"
                     Width="200"
                     IsReadOnly="True" />
-                <TextBox x:ConnectionId='10'
+                <TextBox x:ConnectionId='11'
                     Name="PerDay"
                     Width="200"
                     Margin="93,0,0,0"
                     IsReadOnly="True" />
-                <TextBox x:ConnectionId='11'
+                <TextBox x:ConnectionId='12'
                     Name="BonusPerHour"
                     Width="200"
                     Margin="93,0,0,0"
                     IsReadOnly="True" />
-                <Button x:ConnectionId='12'
+                <Button x:ConnectionId='13'
                     Width="200"
                     Margin="93,0,0,0"
                                         
@@ -231,21 +232,21 @@
                 Width="1080"
                 Margin="0,15"
                 Orientation="Horizontal">
-                <TextBox x:ConnectionId='5'
+                <TextBox x:ConnectionId='6'
                     Name="TotalSalary"
                     Width="200"
                     IsReadOnly="True" />
-                <TextBox x:ConnectionId='6'
+                <TextBox x:ConnectionId='7'
                     Name="TotalBonus"
                     Width="200"
                     Margin="93,0,0,0"
                     IsReadOnly="True" />
-                <TextBox x:ConnectionId='7'
+                <TextBox x:ConnectionId='8'
                     Name="TotalDeduction"
                     Width="200"
                     Margin="93,0,0,0"
                     IsReadOnly="True" />
-                <TextBox x:ConnectionId='8'
+                <TextBox x:ConnectionId='9'
                     Name="TotalSalaryAfterBonus"
                     Width="200"
                     Margin="93,0,0,0"
@@ -270,7 +271,7 @@
                 Width="1080"
                 Margin="0,15"
                 Orientation="Horizontal">
-                <TextBox x:ConnectionId='4'
+                <TextBox x:ConnectionId='5'
                     Name="details"
                     Width="1080"
                     PlaceholderText="Enter the Details About Salary" />
@@ -280,7 +281,7 @@
                 Margin="0,30"
                 HorizontalAlignment="Right"
                 Orientation="Horizontal">
-                <Button x:ConnectionId='3'
+                <Button x:ConnectionId='4'
                     Width="200"
                     Margin="0,0,28,0"
                     Background="BlueViolet"
@@ -301,6 +302,16 @@
             Title="Added!"
             Margin="0,100,0,0"
             Subtitle="New Salary Added Successfully! Check details">
+            <muxc:TeachingTip.IconSource>
+                <muxc:SymbolIconSource Symbol="Refresh" />
+            </muxc:TeachingTip.IconSource>
+        </muxc:TeachingTip>
+
+        <muxc:TeachingTip x:ConnectionId='3'
+            x:Name="FailSalaryToggleTeaching"
+            Title="Failure!"
+            Margin="0,100,0,0"
+            Subtitle="Faliure">
             <muxc:TeachingTip.IconSource>
                 <muxc:SymbolIconSource Symbol="Refresh" />
             </muxc:TeachingTip.IconSource>

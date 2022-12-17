@@ -12,8 +12,9 @@
     <Grid>
         <StackPanel>
             <TextBlock
-                Margin="0,20,0,10"
-                FontSize="30"
+                Margin="0,20,0,20"
+                FontSize="27"
+                FontWeight="Bold"
                 Text="Pay Salary"
                 TextAlignment="Center" />
             <StackPanel
@@ -301,6 +302,16 @@
             Title="Added!"
             Margin="0,100,0,0"
             Subtitle="New Salary Added Successfully! Check details">
+            <muxc:TeachingTip.IconSource>
+                <muxc:SymbolIconSource Symbol="Refresh" />
+            </muxc:TeachingTip.IconSource>
+        </muxc:TeachingTip>
+
+        <muxc:TeachingTip
+            x:Name="FailSalaryToggleTeaching"
+            Title="Failure!"
+            Margin="0,100,0,0"
+            Subtitle="Faliure">
             <muxc:TeachingTip.IconSource>
                 <muxc:SymbolIconSource Symbol="Refresh" />
             </muxc:TeachingTip.IconSource>
