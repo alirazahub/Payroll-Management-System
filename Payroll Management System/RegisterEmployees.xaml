@@ -130,36 +130,26 @@
                 VerticalAlignment="Center"
                 Orientation="Horizontal">
                 <ComboBox
-                    x:Name="employeeDepartment"
+                    x:Name="empDepartments"
                     Width="350"
                     Margin="6"
                     Padding="3"
                     ui:FrameworkElementExtensions.Cursor="Hand"
                     Header="Department of Employee"
+                    ItemsSource="{x:Bind departs}"
                     PlaceholderText="Select Department">
-                    <ComboBoxItem Content="Adminstration" />
-                    <ComboBoxItem Content="Human Resource" />
-                    <ComboBoxItem Content="Customer Services" />
-                    <ComboBoxItem Content="Accounting and Finance" />
-                    <ComboBoxItem Content="Marketing" />
-                    <ComboBoxItem Content="Research and Developement" />
-                    <ComboBoxItem Content="Other" />
+                    <ComboBoxItem Content="{Binding departs}" />
                 </ComboBox>
                 <ComboBox
-                    x:Name="employeeDesignation"
+                    x:Name="empDesignation"
                     Width="350"
                     Margin="6"
                     Padding="3"
                     ui:FrameworkElementExtensions.Cursor="Hand"
                     Header="Designation of Employee"
+                    ItemsSource="{x:Bind desigss}"
                     PlaceholderText="Select Designation">
-                    <ComboBoxItem Content="CEO" />
-                    <ComboBoxItem Content="Managing Director" />
-                    <ComboBoxItem Content="General Manager" />
-                    <ComboBoxItem Content="Supervisor" />
-                    <ComboBoxItem Content="Assistant Manager" />
-                    <ComboBoxItem Content="Team Lead" />
-                    <ComboBoxItem Content="Team Member" />
+                    <ComboBoxItem Content="{Binding desigss}" />
                 </ComboBox>
                 <CalendarDatePicker
                     Name="joiningDate"

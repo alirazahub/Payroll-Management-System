@@ -284,5 +284,49 @@ namespace Payroll_Management_System
                 dbConnection.Execute("delete from ToDoTable where taskID = "+ taskID + "");
             }
         }
+
+        public int getDepartID(string name)
+        {
+            using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
+            {
+                int output = (int)dbConnection.Query<int>("SELECT payrollManagementDB.dbo.[FDepartmentID]('"+name+"')").FirstOrDefault();
+                return output;
+            }
+        }
+
+        public List<ReadingEmployees> getAllDepartments()
+        {
+            using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
+            {
+                var output = dbConnection.Query<ReadingEmployees>("SELECT departmentName from DepartmentsTable").ToList();
+                return output;
+            }
+        }
+
+        public int getDesigID(string name)
+        {
+            using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
+            {
+                int output = (int)dbConnection.Query<int>("SELECT payrollManagementDB.dbo.[FDesignationID]('" + name + "')").FirstOrDefault();
+                return output;
+            }
+        }
+        public string getDesigName(int id)
+        {
+            using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
+            {
+                string output = (string)dbConnection.Query<string>("select designationName from designationTable where designationId = '" + id + "'").FirstOrDefault();
+                return output;
+            }
+        }
+
+        public List<ReadingEmployees> getAllDesignations()
+        {
+            using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
+            {
+                var output = dbConnection.Query<ReadingEmployees>("SELECT designationName from DesignationTable").ToList();
+                return output;
+            }
+        }
     }
 }

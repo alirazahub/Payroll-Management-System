@@ -25,22 +25,40 @@ namespace Payroll_Management_System
     /// </summary>
     public sealed partial class RegisterEmployees : Page
     {
+        DataAccess cont = new DataAccess();
+        List<ReadingEmployees> departments;
+        List<ReadingEmployees> designations;
+        List<string> departs = new List<string>();
+        List<string> desigss = new List<string>();
         
         public RegisterEmployees()
         {
             this.InitializeComponent();
+            departments = cont.getAllDepartments();
+            designations = cont.getAllDesignations();
+            foreach(ReadingEmployees dep in departments)
+            {
+                departs.Add(dep.departmentName.ToString());
+            }
+            foreach (ReadingEmployees desigs in designations)
+            {
+                desigss.Add(desigs.designationName.ToString());
+            }
         }
         private void registerEmployee_Click(object sender, RoutedEventArgs e)
         {
-            var gend = "";
-            if (gender.SelectedIndex == 0)
-            {
-                gend = "Male";
-            }
-            else
-            {
-                gend = "Female";
-            }
+            DataAccess cont = new DataAccess();
+            ComboBoxItem combo = (ComboBoxItem)gender.SelectedItem;
+            string gend = combo.Content.ToString();
+
+            //ComboBoxItem combo2 = (ComboBoxItem)empDepartments.SelectedItem;
+            string departName = empDepartments.SelectedItem.ToString();
+            int departID = cont.getDepartID(departName);
+
+            //ComboBoxItem combo3 = (ComboBoxItem)empDesignation.SelectedItem;
+            string desigName = empDesignation.SelectedItem.ToString();
+            int desigID = cont.getDesigID(desigName);
+
             Employees newEmployee = new Employees();
             newEmployee.employeeName = employeeName.Text;
             newEmployee.employeeNIC = employeeNIC.Text;
@@ -51,12 +69,11 @@ namespace Payroll_Management_System
             newEmployee.street = street.Text;
             newEmployee.town = town.Text;
             newEmployee.city = city.Text;
-            newEmployee.employeeDepartment = employeeDepartment.SelectedIndex + 1;
-            newEmployee.employeeDesignation = employeeDesignation.SelectedIndex + 1;
+            newEmployee.employeeDepartment = departID;
+            newEmployee.employeeDesignation = desigID;
             newEmployee.joiningDate = joiningDate.Date.Value.ToString();
             newEmployee.employeeDOB = employeeDOB.Date.Value.ToString();
 
-            DataAccess cont = new DataAccess();
             string res = cont.addEmployee(newEmployee);
             if(res == "Done")
             {

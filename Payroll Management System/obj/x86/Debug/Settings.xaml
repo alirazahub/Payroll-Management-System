@@ -9,7 +9,13 @@
     mc:Ignorable="d">
 
     <Grid>
-        <TextBlock Text="Settings Page" />
+        <TextBlock
+            Margin="0,20,0,0"
+            FontSize="27"
+            FontWeight="Bold"
+            Text="Settings"
+            TextAlignment="Center" />
+        <StackPanel />
     </Grid>
 </Page>
 

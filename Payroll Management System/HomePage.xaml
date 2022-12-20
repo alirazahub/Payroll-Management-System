@@ -113,15 +113,16 @@
                         Width="70"
                         Margin="20,0,0,0"
                         DisplayName="A R" />
-                    <StackPanel Margin="17,6,0,0">
+                    <StackPanel Margin="15,3,0,0">
                         <TextBlock
                             Name="UserName"
                             Margin="0,6,0,10"
                             FontSize="18" />
                         <TextBlock
-                            FontSize="13"
-                            Foreground="MediumPurple"
-                            Text="CEO" />
+                            Name="currentDesig"
+                            FontSize="17"
+                            FontWeight="Bold"
+                            Foreground="MediumPurple" />
                     </StackPanel>
                     <StackPanel Margin="620,8,0,0">
                         <StackPanel Orientation="Horizontal">

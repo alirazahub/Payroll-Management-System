@@ -35,7 +35,7 @@
                     FontSize="16"
                     FontWeight="Bold"
                     Text="Task:" />
-                <TextBox x:ConnectionId='23'
+                <TextBox x:ConnectionId='24'
                     Name="task"
                     Width="300"
                     Margin="20,0,0,0"
@@ -66,7 +66,7 @@
                         FontSize="16"
                         FontWeight="Bold"
                         Text="Task:" />
-                    <TextBox x:ConnectionId='21'
+                    <TextBox x:ConnectionId='22'
                         Name="taskName"
                         Width="300"
                         Margin="20,0,0,0" />
@@ -80,7 +80,7 @@
                         FontSize="16"
                         FontWeight="Bold"
                         Text="Status:" />
-                    <ComboBox x:ConnectionId='20'
+                    <ComboBox x:ConnectionId='21'
                         Name="taskStatus"
                         Width="300"
                         Margin="8,0,0,0">
@@ -118,10 +118,10 @@
                             Name="UserName"
                             Margin="0,6,0,10"
                             FontSize="18" />
-                        <TextBlock
+                        <TextBlock x:ConnectionId='19'
+                            Name="currentDesig"
                             FontSize="13"
-                            Foreground="MediumPurple"
-                            Text="CEO" />
+                            Foreground="MediumPurple" />
                     </StackPanel>
                     <StackPanel Margin="620,8,0,0">
                         <StackPanel Orientation="Horizontal">

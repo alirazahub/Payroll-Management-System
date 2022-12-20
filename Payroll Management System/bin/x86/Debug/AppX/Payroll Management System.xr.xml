@@ -16,6 +16,8 @@
     <RootPropertyPathName Name="hours" />
     <RootPropertyPathName Name="date" />
     <RootPropertyPathName Name="Details" />
+    <RootPropertyPathName Name="desigss" />
+    <RootPropertyPathName Name="departs" />
     <RootPropertyPathName Name="Description" />
     <RootPropertyPathName Name="SourceUrl" />
     <RootPropertyPathName Name="PicturePath" />
@@ -136,6 +138,7 @@
       <RootProperty Name="PlaceholderText" />
       <RootProperty Name="Name" />
       <RootProperty Name="Header" />
+      <RootProperty Name="ItemsSource" />
       <RootEvent Name="SelectionChanged" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ComboBoxItem">

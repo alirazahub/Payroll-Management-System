@@ -25,10 +25,11 @@ namespace Payroll_Management_System
     /// </summary>
     public sealed partial class HomePage : Page
     {
-            List<ReadingEmployees> empByDeparts;
-            List<ReadingEmployees> directors;
-            List<ToDoList> todo;
-            DataAccess cont = new DataAccess();
+        List<ReadingEmployees> empByDeparts;
+        List<ReadingEmployees> directors;
+        List<ToDoList> todo;
+        DataAccess cont = new DataAccess();
+        string designationName; 
         public HomePage()
         {
             this.InitializeComponent();
@@ -38,6 +39,7 @@ namespace Payroll_Management_System
             displayName.DisplayName = MainPage.currentUser.employeeName.ToString();
             UserEmail.Text = MainPage.currentUser.employeeEmail.ToString();
             Userusername.Text = MainPage.currentUser.username.ToString();
+            currentDesig.Text = MainPage.currentUser.designationName.ToString();
             todo = cont.getToDoList();
         }
 
