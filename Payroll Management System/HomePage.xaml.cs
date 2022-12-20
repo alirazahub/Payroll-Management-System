@@ -28,11 +28,18 @@ namespace Payroll_Management_System
         List<ReadingEmployees> empByDeparts;
         List<ReadingEmployees> directors;
         List<ToDoList> todo;
+        List<ReadingEmployees> departments;
+        List<string> departs = new List<string>();
         DataAccess cont = new DataAccess();
         string designationName; 
         public HomePage()
         {
             this.InitializeComponent();
+            departments = cont.getAllDepartments();
+            foreach (ReadingEmployees dep in departments)
+            {
+                departs.Add(dep.departmentName.ToString());
+            }
             empByDeparts = cont.getEmployeeByDep("Research & Developement");
             directors = cont.getManagingDirectors();
             UserName.Text = MainPage.currentUser.employeeName.ToString();
@@ -45,8 +52,7 @@ namespace Payroll_Management_System
 
         private void empDepart_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ComboBoxItem comb = (ComboBoxItem)empDepart.SelectedItem;
-            string seleted = comb.Content.ToString();
+            string seleted = empDepart.SelectedItem.ToString();
             empByDeparts = cont.getEmployeeByDep(seleted);
             empByDepart.ItemsSource = null;
             empByDepart.ItemsSource = empByDeparts;

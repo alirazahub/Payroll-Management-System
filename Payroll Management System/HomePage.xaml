@@ -167,15 +167,10 @@
                             Width="220"
                             Margin="40,6"
                             Padding="13,0"
+                            ItemsSource="{x:Bind departs}"
                             PlaceholderText="Select Department"
                             SelectionChanged="empDepart_SelectionChanged">
-                            <ComboBoxItem Content="Administration" />
-                            <ComboBoxItem Content="Human Resorce" />
-                            <ComboBoxItem Content="Customer Services" />
-                            <ComboBoxItem Content="Accounting &amp; Finance" />
-                            <ComboBoxItem Content="Marketing" />
-                            <ComboBoxItem Content="Research &amp; Developement" />
-                            <ComboBoxItem Content="Other" />
+                            <ComboBoxItem Content="{Binding departs}" />
                         </ComboBox>
                         <StackPanel
                             Width="738"

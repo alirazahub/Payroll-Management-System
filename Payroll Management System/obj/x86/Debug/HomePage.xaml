@@ -113,14 +113,15 @@
                         Width="70"
                         Margin="20,0,0,0"
                         DisplayName="A R" />
-                    <StackPanel Margin="17,6,0,0">
+                    <StackPanel Margin="15,3,0,0">
                         <TextBlock x:ConnectionId='18'
                             Name="UserName"
                             Margin="0,6,0,10"
                             FontSize="18" />
                         <TextBlock x:ConnectionId='19'
                             Name="currentDesig"
-                            FontSize="13"
+                            FontSize="17"
+                            FontWeight="Bold"
                             Foreground="MediumPurple" />
                     </StackPanel>
                     <StackPanel Margin="620,8,0,0">
@@ -166,15 +167,10 @@
                             Width="220"
                             Margin="40,6"
                             Padding="13,0"
+                                                          
                             PlaceholderText="Select Department"
                                                                          >
-                            <ComboBoxItem Content="Administration" />
-                            <ComboBoxItem Content="Human Resorce" />
-                            <ComboBoxItem Content="Customer Services" />
-                            <ComboBoxItem Content="Accounting &amp; Finance" />
-                            <ComboBoxItem Content="Marketing" />
-                            <ComboBoxItem Content="Research &amp; Developement" />
-                            <ComboBoxItem Content="Other" />
+                            <ComboBoxItem Content="{Binding departs}" />
                         </ComboBox>
                         <StackPanel
                             Width="738"
