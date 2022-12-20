@@ -172,42 +172,84 @@ namespace Payroll_Management_System
             }
         }
 
-        public void present(string date,int id)
+        public string present(string date,int id)
         {
             using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
             {
-                dbConnection.Execute("EXEC SPMarkAttendance @employeeID = "+id+", @status ='Present',@date = '"+date+"'");
+                try
+                {
+                    dbConnection.Execute("EXEC SPMarkAttendance @employeeID = "+id+", @status ='Present',@date = '"+date+"'");
+                    return "Done";
+                }
+                catch (Exception ex)
+                {
+                    return "Error: "+ex;
+                }
             }
         }
 
-        public void absent(string date, int id)
+        public string absent(string date, int id)
         {
             using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
             {
-                dbConnection.Execute("EXEC SPMarkAttendance @employeeID = " + id + ", @status ='Absent',@date = '" + date + "'");
+                try
+                {
+                    dbConnection.Execute("EXEC SPMarkAttendance @employeeID = " + id + ", @status ='Absent',@date = '" + date + "'");
+                    return "Done";
+                }
+                catch (Exception ex)
+                {
+                    return "Error: " + ex;
+                }
             }
         }
 
-        public void leaveA(string date, int id)
+        public string leaveA(string date, int id)
         {
             using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
             {
-                dbConnection.Execute("EXEC SPMarkAttendance @employeeID = " + id + ", @status ='LeaveAccepted',@date = '" + date + "'");
+                try
+                {
+                    dbConnection.Execute("EXEC SPMarkAttendance @employeeID = " + id + ", @status ='LeaveAccepted',@date = '" + date + "'");
+                    return "Done";
+                }
+                catch (Exception ex)
+                {
+                    return "Error: " + ex;
+                }
             }
         }
 
-        public void leaveR(string date, int id)
+        public string leaveR(string date, int id)
         {
             using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
             {
-                dbConnection.Execute("EXEC SPMarkAttendance @employeeID = " + id + ", @status ='LeaveRejected',@date = '" + date + "'");
+                try
+                {
+                    dbConnection.Execute("EXEC SPMarkAttendance @employeeID = " + id + ", @status ='LeaveRejected',@date = '" + date + "'");
+                    return "Done";
+                }
+                catch (Exception ex)
+                {
+                    return "Error: " + ex;
+                }
+                
             }
         }
-        public void deleteAttend(string date, int id)
+        public string deleteAttend(string date, int id)
         {
             using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
             {
-                dbConnection.Execute("delete from attendanceTable where employeeid = "+id+" and date = '"+date+"'");
+                try
+                {
+                    dbConnection.Execute("delete from attendanceTable where employeeid = " + id + " and date = '" + date + "'");
+                    return "Done";
+                }
+                catch (Exception ex)
+                {
+                    return "Error: " + ex;
+                }
+                
             }
         }
 

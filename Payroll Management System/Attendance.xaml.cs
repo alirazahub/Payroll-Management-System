@@ -5,6 +5,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Security.Cryptography;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -101,65 +102,329 @@ namespace Payroll_Management_System
 
         private void present_Checked(object sender, RoutedEventArgs e)
         {
-            string dat = attendanceDate.Date.Value.ToString();
-            int index = markAttendanceList.SelectedIndex;
-            int empID = employees[index].employeeID;
-            cont.present(dat,empID);
+            string dat = "-";
+            int index = -1;
+            try
+            {
+                dat = attendanceDate.Date.Value.ToString();
+            }
+            catch (Exception)
+            {
+                AddAttendanceToggleTeaching.Title = "Error";
+                AddAttendanceToggleTeaching.Subtitle = "Select Date First";
+                AddAttendanceToggleTeaching.IsOpen= true;
+            }
+            
+            index = markAttendanceList.SelectedIndex;
+            if (index == -1)
+            {
+                AddAttendanceToggleTeaching.Title = "Error";
+                AddAttendanceToggleTeaching.Subtitle = "Select the Employee Item First";
+                AddAttendanceToggleTeaching.IsOpen = true;
+            }
+            else
+            {
+                int empID = employees[index].employeeID;
+                string res = cont.present(dat, empID);
+                if (res == "Done")
+                {
+                    AddAttendanceToggleTeaching.Title = "Marked";
+                    AddAttendanceToggleTeaching.Subtitle = "Employee with empployeeID: "+empID+" is Present";
+                    AddAttendanceToggleTeaching.IsOpen = true;
+                }
+                else
+                {
+                    AddAttendanceToggleTeaching.Title = "Error";
+                    AddAttendanceToggleTeaching.Subtitle = "Already Marked";
+                    AddAttendanceToggleTeaching.IsOpen = true;
+                }
+            }
 
         }
 
         private void present_Unchecked(object sender, RoutedEventArgs e)
         {
-            string dat = attendanceDate.Date.Value.ToString();
-            int index = markAttendanceList.SelectedIndex;
-            int empID = employees[index].employeeID;
-            cont.deleteAttend(dat,empID);
+            string dat = "-";
+            int index = -1;
+            try
+            {
+                dat = attendanceDate.Date.Value.ToString();
+            }
+            catch (Exception)
+            {
+                AddAttendanceToggleTeaching.Title = "Error";
+                AddAttendanceToggleTeaching.Subtitle = "Select Date First";
+                AddAttendanceToggleTeaching.IsOpen = true;
+            }
+
+            index = markAttendanceList.SelectedIndex;
+            if (index == -1)
+            {
+                AddAttendanceToggleTeaching.Title = "Error";
+                AddAttendanceToggleTeaching.Subtitle = "Select the Employee Item First";
+                AddAttendanceToggleTeaching.IsOpen = true;
+            }
+            else
+            {
+                int empID = employees[index].employeeID;
+                string res = cont.deleteAttend(dat, empID);
+                if (res == "Done")
+                {
+                    AddAttendanceToggleTeaching.Title = "UnMarked";
+                    AddAttendanceToggleTeaching.Subtitle = "Attendance Removed";
+                    AddAttendanceToggleTeaching.IsOpen = true;
+                }
+                else
+                {
+                    AddAttendanceToggleTeaching.Title = "Error";
+                    AddAttendanceToggleTeaching.Subtitle = "Attendance not Marked";
+                    AddAttendanceToggleTeaching.IsOpen = true;
+                }
+            }
         }
 
         private void absent_Checked(object sender, RoutedEventArgs e)
         {
-            string dat = attendanceDate.Date.Value.ToString();
-            int index = markAttendanceList.SelectedIndex;
-            int empID = employees[index].employeeID;
-            cont.absent(dat,empID);
+            string dat = "-";
+            int index = -1;
+            try
+            {
+                dat = attendanceDate.Date.Value.ToString();
+            }
+            catch (Exception)
+            {
+                AddAttendanceToggleTeaching.Title = "Error";
+                AddAttendanceToggleTeaching.Subtitle = "Select Date First";
+                AddAttendanceToggleTeaching.IsOpen = true;
+            }
+
+            index = markAttendanceList.SelectedIndex;
+            if (index == -1)
+            {
+                AddAttendanceToggleTeaching.Title = "Error";
+                AddAttendanceToggleTeaching.Subtitle = "Select the Employee Item First";
+                AddAttendanceToggleTeaching.IsOpen = true;
+            }
+            else
+            {
+                int empID = employees[index].employeeID;
+                string res = cont.absent(dat, empID);
+                if (res == "Done")
+                {
+                    AddAttendanceToggleTeaching.Title = "Marked";
+                    AddAttendanceToggleTeaching.Subtitle = "Employee with empployeeID: " + empID + " is absent";
+                    AddAttendanceToggleTeaching.IsOpen = true;
+                }
+                else
+                {
+                    AddAttendanceToggleTeaching.Title = "Error";
+                    AddAttendanceToggleTeaching.Subtitle = "Already Marked";
+                    AddAttendanceToggleTeaching.IsOpen = true;
+                }
+            }
         }
 
         private void absent_Unchecked(object sender, RoutedEventArgs e)
         {
-            string dat = attendanceDate.Date.Value.ToString();
-            int index = markAttendanceList.SelectedIndex;
-            int empID = employees[index].employeeID;
-            cont.deleteAttend(dat,empID);
+            string dat = "-";
+            int index = -1;
+            try
+            {
+                dat = attendanceDate.Date.Value.ToString();
+            }
+            catch (Exception)
+            {
+                AddAttendanceToggleTeaching.Title = "Error";
+                AddAttendanceToggleTeaching.Subtitle = "Select Date First";
+                AddAttendanceToggleTeaching.IsOpen = true;
+            }
+
+            index = markAttendanceList.SelectedIndex;
+            if (index == -1)
+            {
+                AddAttendanceToggleTeaching.Title = "Error";
+                AddAttendanceToggleTeaching.Subtitle = "Select the Employee Item First";
+                AddAttendanceToggleTeaching.IsOpen = true;
+            }
+            else
+            {
+                int empID = employees[index].employeeID;
+                string res = cont.deleteAttend(dat, empID);
+                if(res == "Done")
+                {
+                    AddAttendanceToggleTeaching.Title = "UnMarked";
+                    AddAttendanceToggleTeaching.Subtitle = "Attendance Removed";
+                    AddAttendanceToggleTeaching.IsOpen = true;
+                }
+                else
+                {
+                    AddAttendanceToggleTeaching.Title = "Error";
+                    AddAttendanceToggleTeaching.Subtitle = "Attendance not Marked";
+                    AddAttendanceToggleTeaching.IsOpen = true;
+                }
+            }
         }
         private void leaveA_Checked(object sender, RoutedEventArgs e)
         {
-            string dat = attendanceDate.Date.Value.ToString();
-            int index = markAttendanceList.SelectedIndex;
-            int empID = employees[index].employeeID;
-            cont.leaveA(dat,empID);
+            string dat = "-";
+            int index = -1;
+            try
+            {
+                dat = attendanceDate.Date.Value.ToString();
+            }
+            catch (Exception)
+            {
+                AddAttendanceToggleTeaching.Title = "Error";
+                AddAttendanceToggleTeaching.Subtitle = "Select Date First";
+                AddAttendanceToggleTeaching.IsOpen = true;
+            }
+
+            index = markAttendanceList.SelectedIndex;
+            if (index == -1)
+            {
+                AddAttendanceToggleTeaching.Title = "Error";
+                AddAttendanceToggleTeaching.Subtitle = "Select the Employee Item First";
+                AddAttendanceToggleTeaching.IsOpen = true;
+            }
+            else
+            {
+                int empID = employees[index].employeeID;
+                string res = cont.leaveA(dat, empID);
+                if (res == "Done")
+                {
+                    AddAttendanceToggleTeaching.Title = "Marked";
+                    AddAttendanceToggleTeaching.Subtitle = "Employee with empployeeID: " + empID + " is on Leave and Leave is Accepted";
+                    AddAttendanceToggleTeaching.IsOpen = true;
+                }
+                else
+                {
+                    AddAttendanceToggleTeaching.Title = "Error";
+                    AddAttendanceToggleTeaching.Subtitle = "Already Marked";
+                    AddAttendanceToggleTeaching.IsOpen = true;
+                }
+            }
         }
 
         private void leaveA_Unchecked(object sender, RoutedEventArgs e)
         {
-            string dat = attendanceDate.Date.Value.ToString();
-            int index = markAttendanceList.SelectedIndex;
-            int empID = employees[index].employeeID;
-            cont.deleteAttend(dat,empID);
+            string dat = "-";
+            int index = -1;
+            try
+            {
+                dat = attendanceDate.Date.Value.ToString();
+            }
+            catch (Exception)
+            {
+                AddAttendanceToggleTeaching.Title = "Error";
+                AddAttendanceToggleTeaching.Subtitle = "Select Date First";
+                AddAttendanceToggleTeaching.IsOpen = true;
+            }
+
+            index = markAttendanceList.SelectedIndex;
+            if (index == -1)
+            {
+                AddAttendanceToggleTeaching.Title = "Error";
+                AddAttendanceToggleTeaching.Subtitle = "Select the Employee Item First";
+                AddAttendanceToggleTeaching.IsOpen = true;
+            }
+            else
+            {
+                int empID = employees[index].employeeID;
+                string res = cont.deleteAttend(dat, empID);
+                if (res == "Done")
+                {
+                    AddAttendanceToggleTeaching.Title = "UnMarked";
+                    AddAttendanceToggleTeaching.Subtitle = "Attendance Removed";
+                    AddAttendanceToggleTeaching.IsOpen = true;
+                }
+                else
+                {
+                    AddAttendanceToggleTeaching.Title = "Error";
+                    AddAttendanceToggleTeaching.Subtitle = "Attendance is not Marked";
+                    AddAttendanceToggleTeaching.IsOpen = true;
+                }
+            }
         }
         private void leaveR_Checked(object sender, RoutedEventArgs e)
         {
-            string dat = attendanceDate.Date.Value.ToString();
-            int index = markAttendanceList.SelectedIndex;
-            int empID = employees[index].employeeID;
-            cont.leaveR(dat,empID);
+            string dat = "-";
+            int index = -1;
+            try
+            {
+                dat = attendanceDate.Date.Value.ToString();
+            }
+            catch (Exception)
+            {
+                AddAttendanceToggleTeaching.Title = "Error";
+                AddAttendanceToggleTeaching.Subtitle = "Select Date First";
+                AddAttendanceToggleTeaching.IsOpen = true;
+            }
+
+            index = markAttendanceList.SelectedIndex;
+            if (index == -1)
+            {
+                AddAttendanceToggleTeaching.Title = "Error";
+                AddAttendanceToggleTeaching.Subtitle = "Select the Employee Item First";
+                AddAttendanceToggleTeaching.IsOpen = true;
+            }
+            else
+            {
+                int empID = employees[index].employeeID;
+                string res = cont.leaveR(dat, empID);
+                if (res == "Done")
+                {
+                    AddAttendanceToggleTeaching.Title = "Marked";
+                    AddAttendanceToggleTeaching.Subtitle = "Employee with empployeeID: " + empID + " is on Leave and leave is Rejected";
+                    AddAttendanceToggleTeaching.IsOpen = true;
+                }
+                else
+                {
+                    AddAttendanceToggleTeaching.Title = "Error";
+                    AddAttendanceToggleTeaching.Subtitle = "Already Marked";
+                    AddAttendanceToggleTeaching.IsOpen = true;
+                }
+            }
         }
 
         private void leaveR_Unchecked(object sender, RoutedEventArgs e)
         {
-            string dat = attendanceDate.Date.Value.ToString();
-            int index = markAttendanceList.SelectedIndex;
-            int empID = employees[index].employeeID;
-            cont.deleteAttend(dat,empID);
+            string dat = "-";
+            int index = -1;
+            try
+            {
+                dat = attendanceDate.Date.Value.ToString();
+            }
+            catch (Exception)
+            {
+                AddAttendanceToggleTeaching.Title = "Error";
+                AddAttendanceToggleTeaching.Subtitle = "Select Date First";
+                AddAttendanceToggleTeaching.IsOpen = true;
+            }
+
+            index = markAttendanceList.SelectedIndex;
+            if (index == -1)
+            {
+                AddAttendanceToggleTeaching.Title = "Error";
+                AddAttendanceToggleTeaching.Subtitle = "Select the Employee Item First";
+                AddAttendanceToggleTeaching.IsOpen = true;
+            }
+            else
+            {
+                int empID = employees[index].employeeID;
+                string res = cont.deleteAttend(dat, empID);
+                if(res == "Done")
+                {
+                    AddAttendanceToggleTeaching.Title = "UnMarked";
+                    AddAttendanceToggleTeaching.Subtitle = "Attendance Removed";
+                    AddAttendanceToggleTeaching.IsOpen = true;
+                }
+                else
+                {
+                    AddAttendanceToggleTeaching.Title = "Error";
+                    AddAttendanceToggleTeaching.Subtitle = "Attendance is not Marked";
+                    AddAttendanceToggleTeaching.IsOpen = true;
+                }
+            }
         }
     }
 }
