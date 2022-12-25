@@ -130,6 +130,9 @@
       <DependentUpon>Bonus.xaml</DependentUpon>
     </Compile>
     <Compile Include="Calculations.cs" />
+    <Compile Include="ChangingDetails.xaml.cs">
+      <DependentUpon>ChangingDetails.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ReadingEmployees.cs" />
     <Compile Include="DataAccess.cs" />
     <Compile Include="Employees.cs" />
@@ -188,6 +191,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Bonus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChangingDetails.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

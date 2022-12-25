@@ -36,7 +36,8 @@ namespace Payroll_Management_System
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
+            Frame.Navigate(typeof(RegisterEmployees));
+
         }
 
         private async void Button_Click_1(object sender, RoutedEventArgs e)

@@ -293,6 +293,14 @@ namespace Payroll_Management_System
                 return output;
             }
         }
+        public string getDepartName(int id)
+        {
+            using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
+            {
+                string output = (string)dbConnection.Query<string>("select departmentName from departmentsTable where departmentId = '" + id + "'").FirstOrDefault();
+                return output;
+            }
+        }
 
         public List<ReadingEmployees> getAllDepartments()
         {
@@ -325,6 +333,33 @@ namespace Payroll_Management_System
             using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
             {
                 var output = dbConnection.Query<ReadingEmployees>("SELECT designationName from DesignationTable").ToList();
+                return output;
+            }
+        }
+
+        public void updateDepart(int EmpID, int PrevDepartID, int NewDepartID, int PrevDesigID, int NewDesigID)
+        {
+            using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
+            {
+                string date = System.DateTime.Now.ToString("yyyy/MM/dd");
+                dbConnection.Execute("EXEC SPUpdateEmployeeDetails @employeeID = " + EmpID + ", @PrevDepartID = " + PrevDepartID + ", @PrevDesigID = " + PrevDesigID + ", @NewDepartID = " + NewDepartID + ", @NewDesigID = " + NewDesigID + ", @updatedBy = " + MainPage.currentUser.employeeID + ", @updatedOn = '" + date + "'\r\n");
+            }
+        }
+
+        public void updateDesig(int EmpID, int PrevDepartID, int NewDepartID,int PrevDesigID, int NewDesigID)
+        {
+            using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
+            {
+                string date = System.DateTime.Now.ToString("yyyy/MM/dd");
+                dbConnection.Execute("EXEC SPUpdateEmployeeDetails @employeeID = "+EmpID+", @PrevDepartID = "+PrevDepartID+", @PrevDesigID = "+ PrevDesigID + ", @NewDepartID = "+ NewDepartID + ", @NewDesigID = "+ NewDesigID + ", @updatedBy = "+MainPage.currentUser.employeeID+", @updatedOn = '"+ date + "'\r\n");
+            }
+        }
+
+        public Employees getEmployeesDetails(int id)
+        {
+            using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
+            {
+                var output = dbConnection.Query<Employees>("select * from EmployeesTable where employeeID = " + id + "").FirstOrDefault();
                 return output;
             }
         }

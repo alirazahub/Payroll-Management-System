@@ -130,10 +130,10 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Data.Binding" />
     <RootType FullName="Windows.UI.Xaml.Controls.ComboBox">
+      <RootProperty Name="Width" />
       <RootProperty Name="Margin" />
       <RootProperty Name="SelectedIndex" />
       <RootProperty Name="Items" />
-      <RootProperty Name="Width" />
       <RootProperty Name="Padding" />
       <RootProperty Name="ItemsSource" />
       <RootProperty Name="PlaceholderText" />
@@ -189,6 +189,8 @@
       <RootProperty Name="Value" />
     </RootType>
     <RootType FullName="Payroll_Management_System.Bonus" />
+    <RootType FullName="Microsoft.UI.Xaml.Controls.BreadcrumbBar" />
+    <RootType FullName="Payroll_Management_System.ChangingDetails" />
     <RootType FullName="Microsoft.UI.Xaml.Controls.InfoBar">
       <RootProperty Name="Title" />
       <RootProperty Name="Width" />

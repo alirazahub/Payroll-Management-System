@@ -90,6 +90,7 @@
                     Text="Sort By:" />
                 <ComboBox x:ConnectionId='20'
                     x:Name="sortBy"
+                    Width="150"
                     Margin="0,10,0,0"
                     SelectedIndex="0">
                     <ComboBoxItem Content="ID" />

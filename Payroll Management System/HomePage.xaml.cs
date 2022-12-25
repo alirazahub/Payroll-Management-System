@@ -30,8 +30,7 @@ namespace Payroll_Management_System
         List<ToDoList> todo;
         List<ReadingEmployees> departments;
         List<string> departs = new List<string>();
-        DataAccess cont = new DataAccess();
-        string designationName; 
+        DataAccess cont = new DataAccess(); 
         public HomePage()
         {
             this.InitializeComponent();
