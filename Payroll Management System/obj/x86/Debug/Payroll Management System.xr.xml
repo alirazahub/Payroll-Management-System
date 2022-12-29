@@ -189,7 +189,6 @@
       <RootProperty Name="Value" />
     </RootType>
     <RootType FullName="Payroll_Management_System.Bonus" />
-    <RootType FullName="Microsoft.UI.Xaml.Controls.BreadcrumbBar" />
     <RootType FullName="Payroll_Management_System.ChangingDetails" />
     <RootType FullName="Microsoft.UI.Xaml.Controls.InfoBar">
       <RootProperty Name="Title" />

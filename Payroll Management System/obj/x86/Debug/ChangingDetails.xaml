@@ -2,17 +2,20 @@
     x:Class="Payroll_Management_System.ChangingDetails"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Payroll_Management_System"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:Payroll_Management_System"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
     xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
     xmlns:ui="using:Microsoft.Toolkit.Uwp.UI"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    mc:Ignorable="d">
 
     <Grid>
-        <Button x:ConnectionId='2'                     >Go Back</Button>
-        <muxc:BreadcrumbBar x:ConnectionId='3' x:Name="BreadcrumbBar1"/>
+        <StackPanel>
+            <StackPanel>
+                <Button x:ConnectionId='2'                     >Go Back</Button>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Page>
 

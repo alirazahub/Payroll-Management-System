@@ -11,6 +11,10 @@
     mc:Ignorable="d">
 
     <Grid>
-        <Button Click="Button_Click">Go Back</Button>
+        <StackPanel>
+            <StackPanel>
+                <Button Click="Button_Click">Go Back</Button>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Page>
