@@ -11,10 +11,318 @@
     mc:Ignorable="d">
 
     <Grid>
-        <StackPanel>
-            <StackPanel>
-                <Button Click="Button_Click">Go Back</Button>
+        <muxc:TeachingTip
+            x:Name="UpdateToggleTeaching"
+            Title="Updated!"
+            Margin="0,100,0,0"
+            Subtitle="">
+            <muxc:TeachingTip.IconSource>
+                <muxc:SymbolIconSource Symbol="Refresh" />
+            </muxc:TeachingTip.IconSource>
+        </muxc:TeachingTip>
+
+        <ContentDialog
+            x:Name="updateDepartContentDialog"
+            CloseButtonText="Cancel"
+            IsPrimaryButtonEnabled="False"
+            PrimaryButtonText="Update">
+
+            <ContentDialog.TitleTemplate>
+                <DataTemplate>
+                    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                        <TextBlock Text="Change Employee's Department" />
+                    </StackPanel>
+                </DataTemplate>
+            </ContentDialog.TitleTemplate>
+            <StackPanel
+                Padding="20"
+                BorderBrush="Gray"
+                BorderThickness="1"
+                CornerRadius="6">
+                <TextBox
+                    Name="empName"
+                    Margin="0,10"
+                    Header="Name"
+                    IsReadOnly="True" />
+                <TextBox
+                    Name="empNIC"
+                    Margin="0,10"
+                    Header="CINIC"
+                    IsReadOnly="True" />
+                <TextBox
+                    Name="currentDepartment"
+                    Margin="0,10"
+                    Header="Current Department"
+                    IsReadOnly="True" />
+                <ComboBox
+                    x:Name="empDepartments"
+                    Width="350"
+                    Margin="0,10"
+                    Padding="3"
+                    ui:FrameworkElementExtensions.Cursor="Hand"
+                    Header="Updated Department"
+                    ItemsSource="{x:Bind departs}"
+                    PlaceholderText="Select Department">
+                    <ComboBoxItem Content="{Binding departs}" />
+                </ComboBox>
             </StackPanel>
+        </ContentDialog>
+
+        <ContentDialog
+            x:Name="updateDesigContentDialog"
+            CloseButtonText="Cancel"
+            IsPrimaryButtonEnabled="False"
+            PrimaryButtonText="Update">
+
+            <ContentDialog.TitleTemplate>
+                <DataTemplate>
+                    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                        <TextBlock Text="Change Employee's Designation" />
+                    </StackPanel>
+                </DataTemplate>
+            </ContentDialog.TitleTemplate>
+            <StackPanel
+                Padding="20"
+                BorderBrush="Gray"
+                BorderThickness="1"
+                CornerRadius="6">
+                <TextBox
+                    Name="empName1"
+                    Margin="0,10"
+                    Header="Name"
+                    IsReadOnly="True" />
+                <TextBox
+                    Name="empNIC1"
+                    Margin="0,10"
+                    Header="CINIC"
+                    IsReadOnly="True" />
+                <TextBox
+                    Name="currentDesignation"
+                    Margin="0,10"
+                    IsReadOnly="True" />
+                <ComboBox
+                    x:Name="empDesignation"
+                    Width="350"
+                    Margin="6"
+                    Padding="3"
+                    ui:FrameworkElementExtensions.Cursor="Hand"
+                    Header="Designation of Employee"
+                    ItemsSource="{x:Bind desigss}"
+                    PlaceholderText="Select Designation">
+                    <ComboBoxItem Content="{Binding desigss}" />
+                </ComboBox>
+            </StackPanel>
+        </ContentDialog>
+        <StackPanel>
+
+            <StackPanel
+                Width="1100"
+                Margin="0,30,0,20"
+                Orientation="Horizontal">
+                <Button
+                    ui:FrameworkElementExtensions.Cursor="Hand"
+                    Background="Transparent"
+                    Click="Button_Click3">
+                    <StackPanel Orientation="Horizontal">
+                        <SymbolIcon Margin="0,0,10,0" Symbol="Back" />
+                        <TextBlock
+                            FontSize="20"
+                            FontWeight="Bold"
+                            Text="Back" />
+                    </StackPanel>
+                </Button>
+                <TextBlock
+                    Margin="620,0,0,0"
+                    FontSize="20"
+                    FontWeight="Bold"
+                    Text="Changed Departments OR Designations" />
+            </StackPanel>
+            <StackPanel
+                Width="1100"
+                Padding="0,10"
+                Background="#323232"
+                CornerRadius="6"
+                Orientation="Horizontal">
+                <TextBlock
+                    Margin="10,6,0,0"
+                    FontWeight="Bold"
+                    Text="Change Employee's Department" />
+                <TextBlock Margin="230,6,0,0" Text="Employee ID: " />
+                <TextBox
+                    Name="empID"
+                    Width="100"
+                    Margin="20,0,0,0"
+                    PlaceholderText="Emp-1" />
+                <Button
+                    Margin="230,0,0,0"
+                    ui:FrameworkElementExtensions.Cursor="Hand"
+                    Click="Button_Click"
+                    Style="{StaticResource AccentButtonStyle}">
+                    <StackPanel Orientation="Horizontal">
+                        <SymbolIcon Margin="0,0,10,0" Symbol="Edit" />
+                        <TextBlock Text="Change Department" />
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+
+            <StackPanel
+                Width="1100"
+                Margin="0,40"
+                Padding="0,10"
+                Background="#323232"
+                CornerRadius="6"
+                Orientation="Horizontal">
+                <TextBlock
+                    Margin="10,6,0,0"
+                    FontWeight="Bold"
+                    Text="Change Employee's Designation" />
+                <TextBlock Margin="230,6,0,0" Text="Employee ID: " />
+                <TextBox
+                    Name="empID1"
+                    Width="100"
+                    Margin="20,0,0,0"
+                    PlaceholderText="Emp-1" />
+                <Button
+                    Margin="230,0,0,0"
+                    ui:FrameworkElementExtensions.Cursor="Hand"
+                    Click="Button_Click_1"
+                    Style="{StaticResource AccentButtonStyle}">
+                    <StackPanel Orientation="Horizontal">
+                        <SymbolIcon Margin="0,0,10,0" Symbol="Edit" />
+                        <TextBlock Text="Change Designation" />
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+            <StackPanel Width="1100" Margin="0,0,0,10">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock
+                        FontSize="20"
+                        FontWeight="Bold"
+                        Text="Employees whose Department or Designation Changed" />
+                </StackPanel>
+                <muxc:NavigationViewItemSeparator />
+            </StackPanel>
+            <StackPanel
+                Width="1100"
+                Margin="0,10,0,0"
+                Padding="0,10"
+                Background="#323232"
+                CornerRadius="5"
+                Orientation="Horizontal">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="13" />
+                        <ColumnDefinition Width="165" />
+                        <ColumnDefinition Width="200" />
+                        <ColumnDefinition Width="180" />
+                        <ColumnDefinition Width="170" />
+                        <ColumnDefinition Width="167" />
+                        <ColumnDefinition Width="110" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        FontWeight="Bold"
+                        Text="Name" />
+                    <TextBlock
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        FontWeight="Bold"
+                        Text="Previous Department" />
+                    <TextBlock
+                        Grid.Row="0"
+                        Grid.Column="3"
+                        FontWeight="Bold"
+                        Text="New Department" />
+                    <TextBlock
+                        Grid.Row="0"
+                        Grid.Column="4"
+                        FontWeight="Bold"
+                        Text="Previous Designation" />
+                    <TextBlock
+                        Grid.Row="0"
+                        Grid.Column="5"
+                        FontWeight="Bold"
+                        Text="New Designation" />
+                    <TextBlock
+                        Grid.Row="0"
+                        Grid.Column="6"
+                        FontWeight="Bold"
+                        Text="Changed By" />
+                    <TextBlock
+                        Grid.Row="0"
+                        Grid.Column="7"
+                        FontWeight="Bold"
+                        Text="Changed On" />
+                </Grid>
+            </StackPanel>
+            <ListView
+                Name="empByDepart"
+                Width="1100"
+                Height="380"
+                Padding="1"
+                BorderBrush="#272727"
+                BorderThickness="1"
+                CornerRadius="6"
+                ItemsSource="{x:Bind details}"
+                SelectionMode="Single">
+                <ListView.ItemTemplate>
+
+                    <DataTemplate>
+
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="160" />
+                                <ColumnDefinition Width="200" />
+                                <ColumnDefinition Width="180" />
+                                <ColumnDefinition Width="170" />
+                                <ColumnDefinition Width="170" />
+                                <ColumnDefinition Width="120" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Text="{Binding employeeName}" />
+                            <TextBlock
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Text="{Binding PreviousDepartment}" />
+                            <TextBlock
+                                Grid.Row="0"
+                                Grid.Column="2"
+                                Text="{Binding NewDepartment}" />
+                            <TextBlock
+                                Grid.Row="0"
+                                Grid.Column="3"
+                                Text="{Binding PreviousDesignation}" />
+                            <TextBlock
+                                Grid.Row="0"
+                                Grid.Column="4"
+                                Text="{Binding NewDesignation}" />
+                            <TextBlock
+                                Grid.Row="0"
+                                Grid.Column="5"
+                                Text="{Binding UpdatedBy}" />
+                            <TextBlock
+                                Grid.Row="0"
+                                Grid.Column="6"
+                                Text="{Binding updatedOn}" />
+                        </Grid>
+
+                    </DataTemplate>
+
+                </ListView.ItemTemplate>
+            </ListView>
         </StackPanel>
     </Grid>
 </Page>

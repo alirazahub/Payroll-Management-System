@@ -11,6 +11,7 @@ App.xbf
 Attendance.xbf
 Bonus.xbf
 ChangingDetails.xbf
+ChangingSalary.xbf
 HomePage.xbf
 MainFrame.xbf
 MainPage.xbf
@@ -19,4 +20,5 @@ RegisterEmployees.xbf
 Report.xbf
 Salary.xbf
 Settings.xbf
+ViewAdmins.xbf
 Properties\Default.rd.xml

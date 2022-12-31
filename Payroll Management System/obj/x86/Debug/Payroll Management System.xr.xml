@@ -15,12 +15,25 @@
     <RootPropertyPathName Name="totalBonus" />
     <RootPropertyPathName Name="hours" />
     <RootPropertyPathName Name="date" />
-    <RootPropertyPathName Name="Details" />
-    <RootPropertyPathName Name="departs" />
+    <RootPropertyPathName Name="updatedOn" />
+    <RootPropertyPathName Name="UpdatedBy" />
+    <RootPropertyPathName Name="NewDesignation" />
+    <RootPropertyPathName Name="PreviousDesignation" />
+    <RootPropertyPathName Name="NewDepartment" />
+    <RootPropertyPathName Name="PreviousDepartment" />
     <RootPropertyPathName Name="desigss" />
+    <RootPropertyPathName Name="departs" />
+    <RootPropertyPathName Name="wasValidTill" />
+    <RootPropertyPathName Name="BonusPerHour" />
+    <RootPropertyPathName Name="perDay" />
+    <RootPropertyPathName Name="DesignationName" />
+    <RootPropertyPathName Name="designationID" />
+    <RootPropertyPathName Name="PerDay" />
+    <RootPropertyPathName Name="Details" />
     <RootPropertyPathName Name="Description" />
     <RootPropertyPathName Name="SourceUrl" />
     <RootPropertyPathName Name="PicturePath" />
+    <RootPropertyPathName Name="username" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application">
@@ -117,8 +130,8 @@
       <RootProperty Name="ItemsSource" />
       <RootProperty Name="ItemTemplate" />
       <RootProperty Name="SelectionMode" />
-      <RootProperty Name="Margin" />
       <RootProperty Name="Padding" />
+      <RootProperty Name="Margin" />
       <RootProperty Name="Resources" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.BindExtension" />
@@ -135,10 +148,10 @@
       <RootProperty Name="SelectedIndex" />
       <RootProperty Name="Items" />
       <RootProperty Name="Padding" />
+      <RootProperty Name="Header" />
       <RootProperty Name="ItemsSource" />
       <RootProperty Name="PlaceholderText" />
       <RootProperty Name="Name" />
-      <RootProperty Name="Header" />
       <RootEvent Name="SelectionChanged" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ComboBoxItem">
@@ -189,18 +202,23 @@
       <RootProperty Name="Value" />
     </RootType>
     <RootType FullName="Payroll_Management_System.Bonus" />
+    <RootType FullName="Microsoft.Toolkit.Uwp.UI.FrameworkElementExtensions">
+      <RootMethod Name="GetCursor" />
+      <RootMethod Name="SetCursor" />
+    </RootType>
     <RootType FullName="Payroll_Management_System.ChangingDetails" />
     <RootType FullName="Microsoft.UI.Xaml.Controls.InfoBar">
       <RootProperty Name="Title" />
+      <RootProperty Name="IsClosable" />
+      <RootProperty Name="IsOpen" />
+      <RootProperty Name="Message" />
+      <RootProperty Name="Severity" />
       <RootProperty Name="Width" />
       <RootProperty Name="Height" />
       <RootProperty Name="CornerRadius" />
-      <RootProperty Name="IsClosable" />
-      <RootProperty Name="IsOpen" />
-      <RootProperty Name="Severity" />
       <RootProperty Name="Margin" />
-      <RootProperty Name="Message" />
     </RootType>
+    <RootType FullName="Payroll_Management_System.ChangingSalary" />
     <RootType FullName="Windows.UI.Xaml.Controls.CommandBar">
       <RootProperty Name="Margin" />
       <RootProperty Name="Background" />
@@ -212,10 +230,6 @@
       <RootProperty Name="Icon" />
       <RootProperty Name="Label" />
       <RootEvent Name="Click" />
-    </RootType>
-    <RootType FullName="Microsoft.Toolkit.Uwp.UI.FrameworkElementExtensions">
-      <RootMethod Name="GetCursor" />
-      <RootMethod Name="SetCursor" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.CalendarView">
       <RootProperty Name="Height" />
@@ -262,8 +276,8 @@
     </RootType>
     <RootType FullName="Payroll_Management_System.MainFrame" />
     <RootType FullName="Windows.UI.Xaml.Controls.Image">
-      <RootProperty Name="Source" />
       <RootProperty Name="Height" />
+      <RootProperty Name="Source" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Stretch" />
       <RootProperty Name="Width" />
@@ -287,5 +301,6 @@
     </RootType>
     <RootType FullName="Payroll_Management_System.Salary" />
     <RootType FullName="Payroll_Management_System.Settings" />
+    <RootType FullName="Payroll_Management_System.ViewAdmins" />
   </Roots.RootTypes>
 </Roots>

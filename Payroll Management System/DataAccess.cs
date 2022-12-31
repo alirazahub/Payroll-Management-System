@@ -336,6 +336,14 @@ namespace Payroll_Management_System
                 return output;
             }
         }
+        public List<Designations> getAllDesigs()
+        {
+            using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
+            {
+                var output = dbConnection.Query<Designations>("SELECT * from DesignationTable").ToList();
+                return output;
+            }
+        }
 
         public void updateDepart(int EmpID, int PrevDepartID, int NewDepartID, int PrevDesigID, int NewDesigID)
         {
@@ -361,6 +369,106 @@ namespace Payroll_Management_System
             {
                 var output = dbConnection.Query<Employees>("select * from EmployeesTable where employeeID = " + id + "").FirstOrDefault();
                 return output;
+            }
+        }
+
+        public List<PrevAndNewDetails> getPrevAndNewDetails()
+        {
+            using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
+            {
+                var output = dbConnection.Query<PrevAndNewDetails>("EXEC SPGetPreviousAndNewDetails").ToList();
+                return output;
+            }
+        }
+        public string changeSalary(int desigID, int perDay, int perHour,string date,int changedBy)
+        {
+            using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
+            {
+                try
+                {
+                    dbConnection.Execute("EXEC SPChangeSalary @designationID = "+ desigID + ", @changedBy = "+ changedBy + ", @PerDay = "+ perDay + ", @BonusPerHour = "+ perHour + ", @wasValidTill = '"+date+"'");
+                    return "Done";
+                }catch(Exception ex)
+                {
+                    return "Error: "+ex;
+                }
+            }
+        }
+        public  Designations getDesigs(int desigID)
+        {
+            using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
+            {
+                var output = dbConnection.Query<Designations>("select * from DesignationTable where designationID = "+desigID+"").FirstOrDefault();
+                return output;
+            }
+        }
+        public List<ChangedSalaries> getPreviousSalaries()
+        {
+            using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
+            {
+                var output = dbConnection.Query<ChangedSalaries>("EXEC SPGetPreviousSalaryDetails").ToList();
+                return output;
+            }
+        }
+        public List<ReadingEmployees> getNonAdmins()
+        {
+            using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
+            {
+                var output = dbConnection.Query<ReadingEmployees>("EXEC SPGetEmployeeDetailsByUserNameAndPassword").ToList();
+                return output;
+            }
+        }
+
+        public string makeAdmin(int id, string username, string password)
+        {
+            using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
+            {
+                try
+                {
+                    dbConnection.Execute("EXEC SPUpdateUsernameAndPassword @employeeID = "+id+", @username = '"+ username + "', @password = '"+ password + "'");
+                    return "Done";
+                }
+                catch (Exception ex)
+                {
+                    return "Error: "+ex;
+                }
+            }
+        }
+        public string removeAdmin(int id)
+        {
+            using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
+            {
+                try
+                {
+                    dbConnection.Execute("EXEC SPSetUsernameAndPasswordToNull @employeeID ="+ id+"");
+                    return "Done";
+                }
+                catch (Exception ex)
+                {
+                    return "Error: "+ex;
+                }
+            }
+        }
+        public ReadingEmployees getEmpDetail(int empID)
+        {
+            using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
+            {
+                var output = dbConnection.Query<ReadingEmployees>("EXEC SPGetEmployeeDetailsByEmployeeID @employeeID = "+empID+"").FirstOrDefault();
+                return output;
+            }
+        }
+        public string passwordReset(int empID)
+        {
+            using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
+            {
+                try
+                {
+                    dbConnection.Execute("EXEC SPResetUsernameAndPassword @employeeID = "+empID+"");
+                    return "Done";
+                }catch(Exception ex)
+                {
+                    return "Error: " +ex;
+                }
             }
         }
     }

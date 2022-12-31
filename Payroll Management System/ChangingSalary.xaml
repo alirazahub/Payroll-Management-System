@@ -1,0 +1,286 @@
+﻿<Page
+    x:Class="Payroll_Management_System.ChangingSalary"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:Payroll_Management_System"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    xmlns:ui="using:Microsoft.Toolkit.Uwp.UI"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    mc:Ignorable="d">
+
+    <Grid>
+        <StackPanel Width="1100">
+            <muxc:TeachingTip
+                x:Name="SalaryChangedToggleTeaching"
+                Title="Success!"
+                Margin="0,100,0,0"
+                Subtitle="Changed Successfully!">
+                <muxc:TeachingTip.IconSource>
+                    <muxc:SymbolIconSource Symbol="Refresh" />
+                </muxc:TeachingTip.IconSource>
+            </muxc:TeachingTip>
+            <StackPanel>
+                <StackPanel Margin="0,10" Orientation="Horizontal">
+                    <Button
+                        ui:FrameworkElementExtensions.Cursor="Hand"
+                        Background="Transparent"
+                        Click="Button_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <SymbolIcon Margin="0,0,10,0" Symbol="Back" />
+                            <TextBlock Text="Back" />
+                        </StackPanel>
+                    </Button>
+                    <TextBlock
+                        Margin="640,0,0,0"
+                        FontSize="20"
+                        FontWeight="Bold"
+                        Text="Change Per Day Salary or Per Hour Rate" />
+                </StackPanel>
+
+                <StackPanel Margin="0,10" Orientation="Horizontal">
+                    <TextBlock
+                        Margin="0,4,20,0"
+                        FontSize="20"
+                        FontWeight="Bold"
+                        Text="Select Designation" />
+                    <ComboBox
+                        x:Name="desigsss"
+                        Width="210"
+                        Margin="6"
+                        Padding="5"
+                        ui:FrameworkElementExtensions.Cursor="Hand"
+                        ItemsSource="{x:Bind desigss}"
+                        PlaceholderText="Select Designation"
+                        SelectionChanged="desigsss_SelectionChanged">
+                        <ComboBoxItem Content="{Binding desigss}" />
+                    </ComboBox>
+                </StackPanel>
+                <StackPanel Margin="0,60" Orientation="Horizontal">
+                    <TextBox
+                        Name="DesigID"
+                        Margin="0,0,5,0"
+                        Header="Designation ID"
+                        IsReadOnly="True" />
+                    <TextBox
+                        Name="perDayy"
+                        Margin="5,0"
+                        Header="Per Day Salary" />
+                    <TextBox
+                        Name="perHourr"
+                        Margin="5,0"
+                        Header="Per Hour Rate" />
+
+                    <Button
+                        Margin="5,25,0,0"
+                        ui:FrameworkElementExtensions.Cursor="Hand"
+                        Click="Button_Click_1"
+                        Style="{StaticResource AccentButtonStyle}">
+                        <StackPanel Orientation="Horizontal">
+                            <SymbolIcon Margin="0,0,10,0" Symbol="Accept" />
+                            <TextBlock Text="Change Now" />
+                        </StackPanel>
+                    </Button>
+
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Width="600" Margin="450,-270,0,0">
+                <TextBlock Margin="4,10,0,10" Text="Current Salaries" />
+                <StackPanel
+                    Padding="0,10"
+                    Background="#323232"
+                    CornerRadius="5"
+                    Orientation="Horizontal">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition Width="50" />
+                            <ColumnDefinition Width="190" />
+                            <ColumnDefinition Width="200" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            FontWeight="Bold"
+                            Text="ID" />
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.Column="2"
+                            FontWeight="Bold"
+                            Text="Designation Name" />
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.Column="3"
+                            FontWeight="Bold"
+                            Text="Salary PerDay" />
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.Column="4"
+                            FontWeight="Bold"
+                            Text="Bonus PerHour" />
+                    </Grid>
+                </StackPanel>
+                <ListView
+                    Name="desigList"
+                    Height="150"
+                    BorderBrush="#323232"
+                    BorderThickness="1"
+                    CornerRadius="6"
+                    ItemsSource="{x:Bind Alldesignations}">
+                    <ListView.ItemTemplate>
+
+                        <DataTemplate>
+
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50" />
+                                    <ColumnDefinition Width="220" />
+                                    <ColumnDefinition Width="200" />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    Text="{Binding designationID}" />
+                                <TextBlock
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    Text="{Binding designationName}" />
+                                <TextBlock
+                                    Grid.Row="0"
+                                    Grid.Column="2"
+                                    Text="{Binding PerDay}" />
+                                <TextBlock
+                                    Grid.Row="0"
+                                    Grid.Column="3"
+                                    Text="{Binding BonusPerHour}" />
+                            </Grid>
+
+                        </DataTemplate>
+
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+            <StackPanel>
+                <StackPanel Width="1100">
+                    <muxc:InfoBar
+                        Title="Salaries"
+                        IsClosable="False"
+                        IsOpen="True"
+                        Message="Previous Salary Rates and Bonus Rates"
+                        Severity="Informational" />
+                    <StackPanel
+                        Padding="0,10"
+                        Background="#323232"
+                        CornerRadius="5"
+                        Orientation="Horizontal">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="10" />
+                                <ColumnDefinition Width="70" />
+                                <ColumnDefinition Width="220" />
+                                <ColumnDefinition Width="180" />
+                                <ColumnDefinition Width="200" />
+                                <ColumnDefinition Width="210" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                FontWeight="Bold"
+                                Text="ID" />
+                            <TextBlock
+                                Grid.Row="0"
+                                Grid.Column="2"
+                                FontWeight="Bold"
+                                Text="Designation Name" />
+                            <TextBlock
+                                Grid.Row="0"
+                                Grid.Column="3"
+                                FontWeight="Bold"
+                                Text="Salary PerDay" />
+                            <TextBlock
+                                Grid.Row="0"
+                                Grid.Column="4"
+                                FontWeight="Bold"
+                                Text="Bonus PerHour" />
+                            <TextBlock
+                                Grid.Row="0"
+                                Grid.Column="5"
+                                FontWeight="Bold"
+                                Text="Updated By" />
+                            <TextBlock
+                                Grid.Row="0"
+                                Grid.Column="6"
+                                FontWeight="Bold"
+                                Text="Was Valid Till" />
+                        </Grid>
+                    </StackPanel>
+                    <ListView
+                        Name="previousSalary"
+                        Height="270"
+                        BorderBrush="#323232"
+                        BorderThickness="1"
+                        CornerRadius="6"
+                        ItemsSource="{x:Bind previousSalaries}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="70" />
+                                        <ColumnDefinition Width="220" />
+                                        <ColumnDefinition Width="180" />
+                                        <ColumnDefinition Width="200" />
+                                        <ColumnDefinition Width="210" />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock
+                                        Grid.Row="0"
+                                        Grid.Column="0"
+                                        Text="{Binding designationID}" />
+                                    <TextBlock
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        Text="{Binding DesignationName}" />
+                                    <TextBlock
+                                        Grid.Row="0"
+                                        Grid.Column="2"
+                                        Text="{Binding perDay}" />
+                                    <TextBlock
+                                        Grid.Row="0"
+                                        Grid.Column="3"
+                                        Text="{Binding BonusPerHour}" />
+                                    <TextBlock
+                                        Grid.Row="0"
+                                        Grid.Column="4"
+                                        Text="{Binding UpdatedBy}" />
+                                    <TextBlock
+                                        Grid.Row="0"
+                                        Grid.Column="5"
+                                        Text="{Binding wasValidTill}" />
+                                </Grid>
+
+                            </DataTemplate>
+
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
