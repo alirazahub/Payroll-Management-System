@@ -131,13 +131,18 @@
     </Compile>
     <Compile Include="Calculations.cs" />
     <Compile Include="ChangedSalaries.cs" />
-    <Compile Include="ChangingDetails.xaml.cs">
-      <DependentUpon>ChangingDetails.xaml</DependentUpon>
+    <Compile Include="ChangingDepartment.xaml.cs">
+      <DependentUpon>ChangingDepartment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChangingDesignation.xaml.cs">
+      <DependentUpon>ChangingDesignation.xaml</DependentUpon>
     </Compile>
     <Compile Include="ChangingSalary.xaml.cs">
       <DependentUpon>ChangingSalary.xaml</DependentUpon>
     </Compile>
     <Compile Include="Designations.cs" />
+    <Compile Include="Payroll.cs" />
+    <Compile Include="PayrollDetailsss.cs" />
     <Compile Include="PrevAndNewDetails.cs" />
     <Compile Include="ReadingEmployees.cs" />
     <Compile Include="DataAccess.cs" />
@@ -203,7 +208,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ChangingDetails.xaml">
+    <Page Include="ChangingDepartment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChangingDesignation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

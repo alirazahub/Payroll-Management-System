@@ -1,5 +1,5 @@
-﻿<Page
-    x:Class="Payroll_Management_System.ChangingDetails"
+﻿<Page x:ConnectionId='1'
+    x:Class="Payroll_Management_System.ChangingDesignation"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -11,7 +11,7 @@
     mc:Ignorable="d">
 
     <Grid>
-        <muxc:TeachingTip
+        <muxc:TeachingTip x:ConnectionId='2'
             x:Name="UpdateToggleTeaching"
             Title="Updated!"
             Margin="0,100,0,0"
@@ -21,54 +21,8 @@
             </muxc:TeachingTip.IconSource>
         </muxc:TeachingTip>
 
-        <ContentDialog
-            x:Name="updateDepartContentDialog"
-            CloseButtonText="Cancel"
-            IsPrimaryButtonEnabled="False"
-            PrimaryButtonText="Update">
 
-            <ContentDialog.TitleTemplate>
-                <DataTemplate>
-                    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-                        <TextBlock Text="Change Employee's Department" />
-                    </StackPanel>
-                </DataTemplate>
-            </ContentDialog.TitleTemplate>
-            <StackPanel
-                Padding="20"
-                BorderBrush="Gray"
-                BorderThickness="1"
-                CornerRadius="6">
-                <TextBox
-                    Name="empName"
-                    Margin="0,10"
-                    Header="Name"
-                    IsReadOnly="True" />
-                <TextBox
-                    Name="empNIC"
-                    Margin="0,10"
-                    Header="CINIC"
-                    IsReadOnly="True" />
-                <TextBox
-                    Name="currentDepartment"
-                    Margin="0,10"
-                    Header="Current Department"
-                    IsReadOnly="True" />
-                <ComboBox
-                    x:Name="empDepartments"
-                    Width="350"
-                    Margin="0,10"
-                    Padding="3"
-                    ui:FrameworkElementExtensions.Cursor="Hand"
-                    Header="Updated Department"
-                    ItemsSource="{x:Bind departs}"
-                    PlaceholderText="Select Department">
-                    <ComboBoxItem Content="{Binding departs}" />
-                </ComboBox>
-            </StackPanel>
-        </ContentDialog>
-
-        <ContentDialog
+        <ContentDialog x:ConnectionId='3'
             x:Name="updateDesigContentDialog"
             CloseButtonText="Cancel"
             IsPrimaryButtonEnabled="False"
@@ -86,28 +40,28 @@
                 BorderBrush="Gray"
                 BorderThickness="1"
                 CornerRadius="6">
-                <TextBox
+                <TextBox x:ConnectionId='10'
                     Name="empName1"
                     Margin="0,10"
                     Header="Name"
                     IsReadOnly="True" />
-                <TextBox
+                <TextBox x:ConnectionId='11'
                     Name="empNIC1"
                     Margin="0,10"
                     Header="CINIC"
                     IsReadOnly="True" />
-                <TextBox
+                <TextBox x:ConnectionId='12'
                     Name="currentDesignation"
                     Margin="0,10"
                     IsReadOnly="True" />
-                <ComboBox
+                <ComboBox x:ConnectionId='13'
                     x:Name="empDesignation"
                     Width="350"
                     Margin="6"
                     Padding="3"
                     ui:FrameworkElementExtensions.Cursor="Hand"
                     Header="Designation of Employee"
-                    ItemsSource="{x:Bind desigss}"
+                                                  
                     PlaceholderText="Select Designation">
                     <ComboBoxItem Content="{Binding desigss}" />
                 </ComboBox>
@@ -119,10 +73,10 @@
                 Width="1100"
                 Margin="0,30,0,20"
                 Orientation="Horizontal">
-                <Button
+                <Button x:ConnectionId='8'
                     ui:FrameworkElementExtensions.Cursor="Hand"
                     Background="Transparent"
-                    Click="Button_Click3">
+                                         >
                     <StackPanel Orientation="Horizontal">
                         <SymbolIcon Margin="0,0,10,0" Symbol="Back" />
                         <TextBlock
@@ -132,37 +86,10 @@
                     </StackPanel>
                 </Button>
                 <TextBlock
-                    Margin="620,0,0,0"
+                    Margin="680,0,0,0"
                     FontSize="20"
                     FontWeight="Bold"
-                    Text="Changed Departments OR Designations" />
-            </StackPanel>
-            <StackPanel
-                Width="1100"
-                Padding="0,10"
-                Background="#323232"
-                CornerRadius="6"
-                Orientation="Horizontal">
-                <TextBlock
-                    Margin="10,6,0,0"
-                    FontWeight="Bold"
-                    Text="Change Employee's Department" />
-                <TextBlock Margin="230,6,0,0" Text="Employee ID: " />
-                <TextBox
-                    Name="empID"
-                    Width="100"
-                    Margin="20,0,0,0"
-                    PlaceholderText="Emp-1" />
-                <Button
-                    Margin="230,0,0,0"
-                    ui:FrameworkElementExtensions.Cursor="Hand"
-                    Click="Button_Click"
-                    Style="{StaticResource AccentButtonStyle}">
-                    <StackPanel Orientation="Horizontal">
-                        <SymbolIcon Margin="0,0,10,0" Symbol="Edit" />
-                        <TextBlock Text="Change Department" />
-                    </StackPanel>
-                </Button>
+                    Text="Change Designation of Employee" />
             </StackPanel>
 
             <StackPanel
@@ -177,15 +104,15 @@
                     FontWeight="Bold"
                     Text="Change Employee's Designation" />
                 <TextBlock Margin="230,6,0,0" Text="Employee ID: " />
-                <TextBox
+                <TextBox x:ConnectionId='6'
                     Name="empID1"
                     Width="100"
                     Margin="20,0,0,0"
                     PlaceholderText="Emp-1" />
-                <Button
+                <Button x:ConnectionId='7'
                     Margin="230,0,0,0"
                     ui:FrameworkElementExtensions.Cursor="Hand"
-                    Click="Button_Click_1"
+                                          
                     Style="{StaticResource AccentButtonStyle}">
                     <StackPanel Orientation="Horizontal">
                         <SymbolIcon Margin="0,0,10,0" Symbol="Edit" />
@@ -260,15 +187,15 @@
                         Text="Changed On" />
                 </Grid>
             </StackPanel>
-            <ListView
-                Name="empByDepart"
+            <ListView x:ConnectionId='4'
+                Name="employeesDetails"
                 Width="1100"
-                Height="380"
+                Height="475"
                 Padding="1"
                 BorderBrush="#272727"
                 BorderThickness="1"
                 CornerRadius="6"
-                ItemsSource="{x:Bind details}"
+                                              
                 SelectionMode="Single">
                 <ListView.ItemTemplate>
 
@@ -326,3 +253,4 @@
         </StackPanel>
     </Grid>
 </Page>
+

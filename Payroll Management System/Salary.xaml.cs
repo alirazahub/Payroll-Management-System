@@ -71,10 +71,11 @@ namespace Payroll_Management_System
             string empid = EmpID.Text;
             newSalary.employeeID = Convert.ToInt16(empid);
             newSalary.Details = details.Text;
+            string Year = SalaryDate.Date.Date.Year.ToString();
+            string Month = SalaryDate.Date.Date.Month.ToString();
+
             string date = System.DateTime.Now.Date.ToString("yyyy/MM/dd");
             newSalary.Date = date;
-            string Year = date.Split('/')[0];
-            string Month = date.Split('/')[1];
             newSalary.Year = Year;
             newSalary.Month = Month;
             string Totsal = TotalSalaryAfterBonus.Text;

@@ -106,8 +106,11 @@
     <AppxPackagedFile Include="C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\bin\x86\Debug\Bonus.xbf">
       <PackagePath>Bonus.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\bin\x86\Debug\ChangingDetails.xbf">
-      <PackagePath>ChangingDetails.xbf</PackagePath>
+    <AppxPackagedFile Include="C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\bin\x86\Debug\ChangingDepartment.xbf">
+      <PackagePath>ChangingDepartment.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\bin\x86\Debug\ChangingDesignation.xbf">
+      <PackagePath>ChangingDesignation.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\bin\x86\Debug\ChangingSalary.xbf">
       <PackagePath>ChangingSalary.xbf</PackagePath>

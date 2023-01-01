@@ -24,6 +24,10 @@ namespace Payroll_Management_System
     /// </summary>
     public sealed partial class AllEmployees : Page
     {
+        List<ReadingEmployees> designations;
+        List<string> emps = new List<string>();
+        
+
         List<ReadingEmployees> employees;
         List<Employees> employeeDetails;
         Employees employe;
@@ -32,8 +36,43 @@ namespace Payroll_Management_System
         {
             this.InitializeComponent();
             employees = cont.getUsers();
+            foreach(ReadingEmployees emp in employees)
+            {
+                emps.Add(emp.employeeName.ToString());
+            }
         }
 
+        private void AutoSuggestBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
+        {
+            // Since selecting an item will also change the text,
+            // only listen to changes caused by user entering text.
+            if (args.Reason == AutoSuggestionBoxTextChangeReason.UserInput)
+            {
+                var suitableItems = new List<string>();
+                var splitText = sender.Text.ToLower().Split(" ");
+                foreach (var cat in emps)
+                {
+                    var found = splitText.All((key) =>
+                    {
+                        return cat.ToLower().Contains(key);
+                    });
+                    if (found)
+                    {
+                        suitableItems.Add(cat);
+                    }
+                }
+                if (suitableItems.Count == 0)
+                {
+                    suitableItems.Add("No results found");
+                }
+                sender.ItemsSource = suitableItems;
+            }
+        }
+
+        private void AutoSuggestBox_SuggestionChosen(AutoSuggestBox sender, AutoSuggestBoxSuggestionChosenEventArgs args)
+        {
+            
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(RegisterEmployees));
@@ -46,7 +85,7 @@ namespace Payroll_Management_System
             ContentDialogResult result = await termsOfUseContentDialog.ShowAsync();
             if (result == ContentDialogResult.Primary)
             {
-                AllEmployees emp = new AllEmployees();
+                
                  string empID = empIDToEdit.Text;
                 int id = Convert.ToInt32(empID);  
                 employeeDetails = cont.getEmployeeDetails(id);
@@ -96,5 +135,6 @@ namespace Payroll_Management_System
         {
 
         }
+
     }
 }

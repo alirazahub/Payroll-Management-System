@@ -107,11 +107,6 @@ C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\
 C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\obj\x86\Debug\Settings.g.cs
 C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\obj\x86\Debug\Settings.xaml
 C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\obj\x86\Debug\Settings.xbf
-C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\bin\x86\Debug\ChangingDetails.xbf
-C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\obj\x86\Debug\ChangingDetails.g.i.cs
-C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\obj\x86\Debug\ChangingDetails.g.cs
-C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\obj\x86\Debug\ChangingDetails.xaml
-C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\obj\x86\Debug\ChangingDetails.xbf
 C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\bin\x86\Debug\ChangingSalary.xbf
 C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\obj\x86\Debug\ChangingSalary.g.i.cs
 C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\obj\x86\Debug\ChangingSalary.g.cs
@@ -122,3 +117,13 @@ C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\
 C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\obj\x86\Debug\ViewAdmins.g.cs
 C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\obj\x86\Debug\ViewAdmins.xaml
 C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\obj\x86\Debug\ViewAdmins.xbf
+C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\bin\x86\Debug\ChangingDepartment.xbf
+C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\obj\x86\Debug\ChangingDepartment.g.i.cs
+C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\obj\x86\Debug\ChangingDepartment.g.cs
+C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\obj\x86\Debug\ChangingDepartment.xaml
+C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\obj\x86\Debug\ChangingDepartment.xbf
+C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\bin\x86\Debug\ChangingDesignation.xbf
+C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\obj\x86\Debug\ChangingDesignation.g.i.cs
+C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\obj\x86\Debug\ChangingDesignation.g.cs
+C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\obj\x86\Debug\ChangingDesignation.xaml
+C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\obj\x86\Debug\ChangingDesignation.xbf

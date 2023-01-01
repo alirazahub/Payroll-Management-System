@@ -50,14 +50,12 @@
                     Text="All Employees" />
                 <AutoSuggestBox
                     Width="300"
-                    Margin="613,30,0,0"
+                    Margin="613,35,0,0"
+                    AutomationProperties.Name="Basic AutoSuggestBox"
                     PlaceholderText="Search Employee"
-                    QueryIcon="Find" />
-                <!--
-                    QuerySubmitted="Control2_QuerySubmitted"
-                    SuggestionChosen="Control2_SuggestionChosen"
-                    TextChanged="Control2_TextChanged"/>
-                -->
+                    QueryIcon="Find"
+                    SuggestionChosen="AutoSuggestBox_SuggestionChosen"
+                    TextChanged="AutoSuggestBox_TextChanged" />
             </StackPanel>
             <StackPanel
                 Width="1100"

@@ -21,8 +21,8 @@
     <RootPropertyPathName Name="PreviousDesignation" />
     <RootPropertyPathName Name="NewDepartment" />
     <RootPropertyPathName Name="PreviousDepartment" />
-    <RootPropertyPathName Name="desigss" />
     <RootPropertyPathName Name="departs" />
+    <RootPropertyPathName Name="desigss" />
     <RootPropertyPathName Name="wasValidTill" />
     <RootPropertyPathName Name="BonusPerHour" />
     <RootPropertyPathName Name="perDay" />
@@ -30,9 +30,12 @@
     <RootPropertyPathName Name="designationID" />
     <RootPropertyPathName Name="PerDay" />
     <RootPropertyPathName Name="Details" />
-    <RootPropertyPathName Name="Description" />
-    <RootPropertyPathName Name="SourceUrl" />
-    <RootPropertyPathName Name="PicturePath" />
+    <RootPropertyPathName Name="Date" />
+    <RootPropertyPathName Name="TotalSalary" />
+    <RootPropertyPathName Name="Bonus" />
+    <RootPropertyPathName Name="Deduction" />
+    <RootPropertyPathName Name="Month" />
+    <RootPropertyPathName Name="Year" />
     <RootPropertyPathName Name="username" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
@@ -53,8 +56,6 @@
       <RootMethod Name="SetRow" />
       <RootMethod Name="GetColumn" />
       <RootMethod Name="SetColumn" />
-      <RootMethod Name="GetRowSpan" />
-      <RootMethod Name="SetRowSpan" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ContentDialog">
       <RootProperty Name="CloseButtonText" />
@@ -91,8 +92,6 @@
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Name" />
       <RootProperty Name="Width" />
-      <RootProperty Name="FontStyle" />
-      <RootProperty Name="TextWrapping" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="Name" />
@@ -132,12 +131,9 @@
       <RootProperty Name="SelectionMode" />
       <RootProperty Name="Padding" />
       <RootProperty Name="Margin" />
-      <RootProperty Name="Resources" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.BindExtension" />
-    <RootType FullName="Windows.UI.Xaml.Controls.RowDefinition">
-      <RootProperty Name="Height" />
-    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.RowDefinition" />
     <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition">
       <RootProperty Name="Width" />
     </RootType>
@@ -166,6 +162,12 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="PlaceholderText" />
       <RootProperty Name="QueryIcon" />
+      <RootEvent Name="SuggestionChosen" />
+      <RootEvent Name="TextChanged" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Automation.AutomationProperties">
+      <RootMethod Name="GetName" />
+      <RootMethod Name="SetName" />
     </RootType>
     <RootType FullName="Payroll_Management_System.AllEmployees" />
     <RootType FullName="Microsoft.UI.Xaml.Controls.TeachingTip">
@@ -206,7 +208,8 @@
       <RootMethod Name="GetCursor" />
       <RootMethod Name="SetCursor" />
     </RootType>
-    <RootType FullName="Payroll_Management_System.ChangingDetails" />
+    <RootType FullName="Payroll_Management_System.ChangingDepartment" />
+    <RootType FullName="Payroll_Management_System.ChangingDesignation" />
     <RootType FullName="Microsoft.UI.Xaml.Controls.InfoBar">
       <RootProperty Name="Title" />
       <RootProperty Name="IsClosable" />
@@ -278,10 +281,6 @@
     <RootType FullName="Windows.UI.Xaml.Controls.Image">
       <RootProperty Name="Height" />
       <RootProperty Name="Source" />
-      <RootProperty Name="Margin" />
-      <RootProperty Name="Stretch" />
-      <RootProperty Name="Width" />
-      <RootProperty Name="VerticalAlignment" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.PasswordBox">
       <RootProperty Name="Name" />
@@ -293,12 +292,12 @@
       <RootMethod Name="SetMask" />
     </RootType>
     <RootType FullName="Payroll_Management_System.RegisterEmployees" />
-    <RootType FullName="Payroll_Management_System.Report" />
     <RootType FullName="Windows.UI.Xaml.Controls.DatePicker">
       <RootProperty Name="Name" />
-      <RootProperty Name="Margin" />
       <RootProperty Name="DayVisible" />
+      <RootProperty Name="Margin" />
     </RootType>
+    <RootType FullName="Payroll_Management_System.Report" />
     <RootType FullName="Payroll_Management_System.Salary" />
     <RootType FullName="Payroll_Management_System.Settings" />
     <RootType FullName="Payroll_Management_System.ViewAdmins" />

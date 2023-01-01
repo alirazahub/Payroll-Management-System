@@ -10,7 +10,8 @@ AllEmployees.xbf
 App.xbf
 Attendance.xbf
 Bonus.xbf
-ChangingDetails.xbf
+ChangingDepartment.xbf
+ChangingDesignation.xbf
 ChangingSalary.xbf
 HomePage.xbf
 MainFrame.xbf

@@ -471,5 +471,31 @@ namespace Payroll_Management_System
                 }
             }
         }
+        public List<Payroll> Payroll()
+        {
+            using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
+            {
+                var output = dbConnection.Query<Payroll>("SELECT employeeID, payrollManagementDB.dbo.FEmployeeName(employeeID) as employeeName, Year, payrollManagementDB.dbo.FMonthName(Month) as [Month], Date, Deduction, Bonus, TotalSalary FROM PayrollTable ").ToList();
+                return output;
+            }
+        }
+
+        public List<Payroll> PayrollMonth(string year, string month)
+        {
+            using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
+            {
+                var output = dbConnection.Query<Payroll>("SELECT employeeID, payrollManagementDB.dbo.FEmployeeName(employeeID) as employeeName, Year, payrollManagementDB.dbo.FMonthName(Month) as [Month], Date, Deduction, Bonus, TotalSalary FROM PayrollTable  where Month = '" + month + "' and Year = '" + year + "'").ToList();
+                return output;
+            }
+        }
+        public PayrollDetailsss SalaryPayrollDetails(int id, string year, string month)
+        {
+            string date = year + "-" + month + "%";
+            using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
+            {
+                var output = dbConnection.Query<PayrollDetailsss>("DECLARE	@return_value int EXEC	@return_value = SPEmployeeDetailsWithSalary @employeeID = "+id+", @monthYear ='"+ date + "'").FirstOrDefault();
+                return output;
+            }
+        }
     }
 }

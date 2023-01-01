@@ -30,7 +30,7 @@
                 <TextBlock>Employee ID</TextBlock>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock>Enter the ID of the Employee you want to Edit.</TextBlock>
-                    <TextBox x:ConnectionId='23'
+                    <TextBox x:ConnectionId='24'
                         Name="empIDToEdit"
                         Width="100"
                         Margin="50,-10,0,0"
@@ -48,16 +48,14 @@
                     FontSize="27"
                     FontWeight="Bold"
                     Text="All Employees" />
-                <AutoSuggestBox
+                <AutoSuggestBox x:ConnectionId='22'
                     Width="300"
-                    Margin="613,30,0,0"
+                    Margin="613,35,0,0"
+                    AutomationProperties.Name="Basic AutoSuggestBox"
                     PlaceholderText="Search Employee"
-                    QueryIcon="Find" />
-                <!--
-                    QuerySubmitted="Control2_QuerySubmitted"
-                    SuggestionChosen="Control2_SuggestionChosen"
-                    TextChanged="Control2_TextChanged"/>
-                -->
+                    QueryIcon="Find"
+                                                                      
+                                                             />
             </StackPanel>
             <StackPanel
                 Width="1100"

@@ -1,0 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Payroll_Management_System
+{
+    public class Payroll
+    {
+        public int employeeID { get; set; }
+        public string employeeName { get; set;}
+        public string Details { get; set;}
+        public string Month { get; set; }
+        public string Year { get; set; }
+        public string Date { get; set; }
+        public int Deduction { get; set; }
+        public int Bonus { get; set; }
+        public int TotalSalary { get; set; }
+    }
+}
