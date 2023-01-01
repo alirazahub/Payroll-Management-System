@@ -222,6 +222,7 @@
       <RootProperty Name="Margin" />
     </RootType>
     <RootType FullName="Payroll_Management_System.ChangingSalary" />
+    <RootType FullName="Payroll_Management_System.CustomSearching" />
     <RootType FullName="Windows.UI.Xaml.Controls.CommandBar">
       <RootProperty Name="Margin" />
       <RootProperty Name="Background" />

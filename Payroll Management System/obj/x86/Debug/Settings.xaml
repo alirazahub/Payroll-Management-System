@@ -25,7 +25,7 @@
                         FontSize="20"
                         FontWeight="Bold"
                         Text="Change Designation" />
-                    <Button x:ConnectionId='14'
+                    <Button x:ConnectionId='13'
                         Width="102"
                         Margin="805,0,0,0"
                         ui:FrameworkElementExtensions.Cursor="Hand"
@@ -47,7 +47,7 @@
                         FontSize="20"
                         FontWeight="Bold"
                         Text="Change Department" />
-                    <Button x:ConnectionId='13'
+                    <Button x:ConnectionId='12'
                         Width="102"
                         Margin="805,0,0,0"
                         ui:FrameworkElementExtensions.Cursor="Hand"
@@ -71,7 +71,7 @@
                         FontSize="20"
                         FontWeight="Bold"
                         Text="Change Salary or PerHour Rate" />
-                    <Button x:ConnectionId='12'
+                    <Button x:ConnectionId='11'
                         Margin="706,0,0,0"
                         ui:FrameworkElementExtensions.Cursor="Hand"
                         Background="Transparent"
@@ -92,7 +92,7 @@
                         FontSize="20"
                         FontWeight="Bold"
                         Text="Who can Login to this System" />
-                    <Button x:ConnectionId='11'
+                    <Button x:ConnectionId='10'
                         Width="102"
                         Margin="717,0,0,0"
                         ui:FrameworkElementExtensions.Cursor="Hand"
@@ -114,7 +114,7 @@
                         FontSize="20"
                         FontWeight="Bold"
                         Text="Custom Searching" />
-                    <Button x:ConnectionId='10'
+                    <Button x:ConnectionId='9'
                         Width="102"
                         Margin="825,0,0,0"
                         ui:FrameworkElementExtensions.Cursor="Hand"
@@ -135,7 +135,7 @@
                         FontSize="20"
                         FontWeight="Bold"
                         Text="Delete Data" />
-                    <Button x:ConnectionId='9'
+                    <Button x:ConnectionId='8'
                         Width="102"
                         Margin="882,0,0,0"
                         ui:FrameworkElementExtensions.Cursor="Hand"
@@ -150,18 +150,17 @@
                 <muxc:NavigationViewItemSeparator />
             </StackPanel>
 
-            <StackPanel Width="1100" Margin="0,10">
+            <!--<StackPanel Width="1100" Margin="0,10">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock
                         FontSize="20"
                         FontWeight="Bold"
                         Text="Pay Custom Salary" />
-                    <Button x:ConnectionId='8'
+                    <Button
                         Width="102"
                         Margin="819,0,0,0"
                         ui:FrameworkElementExtensions.Cursor="Hand"
-                        Background="Transparent"
-                                              >
+                        Background="Transparent">
                         <StackPanel Orientation="Horizontal">
                             <SymbolIcon Margin="0,0,10,0" Symbol="ZeroBars" />
                             <TextBlock Text="Pay" />
@@ -169,7 +168,7 @@
                     </Button>
                 </StackPanel>
                 <muxc:NavigationViewItemSeparator />
-            </StackPanel>
+            </StackPanel>-->
 
             <StackPanel
                 Margin="0,230,0,0"

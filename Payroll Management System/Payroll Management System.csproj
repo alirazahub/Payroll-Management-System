@@ -140,6 +140,9 @@
     <Compile Include="ChangingSalary.xaml.cs">
       <DependentUpon>ChangingSalary.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CustomSearching.xaml.cs">
+      <DependentUpon>CustomSearching.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Designations.cs" />
     <Compile Include="Payroll.cs" />
     <Compile Include="PayrollDetailsss.cs" />
@@ -217,6 +220,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ChangingSalary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomSearching.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
