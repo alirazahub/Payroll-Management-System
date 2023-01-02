@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2023-01-02T09:15:26.183</Modified>
+      <Modified>2023-01-02T16:12:31.887</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\bin\x86\Debug\Payroll Management System.exe">
       <PackagePath>entrypoint\Payroll Management System.exe</PackagePath>
-      <Modified>2023-01-02T09:15:22.338</Modified>
+      <Modified>2023-01-02T16:12:30.023</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alira\.nuget\packages\microsoft.web.webview2\1.0.1264.42\build\..\runtimes\win-x86\native_uap\Microsoft.Web.WebView2.Core.dll">
       <PackagePath>Microsoft.Web.WebView2.Core.dll</PackagePath>
@@ -122,75 +122,75 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\bin\x86\Debug\Payroll Management System.xr.xml">
       <PackagePath>Payroll Management System.xr.xml</PackagePath>
-      <Modified>2023-01-02T08:55:58.053</Modified>
+      <Modified>2023-01-02T16:01:33.777</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2023-01-02T09:15:21.881</Modified>
+      <Modified>2023-01-02T16:12:29.739</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\bin\x86\Debug\AllEmployees.xbf">
       <PackagePath>AllEmployees.xbf</PackagePath>
-      <Modified>2023-01-02T09:15:21.758</Modified>
+      <Modified>2023-01-02T16:12:29.668</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\bin\x86\Debug\Attendance.xbf">
       <PackagePath>Attendance.xbf</PackagePath>
-      <Modified>2023-01-02T09:15:21.775</Modified>
+      <Modified>2023-01-02T16:12:29.675</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\bin\x86\Debug\Bonus.xbf">
       <PackagePath>Bonus.xbf</PackagePath>
-      <Modified>2023-01-02T09:15:21.782</Modified>
+      <Modified>2023-01-02T16:12:29.680</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\bin\x86\Debug\ChangingDepartment.xbf">
       <PackagePath>ChangingDepartment.xbf</PackagePath>
-      <Modified>2023-01-02T09:15:21.788</Modified>
+      <Modified>2023-01-02T16:12:29.684</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\bin\x86\Debug\ChangingDesignation.xbf">
       <PackagePath>ChangingDesignation.xbf</PackagePath>
-      <Modified>2023-01-02T09:15:21.795</Modified>
+      <Modified>2023-01-02T16:12:29.688</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\bin\x86\Debug\ChangingSalary.xbf">
       <PackagePath>ChangingSalary.xbf</PackagePath>
-      <Modified>2023-01-02T09:15:21.805</Modified>
+      <Modified>2023-01-02T16:12:29.692</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\bin\x86\Debug\CustomSearching.xbf">
       <PackagePath>CustomSearching.xbf</PackagePath>
-      <Modified>2023-01-02T09:15:21.883</Modified>
+      <Modified>2023-01-02T16:12:29.740</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\bin\x86\Debug\HomePage.xbf">
       <PackagePath>HomePage.xbf</PackagePath>
-      <Modified>2023-01-02T09:15:21.824</Modified>
+      <Modified>2023-01-02T16:12:29.710</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\bin\x86\Debug\MainFrame.xbf">
       <PackagePath>MainFrame.xbf</PackagePath>
-      <Modified>2023-01-02T09:15:21.884</Modified>
+      <Modified>2023-01-02T16:12:29.740</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2023-01-02T09:15:21.884</Modified>
+      <Modified>2023-01-02T16:12:29.741</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\bin\x86\Debug\NewDesignationOrDepartment.xbf">
       <PackagePath>NewDesignationOrDepartment.xbf</PackagePath>
-      <Modified>2023-01-02T09:15:21.836</Modified>
+      <Modified>2023-01-02T16:12:29.717</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\bin\x86\Debug\RegisterEmployees.xbf">
       <PackagePath>RegisterEmployees.xbf</PackagePath>
-      <Modified>2023-01-02T09:15:21.846</Modified>
+      <Modified>2023-01-02T16:12:29.721</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\bin\x86\Debug\Report.xbf">
       <PackagePath>Report.xbf</PackagePath>
-      <Modified>2023-01-02T09:15:21.856</Modified>
+      <Modified>2023-01-02T16:12:29.726</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\bin\x86\Debug\Salary.xbf">
       <PackagePath>Salary.xbf</PackagePath>
-      <Modified>2023-01-02T09:15:21.864</Modified>
+      <Modified>2023-01-02T16:12:29.732</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\bin\x86\Debug\Settings.xbf">
       <PackagePath>Settings.xbf</PackagePath>
-      <Modified>2023-01-02T09:15:21.872</Modified>
+      <Modified>2023-01-02T16:12:29.735</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\bin\x86\Debug\ViewAdmins.xbf">
       <PackagePath>ViewAdmins.xbf</PackagePath>
-      <Modified>2023-01-02T09:15:21.879</Modified>
+      <Modified>2023-01-02T16:12:29.739</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.22000.0\\redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -210,7 +210,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\bin\x86\Debug\Core\Payroll Management System.exe">
       <PackagePath>Payroll Management System.exe</PackagePath>
-      <Modified>2023-01-02T09:15:26.170</Modified>
+      <Modified>2023-01-02T16:12:31.882</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

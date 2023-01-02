@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Security.Cryptography;
 using System.ServiceModel.Channels;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -47,49 +48,69 @@ namespace Payroll_Management_System
         }
         private void registerEmployee_Click(object sender, RoutedEventArgs e)
         {
-            DataAccess cont = new DataAccess();
-            ComboBoxItem combo = (ComboBoxItem)gender.SelectedItem;
-            string gend = combo.Content.ToString();
-
-            //ComboBoxItem combo2 = (ComboBoxItem)empDepartments.SelectedItem;
-            string departName = empDepartments.SelectedItem.ToString();
-            int departID = cont.getDepartID(departName);
-
-            //ComboBoxItem combo3 = (ComboBoxItem)empDesignation.SelectedItem;
-            string desigName = empDesignation.SelectedItem.ToString();
-            int desigID = cont.getDesigID(desigName);
-
-            Employees newEmployee = new Employees();
-            newEmployee.employeeName = employeeName.Text;
-            newEmployee.employeeNIC = employeeNIC.Text;
-            newEmployee.employeeContact = employeeContact.Text;
-            newEmployee.employeeEmail = employeeEmail.Text;
-            newEmployee.gender = gend;
-            newEmployee.houseNo = houseNo.Text;
-            newEmployee.street = street.Text;
-            newEmployee.town = town.Text;
-            newEmployee.city = city.Text;
-            newEmployee.employeeDepartment = departID;
-            newEmployee.employeeDesignation = desigID;
-            newEmployee.joiningDate = joiningDate.Date.Value.ToString();
-            newEmployee.employeeDOB = employeeDOB.Date.Value.ToString();
-
-            string res = cont.addEmployee(newEmployee);
-            if(res == "Done")
+            try
             {
-                RegisterToggleTeaching.IsOpen = true;
-                employeeName.Text = "";
-                employeeNIC.Text = "";
-                employeeContact.Text = "";
-                employeeEmail.Text = "";
-                houseNo.Text = "";
-                street.Text = "";
-                town.Text = "";
-                city.Text = "";
-            }
-            else
+                DataAccess cont = new DataAccess();
+                ComboBoxItem combo = (ComboBoxItem)gender.SelectedItem;
+                string gend = combo.Content.ToString();
+                //ComboBoxItem combo2 = (ComboBoxItem)empDepartments.SelectedItem;
+                string departName = empDepartments.SelectedItem.ToString();
+                int departID = cont.getDepartID(departName);
+
+                //ComboBoxItem combo3 = (ComboBoxItem)empDesignation.SelectedItem;
+                string desigName = empDesignation.SelectedItem.ToString();
+                int desigID = cont.getDesigID(desigName);
+                if(employeeName.Text == "" || employeeNIC.Text == "" || employeeEmail.Text == "" || departName == "" || desigName=="" || city.Text == "")
+                {
+                    throw new Exception("All Fields Must be Filled");
+                }
+
+                Employees newEmployee = new Employees();
+                newEmployee.employeeName = employeeName.Text;
+                newEmployee.employeeNIC = employeeNIC.Text;
+                newEmployee.employeeContact = employeeContact.Text;
+                newEmployee.employeeEmail = employeeEmail.Text;
+                newEmployee.gender = gend;
+                newEmployee.houseNo = houseNo.Text;
+                newEmployee.street = street.Text;
+                newEmployee.town = town.Text;
+                newEmployee.city = city.Text;
+                newEmployee.employeeDepartment = departID;
+                newEmployee.employeeDesignation = desigID;
+                newEmployee.joiningDate = joiningDate.Date.Value.ToString();
+                newEmployee.employeeDOB = employeeDOB.Date.Value.ToString();
+                int year = employeeDOB.Date.Value.Year;
+                int month = employeeDOB.Date.Value.Month;
+                int date = employeeDOB.Date.Value.Day;
+                DateTime specificDate = new DateTime(year, month, date);
+                DateTime currentDate = DateTime.Now;
+                int result = DateTime.Compare(specificDate, currentDate);
+                if (result <= 0)
+                {
+                    throw new Exception("Date of Birth Should be Less then Today's Date");
+                }
+                string res = cont.addEmployee(newEmployee);
+                if (res == "Done")
+                {
+                    RegisterToggleTeaching.IsOpen = true;
+                    employeeName.Text = "";
+                    employeeNIC.Text = "";
+                    employeeContact.Text = "";
+                    employeeEmail.Text = "";
+                    houseNo.Text = "";
+                    street.Text = "";
+                    town.Text = "";
+                    city.Text = "";
+                }
+                else
+                {
+                    FailToggleTeaching.Subtitle = res;
+                    FailToggleTeaching.IsOpen = true;
+                }
+            }catch(Exception ex)
             {
-                FailToggleTeaching.Subtitle = res;
+                FailToggleTeaching.Title = "Error";
+                FailToggleTeaching.Subtitle = "Error: "+ex;
                 FailToggleTeaching.IsOpen = true;
             }
         }

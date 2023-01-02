@@ -5,6 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="using:Payroll_Management_System"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     mc:Ignorable="d">
 
@@ -302,5 +303,14 @@
                 </Button>
             </StackPanel>
         </ContentDialog>
+        <muxc:TeachingTip
+            x:Name="faliureToggleTeaching"
+            Title="Faliure!"
+            Margin="0,100,0,0"
+            Subtitle="Faliure!">
+            <muxc:TeachingTip.IconSource>
+                <muxc:SymbolIconSource Symbol="Refresh" />
+            </muxc:TeachingTip.IconSource>
+        </muxc:TeachingTip>
     </Grid>
 </Page>

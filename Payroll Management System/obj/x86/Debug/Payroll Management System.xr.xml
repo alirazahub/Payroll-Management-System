@@ -78,6 +78,15 @@
       <RootProperty Name="Background" />
       <RootProperty Name="VerticalAlignment" />
     </RootType>
+    <RootType FullName="Microsoft.UI.Xaml.Controls.TeachingTip">
+      <RootProperty Name="Title" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Subtitle" />
+      <RootProperty Name="IconSource" />
+    </RootType>
+    <RootType FullName="Microsoft.UI.Xaml.Controls.SymbolIconSource">
+      <RootProperty Name="Symbol" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.DataTemplate">
       <RootProperty Name="Template" />
     </RootType>
@@ -173,15 +182,6 @@
       <RootMethod Name="SetName" />
     </RootType>
     <RootType FullName="Payroll_Management_System.AllEmployees" />
-    <RootType FullName="Microsoft.UI.Xaml.Controls.TeachingTip">
-      <RootProperty Name="Title" />
-      <RootProperty Name="Margin" />
-      <RootProperty Name="Subtitle" />
-      <RootProperty Name="IconSource" />
-    </RootType>
-    <RootType FullName="Microsoft.UI.Xaml.Controls.SymbolIconSource">
-      <RootProperty Name="Symbol" />
-    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.CheckBox">
       <RootProperty Name="Name" />
       <RootProperty Name="Content" />

@@ -85,50 +85,55 @@ namespace Payroll_Management_System
             ContentDialogResult result = await termsOfUseContentDialog.ShowAsync();
             if (result == ContentDialogResult.Primary)
             {
-                
-                 string empID = empIDToEdit.Text;
-                int id = Convert.ToInt32(empID);  
-                employeeDetails = cont.getEmployeeDetails(id);
-                employe = employeeDetails[0];
-
-                employeeID.Text = empID;
-                employeeName.Text = employe.employeeName;
-                employeeNIC.Text = employe.employeeNIC;
-                employeeEmail.Text = employe.employeeEmail;
-                employeeContact.Text = employe.employeeContact;
-                gender.Text = employe.gender;
-                houseNo.Text = employe.houseNo;
-                street.Text = employe.street;
-                town.Text = employe.town;
-                city.Text = employe.city;
-                employeeDOB.Text = employe.employeeDOB;
-                editEmployeeDialog.IsPrimaryButtonEnabled = true;
-                ContentDialogResult result2 = await editEmployeeDialog.ShowAsync();
-                if (result2 == ContentDialogResult.Primary)
+                try
                 {
-                    Employees updatedEmployee= new Employees();
-                    updatedEmployee.employeeName = employeeName.Text;
-                    updatedEmployee.employeeNIC = employeeNIC.Text;
-                    updatedEmployee.employeeContact = employeeContact.Text;
-                    updatedEmployee.employeeDOB = employeeDOB.Text;
-                    updatedEmployee.employeeEmail = employeeEmail.Text;
-                    updatedEmployee.town = town.Text;
-                    updatedEmployee.city = city.Text;
-                    updatedEmployee.houseNo = houseNo.Text;
-                    updatedEmployee.street = street.Text;
-                    updatedEmployee.gender = gender.Text;
+                    string empID = empIDToEdit.Text;
+                    int id = Convert.ToInt32(empID);
+                    employeeDetails = cont.getEmployeeDetails(id);
+                    employe = employeeDetails[0];
+                    employeeID.Text = empID;
+                    employeeName.Text = employe.employeeName;
+                    employeeNIC.Text = employe.employeeNIC;
+                    employeeEmail.Text = employe.employeeEmail;
+                    employeeContact.Text = employe.employeeContact;
+                    gender.Text = employe.gender;
+                    houseNo.Text = employe.houseNo;
+                    street.Text = employe.street;
+                    town.Text = employe.town;
+                    city.Text = employe.city;
+                    employeeDOB.Text = employe.employeeDOB;
+                    editEmployeeDialog.IsPrimaryButtonEnabled = true;
+                    ContentDialogResult result2 = await editEmployeeDialog.ShowAsync();
+                    if (result2 == ContentDialogResult.Primary)
+                    {
+                        Employees updatedEmployee = new Employees();
+                        updatedEmployee.employeeName = employeeName.Text;
+                        updatedEmployee.employeeNIC = employeeNIC.Text;
+                        updatedEmployee.employeeContact = employeeContact.Text;
+                        updatedEmployee.employeeDOB = employeeDOB.Text;
+                        updatedEmployee.employeeEmail = employeeEmail.Text;
+                        updatedEmployee.town = town.Text;
+                        updatedEmployee.city = city.Text;
+                        updatedEmployee.houseNo = houseNo.Text;
+                        updatedEmployee.street = street.Text;
+                        updatedEmployee.gender = gender.Text;
 
-                    cont.updateEmployee(updatedEmployee,id);
-                    employees = cont.getUsers();
-                    employeeList.ItemsSource = null;
-                    employeeList.ItemsSource = employees;
+                        cont.updateEmployee(updatedEmployee, id);
+                        employees = cont.getUsers();
+                        employeeList.ItemsSource = null;
+                        employeeList.ItemsSource = employees;
+                    }
+                }catch(Exception ex)
+                {
+                    faliureToggleTeaching.Title = "Error";
+                    faliureToggleTeaching.Subtitle = "Error: "+ex;
+                    faliureToggleTeaching.IsOpen= true;
                 }
-
-            }
+                }
             else
-            {
-                // User pressed Cancel, ESC, or the back arrow.
-            }
+                {
+                    // User pressed Cancel, ESC, or the back arrow.
+                }
         }
 
         private void DeleteBtn_Click(object sender, RoutedEventArgs e)

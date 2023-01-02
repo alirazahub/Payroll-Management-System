@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Security.Cryptography;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -33,25 +34,34 @@ namespace Payroll_Management_System
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             BonusClass newBonus = new BonusClass();
-            newBonus.employeeID = Int32.Parse(empID.Text);
-            newBonus.date = Datee.Date.Value.ToString();
-            newBonus.hours = Int32.Parse(hourss.Text);
-            newBonus.details = detailss.Text;
-            DataAccess cont = new DataAccess();
-                string res = cont.addBonus(newBonus);
-                if(res == "Done")
-                {
-                bonus = cont.getBonus();
-                empID.Text = "";
-                hourss.Text = "";
-                detailss.Text = "";
-                bonusList.ItemsSource = null;
-                bonusList.ItemsSource = bonus;
-            BonusToggleTeaching.IsOpen = true;
-            }
-            else
+
+            try
             {
-                faliureToggleTeaching.Subtitle = res;
+                newBonus.employeeID = Int32.Parse(empID.Text);
+                newBonus.date = Datee.Date.Value.ToString();
+                newBonus.hours = Int32.Parse(hourss.Text);
+                newBonus.details = detailss.Text;
+                DataAccess cont = new DataAccess();
+                string res = cont.addBonus(newBonus);
+                if (res == "Done")
+                {
+                    bonus = cont.getBonus();
+                    empID.Text = "";
+                    hourss.Text = "";
+                    detailss.Text = "";
+                    bonusList.ItemsSource = null;
+                    bonusList.ItemsSource = bonus;
+                    BonusToggleTeaching.IsOpen = true;
+                }
+                else
+                {
+                    faliureToggleTeaching.Subtitle = res;
+                    faliureToggleTeaching.IsOpen = true;
+                }
+            }catch(Exception ex)
+            {
+                faliureToggleTeaching.Title = "Error";
+                faliureToggleTeaching.Subtitle = "Error: "+ex;
                 faliureToggleTeaching.IsOpen = true;
             }
             
