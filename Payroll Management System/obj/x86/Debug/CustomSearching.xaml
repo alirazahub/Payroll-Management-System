@@ -16,7 +16,7 @@
                 Width="1100"
                 Margin="0,30,0,20"
                 Orientation="Horizontal">
-                <Button x:ConnectionId='8'
+                <Button x:ConnectionId='7'
                     ui:FrameworkElementExtensions.Cursor="Hand"
                     Background="Transparent"
                                         >
@@ -36,18 +36,16 @@
             </StackPanel>
             <StackPanel Width="1100" Orientation="Horizontal">
                 <AutoSuggestBox x:ConnectionId='5'
+                    Header="Search By City"
                     Width="250"
                     AutomationProperties.Name="Basic AutoSuggestBox"
                     PlaceholderText="Search here.."
                     QueryIcon="Find"
+                    Name="search"
                                                                       
                                                              />
-                <TextBox x:ConnectionId='6'
-                    Name="search"
-                    Width="250"
-                    PlaceholderText="Search here.." />
-                <Button x:ConnectionId='7'
-                    Margin="10,0,0,0"
+                <Button x:ConnectionId='6'
+                    Margin="10,26,0,0"
                     ui:FrameworkElementExtensions.Cursor="Hand"
                                           
                     CornerRadius="3">
@@ -108,7 +106,7 @@
                 <ListView x:ConnectionId='3'
                     Name="employeeList"
                     Width="1100"
-                    Height="527"
+                    Height="200"
                     BorderBrush="#323232"
                     BorderThickness="1"
                     CornerRadius="6">

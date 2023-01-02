@@ -127,6 +127,9 @@
     <AppxPackagedFile Include="C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\bin\x86\Debug\NewDesignationOrDepartment.xbf">
+      <PackagePath>NewDesignationOrDepartment.xbf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\alira\source\repos\Payroll Management System\Payroll Management System\bin\x86\Debug\RegisterEmployees.xbf">
       <PackagePath>RegisterEmployees.xbf</PackagePath>
     </AppxPackagedFile>

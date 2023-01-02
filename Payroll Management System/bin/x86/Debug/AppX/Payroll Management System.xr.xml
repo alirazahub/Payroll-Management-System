@@ -30,6 +30,7 @@
     <RootPropertyPathName Name="designationID" />
     <RootPropertyPathName Name="PerDay" />
     <RootPropertyPathName Name="Details" />
+    <RootPropertyPathName Name="departmentID" />
     <RootPropertyPathName Name="Date" />
     <RootPropertyPathName Name="TotalSalary" />
     <RootPropertyPathName Name="Bonus" />
@@ -162,6 +163,8 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="PlaceholderText" />
       <RootProperty Name="QueryIcon" />
+      <RootProperty Name="Name" />
+      <RootProperty Name="Header" />
       <RootEvent Name="SuggestionChosen" />
       <RootEvent Name="TextChanged" />
     </RootType>
@@ -288,6 +291,7 @@
       <RootProperty Name="PasswordRevealMode" />
     </RootType>
     <RootType FullName="Payroll_Management_System.MainPage" />
+    <RootType FullName="Payroll_Management_System.NewDesignationOrDepartment" />
     <RootType FullName="Microsoft.Toolkit.Uwp.UI.TextBoxExtensions">
       <RootMethod Name="GetMask" />
       <RootMethod Name="SetMask" />

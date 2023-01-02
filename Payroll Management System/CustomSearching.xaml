@@ -36,6 +36,7 @@
             </StackPanel>
             <StackPanel Width="1100" Orientation="Horizontal">
                 <AutoSuggestBox
+                    Header="Search By City"
                     Width="250"
                     AutomationProperties.Name="Basic AutoSuggestBox"
                     PlaceholderText="Search here.."
@@ -44,7 +45,7 @@
                     SuggestionChosen="AutoSuggestBox_SuggestionChosen"
                     TextChanged="AutoSuggestBox_TextChanged" />
                 <Button
-                    Margin="10,0,0,0"
+                    Margin="10,26,0,0"
                     ui:FrameworkElementExtensions.Cursor="Hand"
                     Click="Button_Click_1"
                     CornerRadius="3">
@@ -105,7 +106,7 @@
                 <ListView
                     Name="employeeList"
                     Width="1100"
-                    Height="527"
+                    Height="200"
                     BorderBrush="#323232"
                     BorderThickness="1"
                     CornerRadius="6">

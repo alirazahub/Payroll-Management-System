@@ -505,5 +505,52 @@ namespace Payroll_Management_System
                 return output;
             }
         }
+        public List<DesigDeparts> getDesignations()
+        {
+            using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
+            {
+                var output = dbConnection.Query<DesigDeparts>("select * from designationTable").ToList();
+                return output;
+            }
+        }
+
+        public List<DesigDeparts> getDepartments()
+        {
+            using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
+            {
+                var output = dbConnection.Query<DesigDeparts>("select * from departmentsTable").ToList();
+                return output;
+            }
+        }
+        public string addNewDepartment(string name)
+        {
+            using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
+            {
+                try
+                {
+                    dbConnection.Execute("insert into DepartmentsTable values('"+name+"')");
+                    return "Done";
+                }
+                catch (Exception ex)
+                {
+                    return "Error: " + ex;
+                }
+            }
+        }
+        public string addNewDesignation(string name, int perDay, int perHour)
+        {
+            using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
+            {
+                try
+                {
+                    dbConnection.Execute("insert into designationTable values('" + name + "'," + perDay + "," + perHour + ")");
+                    return "Done";
+                }
+                catch(Exception ex)
+                {
+                    return "Error: "+ex;
+                }
+            }
+        }
     }
 }

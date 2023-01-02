@@ -143,7 +143,11 @@
     <Compile Include="CustomSearching.xaml.cs">
       <DependentUpon>CustomSearching.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DesigDeparts.cs" />
     <Compile Include="Designations.cs" />
+    <Compile Include="NewDesignationOrDepartment.xaml.cs">
+      <DependentUpon>NewDesignationOrDepartment.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Payroll.cs" />
     <Compile Include="PayrollDetailsss.cs" />
     <Compile Include="PrevAndNewDetails.cs" />
@@ -238,6 +242,10 @@
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="NewDesignationOrDepartment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="RegisterEmployees.xaml">
       <SubType>Designer</SubType>
