@@ -497,5 +497,13 @@ namespace Payroll_Management_System
                 return output;
             }
         }
+        public List<ReadingEmployees> getEmployeesByCity(string city)
+        {
+            using (IDbConnection dbConnection = new System.Data.SqlClient.SqlConnection(connectionString))
+            {
+                var output = dbConnection.Query<ReadingEmployees>("EXEC SPGetEmployeeDetailsByCityName @cityName = '"+city+"'").ToList();
+                return output;
+            }
+        }
     }
 }

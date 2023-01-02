@@ -34,6 +34,129 @@
                     FontWeight="Bold"
                     Text="Custom Searching" />
             </StackPanel>
+            <StackPanel Width="1100" Orientation="Horizontal">
+                <AutoSuggestBox
+                    Width="250"
+                    AutomationProperties.Name="Basic AutoSuggestBox"
+                    PlaceholderText="Search here.."
+                    QueryIcon="Find"
+                    SuggestionChosen="AutoSuggestBox_SuggestionChosen"
+                    TextChanged="AutoSuggestBox_TextChanged" />
+                <TextBox
+                    Name="search"
+                    Width="250"
+                    PlaceholderText="Search here.." />
+                <Button
+                    Margin="10,0,0,0"
+                    ui:FrameworkElementExtensions.Cursor="Hand"
+                    Click="Button_Click_1"
+                    CornerRadius="3">
+                    <StackPanel Orientation="Horizontal">
+                        <SymbolIcon Symbol="Find" />
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+            <StackPanel>
+
+                <StackPanel
+                    Width="1100"
+                    Margin="0,30,0,10"
+                    Padding="0,10"
+                    Background="#323232"
+                    CornerRadius="5"
+                    Orientation="Horizontal">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="190" />
+                            <ColumnDefinition Width="190" />
+                            <ColumnDefinition Width="190" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            FontWeight="Bold"
+                            Text="Emp ID" />
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.Column="2"
+                            FontWeight="Bold"
+                            Text="Name" />
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.Column="3"
+                            FontWeight="Bold"
+                            Text="CINIC" />
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.Column="4"
+                            FontWeight="Bold"
+                            Text="Department" />
+                        <TextBlock
+                            Grid.Row="0"
+                            Grid.Column="5"
+                            FontWeight="Bold"
+                            Text="Designation" />
+
+                    </Grid>
+                </StackPanel>
+                <ListView
+                    Name="employeeList"
+                    Width="1100"
+                    Height="527"
+                    BorderBrush="#323232"
+                    BorderThickness="1"
+                    CornerRadius="6">
+                    <ListView.ItemTemplate>
+
+                        <DataTemplate>
+
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="95" />
+                                    <ColumnDefinition Width="187" />
+                                    <ColumnDefinition Width="194" />
+                                    <ColumnDefinition Width="190" />
+
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    Text="{Binding employeeID}" />
+                                <TextBlock
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    Text="{Binding employeeName}" />
+                                <TextBlock
+                                    Grid.Row="0"
+                                    Grid.Column="2"
+                                    Text="{Binding employeeNIC}" />
+                                <TextBlock
+                                    Grid.Row="0"
+                                    Grid.Column="3"
+                                    Text="{Binding designationName}" />
+                                <TextBlock
+                                    Grid.Row="0"
+                                    Grid.Column="4"
+                                    Text="{Binding departmentName}" />
+                            </Grid>
+
+                        </DataTemplate>
+
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </StackPanel>
             <StackPanel />
         </StackPanel>
         <muxc:TeachingTip

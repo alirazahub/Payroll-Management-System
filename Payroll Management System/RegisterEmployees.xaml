@@ -174,7 +174,6 @@
                         <SymbolIcon Margin="0,0,15,0" Symbol="Add" />
                         <TextBlock><Run Text="Register Employee" /></TextBlock>
                     </StackPanel>
-
                 </Button>
             </StackPanel>
             <muxc:TeachingTip
