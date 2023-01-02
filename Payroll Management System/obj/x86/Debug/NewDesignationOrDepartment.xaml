@@ -16,12 +16,24 @@
                 <muxc:SymbolIconSource Symbol="Refresh" />
             </muxc:TeachingTip.IconSource>
         </muxc:TeachingTip>
-        <StackPanel>
+        <StackPanel Width="1100">
+            <TextBlock
+                Margin="320,20"
+                FontSize="20"
+                FontWeight="Bold"
+                Text="Adding New Departments or Designation" />
             <StackPanel>
-                <TextBlock Text="Add new Department" />
-                <StackPanel Orientation="Horizontal">
-                    <TextBox x:ConnectionId='11' Name="DepartmentName" Header="Department Name" />
+                <TextBlock
+                    FontSize="15"
+                    FontWeight="Bold"
+                    Text="Add new Department" />
+                <StackPanel Margin="0,20" Orientation="Horizontal">
+                    <TextBox x:ConnectionId='11'
+                        Name="DepartmentName"
+                        Width="200"
+                        Header="Department Name" />
                     <Button x:ConnectionId='12'
+                        Margin="100,0"
                         ui:FrameworkElementExtensions.Cursor="Hand"
                         Background="Transparent"
                                             >
@@ -34,12 +46,29 @@
             </StackPanel>
 
             <StackPanel>
-                <TextBlock Text="Add new Designation" />
-                <StackPanel Orientation="Horizontal">
-                    <TextBox x:ConnectionId='7' Name="DesignationName" Header="Designation Name" />
-                    <TextBox x:ConnectionId='8' Name="perDay" Header="Salary per Day" />
-                    <TextBox x:ConnectionId='9' Name="BonusperHour" Header="Bonus per Hour" />
+                <TextBlock
+                    Margin="0,20,0,0"
+                    FontSize="15"
+                    FontWeight="Bold"
+                    Text="Add new Designation" />
+                <StackPanel Margin="0,30" Orientation="Horizontal">
+                    <TextBox x:ConnectionId='7'
+                        Name="DesignationName"
+                        Width="200"
+                        Margin="0,0,20,0"
+                        Header="Designation Name" />
+                    <TextBox x:ConnectionId='8'
+                        Name="perDay"
+                        Width="200"
+                        Margin="20,0,20,0"
+                        Header="Salary per Day" />
+                    <TextBox x:ConnectionId='9'
+                        Name="BonusperHour"
+                        Width="200"
+                        Margin="20,0,20,0"
+                        Header="Bonus per Hour" />
                     <Button x:ConnectionId='10'
+                        Margin="120,0"
                         ui:FrameworkElementExtensions.Cursor="Hand"
                         Background="Transparent"
                                               >
@@ -54,8 +83,7 @@
 
                 <StackPanel>
                     <StackPanel
-                        Width="738"
-                        Margin="40,0,0,0"
+                        Width="350"
                         Padding="0,10"
                         Background="#323232"
                         CornerRadius="5"
@@ -79,14 +107,13 @@
                                 Grid.Row="0"
                                 Grid.Column="2"
                                 FontWeight="Bold"
-                                Text="Name" />
+                                Text=" Department Name" />
                         </Grid>
                     </StackPanel>
                     <ListView x:ConnectionId='5'
                         Name="depart"
-                        Width="738"
+                        Width="350"
                         Height="200"
-                        Margin="35,0,0,0"
                         Padding="1"
                         BorderBrush="#272727"
                         BorderThickness="1"
@@ -125,7 +152,7 @@
 
                 <StackPanel>
                     <StackPanel
-                        Width="738"
+                        Width="700"
                         Margin="40,0,0,0"
                         Padding="0,10"
                         Background="#323232"
@@ -137,8 +164,9 @@
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="13" />
-                                <ColumnDefinition Width="52" />
-                                <ColumnDefinition Width="149" />
+                                <ColumnDefinition Width="70" />
+                                <ColumnDefinition Width="200" />
+                                <ColumnDefinition Width="200" />
                                 <ColumnDefinition />
                             </Grid.ColumnDefinitions>
                             <TextBlock
@@ -150,12 +178,22 @@
                                 Grid.Row="0"
                                 Grid.Column="2"
                                 FontWeight="Bold"
-                                Text="Name" />
+                                Text="Designation Name" />
+                            <TextBlock
+                                Grid.Row="0"
+                                Grid.Column="3"
+                                FontWeight="Bold"
+                                Text="Salary Per Day" />
+                            <TextBlock
+                                Grid.Row="0"
+                                Grid.Column="4"
+                                FontWeight="Bold"
+                                Text="Bonus Per Hour" />
                         </Grid>
                     </StackPanel>
                     <ListView x:ConnectionId='3'
                         Name="desig"
-                        Width="738"
+                        Width="700"
                         Height="200"
                         Margin="35,0,0,0"
                         Padding="1"
@@ -173,8 +211,9 @@
                                     </Grid.RowDefinitions>
 
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="50" />
-                                        <ColumnDefinition Width="150" />
+                                        <ColumnDefinition Width="70" />
+                                        <ColumnDefinition Width="200" />
+                                        <ColumnDefinition Width="200" />
                                         <ColumnDefinition />
                                     </Grid.ColumnDefinitions>
 
@@ -186,6 +225,14 @@
                                         Grid.Row="0"
                                         Grid.Column="1"
                                         Text="{Binding designationName}" />
+                                    <TextBlock
+                                        Grid.Row="0"
+                                        Grid.Column="2"
+                                        Text="{Binding perDay}" />
+                                    <TextBlock
+                                        Grid.Row="0"
+                                        Grid.Column="3"
+                                        Text="{Binding BonusPerHour}" />
                                 </Grid>
 
                             </DataTemplate>
